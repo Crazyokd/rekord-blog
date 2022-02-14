@@ -1,2 +1,9 @@
 # rekord-blog
 repo for my blog.
+## Content
+- [Reference](#Reference)
+- [License](#License)
+## Reference
+This blog is based on [hexo-theme-nexmoe](https://github.com/theme-nexmoe/hexo-theme-nexmoe) theme.
+## License
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
