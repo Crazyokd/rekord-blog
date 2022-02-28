@@ -128,13 +128,13 @@ gitalk:
   admin: Crazyokd # 拥有对该repo进行操作的 GitHub username
   owner: Crazyokd # 持有该 repo 的 GitHub username
   repo: rekord-blog # 存放评论的 issue 所在的 repo
-  clientID: 04547210466ecdd58b78 # GitHub Client ID
-  clientSecret: 4250a3c7c5ed38326421ebfb2ef14b406d793091 # GitHub Client Secret
+  clientID: b640e2db71a95cb19b24 # GitHub Client ID
+  clientSecret: f095962d7b7040d25063c4713b8dfe4c6441b78e # GitHub Client Secret
 gitment:
   owner: Crazyokd # 持有该 repo 的 GitHub username
   repo: rekord-blog # 存放评论的 issue 所在的 repo
-  clientID: 04547210466ecdd58b78 # GitHub Client ID
-  clientSecret: 4250a3c7c5ed38326421ebfb2ef14b406d793091 # GitHub Client Secret
+  clientID: b640e2db71a95cb19b24 # GitHub Client ID
+  clientSecret: f095962d7b7040d25063c4713b8dfe4c6441b78e # GitHub Client Secret
 valine: 
   appId: <API_ID> # leancloud application app id
   appKey: <API_Key> # leancloud application app key
