@@ -5,9 +5,10 @@ date: 2021/11/15
 updated: 2021/11/15
 comments: true
 categories: 
-- Linux
+- 学习相关
 tags:
 - Linux
+- 学习笔记
 ---
 
 <h1 align="center">

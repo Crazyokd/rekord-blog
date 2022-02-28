@@ -7,7 +7,7 @@ comments: true
 categories: 
 - 折腾
 tags:
-- 折腾
+- Windows
 ---
 
 ## C盘大目录

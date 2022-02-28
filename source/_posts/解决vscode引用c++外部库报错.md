@@ -5,8 +5,7 @@ date: 2021/10/16
 updated: 2021/10/16
 comments: true
 categories: 
-- vscode
-- programing language
+- 工具
 tags:
 - vscode
 - c++

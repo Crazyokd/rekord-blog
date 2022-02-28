@@ -7,7 +7,7 @@ comments: true
 categories: 
 - 工具
 tags:
-- 工具
+- vim
 ---
 
 <h1 align="center">

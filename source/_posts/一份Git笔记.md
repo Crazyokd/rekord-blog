@@ -5,9 +5,10 @@ date: 2021/10/22
 updated: 2021/10/22
 comments: true
 categories: 
-- Git
+- 学习相关
 tags:
 - Git
+- 学习笔记
 ---
 
 ## Git配置

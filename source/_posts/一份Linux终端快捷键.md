@@ -5,9 +5,11 @@ date: 2021/11/6
 updated: 2021/11/6
 comments: true
 categories: 
-- 快捷键
+- 学习相关
 tags:
 - 快捷键
+- Linux
+- Windows
 ---
 
 <h1 align="center">
