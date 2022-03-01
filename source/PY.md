@@ -5,7 +5,7 @@ layout: py
 
 ## 友情链接
 
-- [![衬线柔骨](https://avatar.mixcm.com/github/nexmoe)](http://sxrekord.com/ "衬线柔骨")
+- [![Jax Young](https://jaxvanyang.github.io/assets/images/avatar.png)](https://jaxvanyang.github.io/ "Jax Young")
 
 
 ## 添加友链

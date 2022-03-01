@@ -1,5 +1,5 @@
 ---
-title: 关于
+title: 关于博主
 abbrlink: about
 ---
 
