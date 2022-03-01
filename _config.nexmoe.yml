@@ -41,11 +41,14 @@ menu:
 #  文章归档:  # 使用说明：https://docs.nexmoe.com/article/archive
 #    - /archive.html
 #    - icon-container
-  关于博客:
+  关于博主:
     - /about.html
     - icon-info-circle
   我的朋友: 
     - /PY.html # 使用说明：https://docs.nexmoe.com/article/py
+  每日佬链:
+    - /dalao.html
+    - icon-eye-fill
 
 widgets:
 - search
@@ -74,6 +77,27 @@ social:
     - icon-github
     - rgb(25, 23, 23)
     - rgba(25, 23, 23, .15)
+  豆瓣:
+    - https://www.douban.com/people/232567446/
+    - icon-douban-fill
+    - rgb(51, 153, 51)
+    - rgba(51, 51, 51, .15)
+  Steam:
+    - https://steamcommunity.com/id/crazyokd
+    - icon-steam
+    - rgb(0, 51, 139)
+    - rgba(0, 51, 153, .15)
+  Telegram:
+    - https://telegram.me/crazyokd
+    - icon-telegram
+    - rgb(0, 191, 255)
+    - rgba(0, 191, 255, .15)
+  知乎:
+    - https://www.zhihu.com/people/jing-2-73-45
+    - icon-zhihu
+    - rgb(30, 144, 255)
+    - rgba(30, 144, 255, .15)  
+  
 
 # 自定义样式，启用后可在站点的source文件夹下新建custom.css自定义站点样式
 customstyle: false  
