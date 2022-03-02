@@ -12,7 +12,7 @@ repo for my blog.
 - 4. run [launch.sh](launch.sh).
 ## ToDo
 - [ ] 添加更多的“每日佬链”
-- [ ] 图片来源重构（logo、background）
+- [x] 图片来源重构（logo、background）
 - [ ] 完善“关于博主”
 
 ## Reference
