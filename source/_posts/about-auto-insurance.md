@@ -69,3 +69,4 @@ tags:
         + 无法找到第三方责任险
         + 不计免赔险*
 
+![auto-insurance](../assets/auto-insu.jpg)
