@@ -3,6 +3,9 @@ layout: post
 title: 解决vscode引用c++外部库报错
 date: 2021/10/16
 updated: 2021/10/16
+cover: /assets/post-bg-2.jpg
+# coverWidth: 920
+# coverHeight: 613
 comments: true
 categories: 
 - 工具
