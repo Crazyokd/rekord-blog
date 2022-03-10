@@ -1,5 +1,5 @@
 ---
-title: 每日佬链
+title: 每日逛逛
 layout: py
 ---
 
