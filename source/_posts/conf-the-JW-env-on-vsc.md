@@ -3,6 +3,9 @@ layout: post
 title: 在VSCode上配置JavaWeb环境
 date: 2021/11/25
 updated: 2021/11/25
+cover: /assets/post-bg-2.jpg
+# coverWidth: 920
+# coverHeight: 613
 comments: true
 categories: 
 - GitHub
