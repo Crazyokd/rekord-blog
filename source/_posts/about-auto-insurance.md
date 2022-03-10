@@ -5,7 +5,7 @@ date: 2022/2/23
 updated: 2022/2/23
 comments: true
 categories: 
-- 通识知识
+- 生活
 tags:
 - 车险
 ---
