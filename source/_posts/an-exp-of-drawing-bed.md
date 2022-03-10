@@ -2,7 +2,7 @@
 layout: post
 title: 一次对图床问题的探索
 date: 2021/10/10
-updated: 2021/10/10
+updated: 2022/3/10
 comments: true
 categories: 
 - 折腾
@@ -10,8 +10,8 @@ tags:
 - 图床
 ---
 
+## 初体验
 > 就是不想去找第三方图床，一心想要薅它们的羊毛！！！
-
 
 1. 本以为可以将博客园当图床，而且在Typora上使用也成功显示了。但是在其他网站引用时却无法正常显示，估计是被filter了:skull_and_crossbones:。
 
@@ -22,3 +22,8 @@ tags:
 4. 直接拿自己网站当图床得了！
 
 5. 在GitHub上面的README.md文件直接粘贴图片，图片会完成上传工作，而且在其他网页是可以引用的（博客园应该学学人家的气度:angry:)
+
+## 需求升级
+### CDN
+- content delivery network
+- 关于CDN各方面的基本介绍可参考[www.cloudflare.com](https://www.cloudflare.com/zh-cn/learning/cdn/what-is-a-cdn/)
