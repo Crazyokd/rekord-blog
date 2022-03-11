@@ -3,6 +3,9 @@ layout: post
 title: 关于车险
 date: 2022/2/23
 updated: 2022/2/23
+cover: /assets/auto-insu-bac.png
+# coverWidth: 920
+# coverHeight: 613
 comments: true
 categories: 
 - 生活

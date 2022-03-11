@@ -3,6 +3,9 @@ layout: post
 title: 一份Linux终端快捷键 & Windows terminal常用命令 & Windows资源管理器快捷键
 date: 2021/11/6
 updated: 2021/11/6
+cover: /assets/linux.jpg
+# coverWidth: 920
+# coverHeight: 613
 comments: true
 categories: 
 - 技术

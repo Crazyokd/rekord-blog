@@ -3,6 +3,9 @@ layout: post
 title: Windows用户管理初体验
 date: 2021/5/8
 updated: 2021/5/8
+cover: /assets/windows.jpg
+# coverWidth: 920
+# coverHeight: 613
 comments: true
 categories: 
 - 折腾

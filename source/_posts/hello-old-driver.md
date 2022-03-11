@@ -3,6 +3,9 @@ layout: post
 title: hello-old-driver
 date: 2021/10/7
 updated: 2021/10/7
+cover: /assets/github.png
+# coverWidth: 920
+# coverHeight: 613
 comments: true
 categories: 
 - 技术

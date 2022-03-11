@@ -3,6 +3,9 @@ layout: post
 title: 一份Git笔记
 date: 2021/10/22
 updated: 2021/10/22
+cover: /assets/git.jpeg
+# coverWidth: 920
+# coverHeight: 613
 comments: true
 categories: 
 - 技术

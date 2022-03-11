@@ -3,6 +3,9 @@ layout: post
 title: 一份来自于C盘的统计数据
 date: 2022/2/8
 updated: 2022/2/8
+cover: /assets/windows.jpg
+# coverWidth: 920
+# coverHeight: 613
 comments: true
 categories: 
 - 折腾
