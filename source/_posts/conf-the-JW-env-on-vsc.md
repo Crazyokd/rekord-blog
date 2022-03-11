@@ -8,7 +8,7 @@ cover: /assets/post-bg-2.jpg
 # coverHeight: 613
 comments: true
 categories: 
-- GitHub
+- 技术
 tags:
 - vscode
 - Java

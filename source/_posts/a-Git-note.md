@@ -5,7 +5,7 @@ date: 2021/10/22
 updated: 2021/10/22
 comments: true
 categories: 
-- 学习相关
+- 技术
 tags:
 - Git
 - 学习笔记

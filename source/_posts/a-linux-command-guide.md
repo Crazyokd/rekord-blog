@@ -5,7 +5,7 @@ date: 2021/11/15
 updated: 2021/11/15
 comments: true
 categories: 
-- 学习相关
+- 技术
 tags:
 - Linux
 - 学习笔记

@@ -5,7 +5,7 @@ date: 2021/11/6
 updated: 2021/11/6
 comments: true
 categories: 
-- 学习相关
+- 技术
 tags:
 - 快捷键
 - Linux

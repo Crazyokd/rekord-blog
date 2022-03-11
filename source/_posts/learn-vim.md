@@ -5,7 +5,7 @@ date: 2021/11/10
 updated: 2021/11/10
 comments: true
 categories: 
-- 工具
+- 技术
 tags:
 - vim
 ---
