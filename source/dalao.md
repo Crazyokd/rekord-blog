@@ -9,3 +9,15 @@ layout: py
  
 ## 那些大佬们
 - [![Jax Young](https://jaxvanyang.github.io/assets/images/avatar.png)](https://jaxvanyang.github.io/ "Jax Young")
+- [![yihong0618](https://avatars.githubusercontent.com/u/15976103?v=4)](https://yihong.run/ "yihong0618")
+- [![Ray Eldath](https://ray-eldath.me/img/avatar.jpg)](https://ray-eldath.me/ "Ray Eldath")
+- [![GoogTech](https://cdn.jsdelivr.net/gh/googtech/googtech.github.io@gh-pages/assets/img/profile.png)](https://goog.tech/ "GoogTech")
+- [![Rachel](https://avatars.githubusercontent.com/u/13704467?v=4)](https://rachelt.one/zh/ "Rachel")
+- [![xiaoyou66](https://img.xiaoyou66.com/images/2020/02/20/tTSY.jpg)](https://xiaoyou66.com/ "xiaoyou66")
+- [![Hugefiver](https://gravatar.loli.net/avatar/e114a9517bd545a0f93da5f6a8e3538f)](https://rurilove.moe/ "Hugefiver")
+- [![Airing](https://avatars.githubusercontent.com/u/10513408?v=4)](https://me.ursb.me/ "Airing")]
+- [![halfrost](https://avatars.githubusercontent.com/u/10825609?v=4)](https://halfrost.com/ "halfrost")
+- [![Otstar Lin](https://ixk.me/img/avatar-full.jpg)](https://ixk.me/ "Otstar Lin")
+- [![phodal](https://www.phodal.com/static/phodal/images/phodal.jpg)](https://www.phodal.com/blog/ "phodal")
+- [![ruanyifeng](https://avatars.githubusercontent.com/u/905434?v=4)](https://www.ruanyifeng.com/ "ruanyifeng")
+- [![Pion1eer](https://www.ruanx.net/content/images/size/w100/2020/05/blue.jpeg)](https://www.ruanx.net/ "Pion1eer")
