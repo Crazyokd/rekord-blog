@@ -13,6 +13,7 @@ tags:
 - 学习笔记
 - Java
 ---
+
 ## 1. Java程序设计概述
 ### 1.1 Java程序设计平台
 Java是一个完整的平台，有一个庞大的库，其中包含了很多可重用的代码，以及一个提供诸如安全性、跨操作系统的可移植性以及自动垃圾收集等服务的执行环境。
@@ -36,7 +37,8 @@ Java是一个完整的平台，有一个庞大的库，其中包含了很多可�
 - 1996年初Sun发布了Java的第一个版本
 - 2009年Sun公司被Oracle收购
 - 2011年Oracle发布了Java的一个新版本——Java7
-### 关于Java的常见误解
+
+### 1.5 关于Java的常见误解
 ## 2. Java程序设计环境
 ### JShell
 Java9引入了另一种使用Java的方法。Jshell程序提供了一个“读取－计算－打印循环”【REPL】。键入一个Java表达式；JShell会评估你的输入，打印结果，等待你的下一个输入。
@@ -87,6 +89,7 @@ Java9引入了另一种使用Java的方法。Jshell程序提供了一个“读�
 	enum Size {SMALL, MEDIUM, LARGE, EXTRA_LARGE}
 	Size s = Size.MEDIUM;
 	```
+
 ### 3.5 运算符
 - 算术运算符
 - 数学函数与常量
@@ -223,6 +226,7 @@ Java9引入了另一种使用Java的方法。Jshell程序提供了一个“读�
 	* 依赖（uses-a)
 	* 聚合 (has-a)
 	* 继承 (is-a)
+
 ### 4.2 使用预定义类
 - 对象与对象变量
 - LocalDate类
@@ -235,6 +239,7 @@ Java9引入了另一种使用Java的方法。Jshell程序提供了一个“读�
 	`int month = newYearEve.getMonthValue();`
 	`int day = newYearEve.getDayOfMonth();`
 - 更改器方法与访问器方法
+
 ### 4.3 用户自定义类
 - 多个源文件的使用
 	> 每次编译只需编译main方法所在的类
@@ -470,13 +475,16 @@ JDK 包含一个很有用的工具，叫做 javadoc，它可以由源文件生�
 - 声明数组列表
 - 访问数组列表元素
 - 类型化与原始数组列表的兼容性	
+
 ### 5.4 对象包装器与自动装箱
 1. 对应基本类型的类称为包装器（wrapper）
 2. 包装器类是不可变的
 3. 包装器类还是 final
 4. 装箱和拆箱是编译器要做的工作，而不是虚拟机
+
 ### 5.5 参数数量可变的方法
 返回值 方法名(类型... 形参名){}
+
 ### 5.6 枚举类
 ```java
 public enum Size {
@@ -496,6 +504,7 @@ public enum Size {
 - values
 - ordinal
 - compareTo
+
 ### 5.7 反射
 - 作用：
 	* 在运行时分析类的能力
@@ -533,6 +542,7 @@ public enum Size {
 5. 在覆盖方法时，不要改变预期的行为
 6. 使用多态，而不要使用类型信息
 7. 不要滥用反射
+
 ## 接口、lambda表达式与内部类
 ### 6.1 接口
 - 接口的概念
@@ -568,6 +578,7 @@ public enum Size {
 	1. 实现 Cloneable 接口
 	2. 重新定义 clone 方法，并指定 public 访问修饰符
 	> Cloneable 属于标记接口【不包含任何方法的接口】
+
 ### 6.2 lambda 表达式
 - 为什么引入 lambda 表达式
 	> lambda 表达式是一个可传递的代码快，可以在以后执行一次或多次。
@@ -615,6 +626,7 @@ public enum Size {
 - 处理 lambda 表达式
 	`@FunctionalInterface`
 - 再谈 Comparator
+
 ### 6.3 内部类
 why using？
 1. 内部类可以对同一个包中的其他类隐藏
@@ -645,7 +657,9 @@ why using？
 	> 与常规内部类不同，静态内部类可以有静态字段和方法
 	>
 	> 在接口中声明的内部类自动是 static 和 public .
+
 ### 6.4 服务加载器
+
 ### 6.5 代理
 利用代理可以在运行时创建实现了一组给定接口的新类。
 只有在编译时期无法确定需要实现哪个接口时才有必要使用代理。
