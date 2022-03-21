@@ -2,12 +2,12 @@
 layout: post
 title: 一份Git笔记
 date: 2021/10/22
-updated: 2021/10/22
+updated: 2022/3/20
 cover: /assets/git.jpeg
 # coverWidth: 920
 # coverHeight: 613
 comments: true
-categories: 
+categories:
 - 技术
 tags:
 - Git
@@ -27,6 +27,7 @@ Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为�
 ### 相关命令
 ```shell
 git config --list
+git config --[local/global/system] --list	# 查看当前仓库/全局/系统 的Git配置
 git config --list --show-origin		#查看所有的配置以及它们所在的文件
 git config key value                #设置配置
 git config --unset key              #删除配置
@@ -52,6 +53,7 @@ man git-<verb>
 #初始化配置
 git config --global user.name "your username"
 git config --global user.email "your email"
+git config --global color.ui auto	# 设置git命令输出为彩色
 git config --global core.editor vim     #此处使用vim,Windows中需要指定绝对路径
 
 #得到仓库
@@ -59,6 +61,7 @@ git config --global core.editor vim     #此处使用vim,Windows中需要指定�
 git init
 #2.克隆仓库
 git clone <url> [<rep_name>]
+git clone ssh://user@domain.com/repo.git	# 通过SSH
 
 git status	#查看仓库状态
 git status -s		#--short
@@ -143,7 +146,10 @@ git diff --cached	#效果同上
 git difftool --tool-help	#看你的系统支持哪些 Git Diff 插件
 ```
 
-
+## `git reflog`
+```shell
+git reflog show
+```
 
 ## `git log`
 
@@ -162,7 +168,25 @@ git log --since=2.weeks
 git log -S string	#显示那些添加或删除了该字符串的提交
 ```
 
+## `git stash`
+```shell
+git stash
+```
 
+## `git grep`
+```shell
+git grep pattern
+```
+
+## `git blame`
+```shell
+git blame <file>	# 查看file的修改记录
+```
+
+## `git reset`
+```shell
+git reset --hard HEAD	# 放弃工作目录下的所有修改
+```
 
 ## 撤销修改
 
@@ -242,9 +266,10 @@ HEAD指针是指向当前分支的指针
 ```shell
 git branch	#显示所有本地分支
 git branch -a   #显示所有分支（本地分支+远程分支）
+git branch -r 	#查看所有远程分支
 git branch -v	#查看所有分支以及它们的最后一次提交
 
-git branch <branchname>	#创建分支
+git branch <branchname>	#基于当前分支创建分支
 git checkout <branchname>	#切换分支
 git checkout -b <newbranchname>	#创建新分支并切换到新分支
 git checkout -b <branch> <tagname>	#对tagname位置创建一个分支，并切换到该分支
