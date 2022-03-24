@@ -192,8 +192,8 @@ git reset --hard HEAD	# 放弃工作目录下的所有修改
 
 ```shell
 git commit --amend	#重新提交暂存区,本次提交将覆盖上一次提交
-git rm --cached <file>...	#取消暂存
-git checkout -- <file>	#用最近一次提交覆盖该文件
+git restore --staged <file>...	#取消暂存
+git restore <file>	#用最近一次提交覆盖该文件
 ```
 
 
