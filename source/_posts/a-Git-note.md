@@ -53,8 +53,10 @@ man git-<verb>
 #初始化配置
 git config --global user.name "your username"
 git config --global user.email "your email"
+# 以下仅为参考
 git config --global color.ui auto	# 设置git命令输出为彩色
 git config --global core.editor vim     #此处使用vim,Windows中需要指定绝对路径
+git config --global pull.rebase true    # 拉取默认变基
 
 #得到仓库
 #1.初始化仓库
@@ -278,7 +280,7 @@ git branch -D <branch>	#强制删除分支
 
 git branch --merged	#查看所有已经合并到当前分支的分支
 git branch --no-merged	
-git branch --no-merged <branch>	#查看branch分支的合并状态
+git branch --no-merged <branch>	#查看未合并到branch分支的所有分支
 ```
 
 
@@ -300,10 +302,15 @@ git branch --no-merged <branch>	#查看branch分支的合并状态
 git ls-remote <remote>	#查看远程仓库的所有远程分支
 git remote show <remote>	#查看远程分支的详细信息
 
-git fetch <remote>	#从远程仓库抓取本地没有的数据，并且更新本地数据库
+git fetch <remote>	# fetch branches and/or tags;将所有的远程分支同步到本地
 git push <remote> <localbranch>:<remotebranch>
-git checkout --track <remote>/<branch>	#跟踪远程分支
-git branch -vv	#将所有本地分支列出并包含更多的信息
+
+git checkout -b <branch> <remote>/<remotebranch>    # 基于远程分支创建分支
+git checkout --track <remote>/<branch>	            # 效果同上
+
+git branch -u <remote>/<remotebranch>   # 设置当前分支的上游分支/跟踪分支
+
+git branch -vv  # 列出所有本地分支及其对应的上游分支
 git fetch --all	#抓取所有的远程仓库
 git push <remote> --delete <remotebranch>	#删除远程分支
 ```
@@ -311,6 +318,9 @@ git push <remote> --delete <remotebranch>	#删除远程分支
 
 
 ## 变基
+变基使得提交历史更加整洁。
+
+你在查看一个经过变基的分支的历史记录时会发现，尽管实际的开发工作是并行的，但它们看上去就像是串行的一样，提交历史是一条直线没有分叉。
 
 ```shell
 git rebase <branch>	#将当前分支上的所有修改变基到branch分支上
@@ -318,7 +328,7 @@ git rebase --onto <branch1> <branch2> <branch3>	#取出branch3分支，找出它
 git rebase <branch1> <branch2>	#将branch2变基到branch1
 ```
 
-
+**如果提交存在于你的仓库之外，而别人可能基于这些提交进行开发，那么不要执行变基**
 
 
 
