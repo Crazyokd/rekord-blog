@@ -3,7 +3,7 @@ layout: post
 title: 尝尝 SSH
 date: 2022/4/7
 updated: 2022/4/7
-cover: 
+cover: /assets/ssh.webp
 # coverWidth: 920
 # coverHeight: 613
 comments: true
