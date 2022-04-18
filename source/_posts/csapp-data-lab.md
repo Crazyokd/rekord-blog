@@ -178,7 +178,7 @@ int logicalNeg(int x) {
 ```
 ## howManyBits
 这一题折腾了很久，最终也只想出一种不符合题目要求的解法【_注释的前几行_】
-最后在大佬[jax](https://jaxvanyoung.github.io.com)的帮助下，才得出下面的题解。
+最后在大佬[jax](https://jaxvanyang.github.io/)的帮助下，才得出下面的题解。
 以下代码来源其本人解法，但我对其正负区分部分进行了优化，也可以说是教学相长了。
 大体思路就是先将最高位1前面的所有低位通过 移位+或 全置0，然后统计1的数量即可。
 ```C++
@@ -207,52 +207,52 @@ int howManyBits(int x) {
 
     // fill = x < 0 ? ~x : x;
     unsigned fill = x ^ (x >> 31);
-        fill = (fill >> 1) | fill;
-        fill = (fill >> 2) | fill;
-        fill = (fill >> 4) | fill;
-        fill = (fill >> 8) | fill;
-        fill = (fill >> 16) | fill;
+    fill = (fill >> 1) | fill;
+    fill = (fill >> 2) | fill;
+    fill = (fill >> 4) | fill;
+    fill = (fill >> 8) | fill;
+    fill = (fill >> 16) | fill;
 
-        // add up all bits
+    // add up all bits
 
-        // mask_16 = 0101...
-        unsigned mask_16 = 0x55;
-        mask_16 = (mask_16 << 8) | mask_16;
-        mask_16 = (mask_16 << 16) | mask_16;
-        unsigned a_16 = mask_16 & fill;
-        unsigned b_16 = (fill & ~mask_16) >> 1;
-        unsigned sum = a_16 + b_16;
+    // mask_16 = 0101...
+    unsigned mask_16 = 0x55;
+    mask_16 = (mask_16 << 8) | mask_16;
+    mask_16 = (mask_16 << 16) | mask_16;
+    unsigned a_16 = fill & mask_16;
+    unsigned b_16 = (fill & ~mask_16) >> 1;
+    unsigned sum = a_16 + b_16;
 
-        // mask_8 = 0011...
-        unsigned mask_8 = 0x33;
-        mask_8 = (mask_8 << 8) | mask_8;
-        mask_8 = (mask_8 << 16) | mask_8;
-        unsigned a_8 = sum & mask_8;
-        unsigned b_8 = (sum & ~mask_8) >> 2;
-        sum = a_8 + b_8;
+    // mask_8 = 0011...
+    unsigned mask_8 = 0x33;
+    mask_8 = (mask_8 << 8) | mask_8;
+    mask_8 = (mask_8 << 16) | mask_8;
+    unsigned a_8 = sum & mask_8;
+    unsigned b_8 = (sum & ~mask_8) >> 2;
+    sum = a_8 + b_8;
 
-        // mask_4 = 00001111...
-        unsigned mask_4 = 0x0F;
-        mask_4 = (mask_4 << 8) | mask_4;
-        mask_4 = (mask_4 << 16) | mask_4;
-        unsigned a_4 = sum & mask_4;
-        unsigned b_4 = (sum & ~mask_4) >> 4;
-        sum = a_4 + b_4;
+    // mask_4 = 00001111...
+    unsigned mask_4 = 0x0F;
+    mask_4 = (mask_4 << 8) | mask_4;
+    mask_4 = (mask_4 << 16) | mask_4;
+    unsigned a_4 = sum & mask_4;
+    unsigned b_4 = (sum & ~mask_4) >> 4;
+    sum = a_4 + b_4;
 
-        // mask_2 = 0x00FF00FF
-        unsigned mask_2 = 0xFF;
-        mask_2 = (mask_2 << 16) | mask_2;
-        unsigned a_2 = sum & mask_2;
-        unsigned b_2 = (sum & ~mask_2) >> 8;
-        sum = a_2 + b_2;
+    // mask_2 = 0x00FF00FF
+    unsigned mask_2 = 0xFF;
+    mask_2 = (mask_2 << 16) | mask_2;
+    unsigned a_2 = sum & mask_2;
+    unsigned b_2 = (sum & ~mask_2) >> 8;
+    sum = a_2 + b_2;
 
-        // mask_1 should be 0x0000FFFF, but sum won't be greater than 16
-        unsigned mask_1 = 0xFF;
-        unsigned a_1 = sum & mask_1;
-        unsigned b_1 = (sum & ~mask_1) >> 16;
-        sum = a_1 + b_1;
+    // mask_1 should be 0x0000FFFF, but sum won't be greater than 16
+    unsigned mask_1 = 0xFF;
+    unsigned a_1 = sum & mask_1;
+    unsigned b_1 = (sum & ~mask_1) >> 16;
+    sum = a_1 + b_1;
 
-        return sum + 1;
+    return sum + 1;
 }
 ```
 ## floatScale2
