@@ -6,6 +6,9 @@ layout: py
 ## 好玩社区
 - [![V2EX](https://www.v2ex.com/static/icon-192.png)](https://www.v2ex.com/ "V2EX")
 - [![qoto](https://qoto.org/apple-touch-icon.png)](https://qoto.org/ "qoto")
+- [![DEV](https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico)](https://dev.to/ "DEV")
+- [![GeekNote](https://geeknote.net/assets/favicon-796b8bed7e969bae738cf37c8e84401fe686645e.png)](https://geeknote.net/ "GeekNote")
+
  
 ## 那些大佬们
 - [![Jax Young](https://jaxvanyang.github.io/assets/images/avatar.png)](https://jaxvanyang.github.io/ "Jax Young")
@@ -21,3 +24,5 @@ layout: py
 - [![phodal](https://www.phodal.com/static/phodal/images/phodal.jpg)](https://www.phodal.com/blog/ "phodal")
 - [![ruanyifeng](https://avatars.githubusercontent.com/u/905434?v=4)](https://www.ruanyifeng.com/ "ruanyifeng")
 - [![Pion1eer](https://www.ruanx.net/content/images/size/w100/2020/05/blue.jpeg)](https://www.ruanx.net/ "Pion1eer")
+- [](http://greatdk.com/ "DK博客")
+- [![春水煎茶](https://writings.sh/assets/images/2017-malta-valletta.png)](https://writings.sh/about "春水煎茶")
