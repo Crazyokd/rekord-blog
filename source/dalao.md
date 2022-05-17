@@ -26,3 +26,4 @@ layout: py
 - [![Pion1eer](https://www.ruanx.net/content/images/size/w100/2020/05/blue.jpeg)](https://www.ruanx.net/ "Pion1eer")
 - [](http://greatdk.com/ "DK博客")
 - [![春水煎茶](https://writings.sh/assets/images/2017-malta-valletta.png)](https://writings.sh/about "春水煎茶")
+- [![DIYgod](https://cdn.jsdelivr.net/gh/DIYgod/hexo-theme-sagiri/source/images/DIYgod-avatar2.webp)](https://diygod.me/ "DIYgod")
