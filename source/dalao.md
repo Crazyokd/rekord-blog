@@ -27,3 +27,4 @@ layout: py
 - [](http://greatdk.com/ "DK博客")
 - [![春水煎茶](https://writings.sh/assets/images/2017-malta-valletta.png)](https://writings.sh/about "春水煎茶")
 - [![DIYgod](https://cdn.jsdelivr.net/gh/DIYgod/hexo-theme-sagiri/source/images/DIYgod-avatar2.webp)](https://diygod.me/ "DIYgod")
+- [![GeekPlux](https://avatars.githubusercontent.com/u/3816105?v=4)](https://geekplux.com/ "GeekPlux")
