@@ -49,6 +49,9 @@ menu:
   每日逛逛:
     - /dalao.html
     - icon-eye-fill
+  文章归档:
+    - /archives.html
+    - icon-container
 
 widgets:
 - search
