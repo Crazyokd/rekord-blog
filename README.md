@@ -23,6 +23,8 @@ repo for my blog.
 - [x] 加入文章归档
 - [x] 提供RSS订阅
 - [x] 加入分析系统
+- [x] 使用HTTPS代替HTTP
+- [ ] 使用nginx优化网站访问效果
 - [ ] 优化图片使用
 
 ## Reference
