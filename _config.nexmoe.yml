@@ -56,6 +56,7 @@ menu:
 
 widgets:
 - search
+- hitokoto
 - social
 - category
 - tagcloud
@@ -106,7 +107,7 @@ social:
     - icon-QQ
     - rgb(2, 125, 250)
     - rgba(2, 125, 250, .15) 
-  
+
 
 # 自定义样式，启用后可在站点的source文件夹下新建custom.css自定义站点样式
 customstyle: false  
@@ -178,6 +179,11 @@ widgetLink: #链接组件
   - title: <title>
     img : <img_path>
     link : <url>
+
+widgetHitokoto: # 一言组件
+  loading_placeholder: '🚀 获取中...' # 正在一言时的占位符
+  loading_error_placeholder: '🐞 获取失败...' # 加载一言失败时的占位符
+  category: # 一言句子类型（可选），不配置的话随机获取，详见 https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0
 
 # 自定义侧边栏尾部内容
 sidebar: '<br><a target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://i.dawnlab.me/c0268c1e6cfd0863d6ba35be1575941a.png" width="150px"></a>'
