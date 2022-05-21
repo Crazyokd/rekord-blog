@@ -24,6 +24,8 @@ repo for my blog.
 - [x] 提供RSS订阅
 - [x] 加入分析系统
 - [x] 使用HTTPS代替HTTP
+- [x] 添加音乐
+- [x] 添加[一言](https://github.com/hitokoto-osc)组件
 - [ ] 使用nginx优化网站访问效果
 - [ ] 优化图片使用
 
