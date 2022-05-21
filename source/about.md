@@ -3,6 +3,8 @@ title: 关于博主
 abbrlink: about
 ---
 
+{% meting "26830207" "netease" "song" "autoplay" "mutex:true" %}
+
 ## 关于
 Hey，我是<strong>Rekord</strong>，目前大三，还是菜鸡。
 

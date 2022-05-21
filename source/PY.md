@@ -3,6 +3,8 @@ title: 我的朋友
 layout: py
 ---
 
+{% meting "65800" "netease" "song" "autoplay" "mutex:false" %}
+
 ## 友情链接
 
 - [![Jax Young](https://jaxvanyang.github.io/assets/images/avatar.png)](https://jaxvanyang.github.io/ "Jax Young")
