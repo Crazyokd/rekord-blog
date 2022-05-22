@@ -28,6 +28,7 @@ repo for my blog.
 - [x] 添加[一言](https://github.com/hitokoto-osc)组件
 - [ ] 使用nginx优化网站访问效果
 - [ ] 优化图片使用
+- [ ] 修复 Gitalk 无法登陆的问题
 
 ## Reference
 - This blog is based on [hexo-theme-nexmoe](https://github.com/theme-nexmoe/hexo-theme-nexmoe) theme.
