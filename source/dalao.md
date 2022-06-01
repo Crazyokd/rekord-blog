@@ -28,3 +28,4 @@ layout: py
 - [![春水煎茶](https://avatars.githubusercontent.com/u/1687443?v=4)](https://writings.sh/about "春水煎茶")
 - [![DIYgod](https://cdn.jsdelivr.net/gh/DIYgod/hexo-theme-sagiri/source/images/DIYgod-avatar2.webp)](https://diygod.me/ "DIYgod")
 - [![GeekPlux](https://avatars.githubusercontent.com/u/3816105?v=4)](https://geekplux.com/ "GeekPlux")
+- [![Hosizuki](https://hosizuki.github.io/pictures/me.jpg)](https://hosizuki.github.io 'Hosizuki')
