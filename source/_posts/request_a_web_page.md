@@ -14,6 +14,8 @@ tags:
 ---
 
 > 下文摘抄自《计算机网络 自顶向下方法》第七版第六章最后一小节
+>
+> 灵感来自于[what-happens-when-zh_CN](https://github.com/skyline75489/what-happens-when-zh_CN)，但本文仅聚焦在网络部分。
 
 ![6-32](/assets/5-32.jpg)
 
