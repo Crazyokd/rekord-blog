@@ -3,9 +3,9 @@ layout: post
 title: Java规范
 date: 2022/05/06
 updated: 2022/05/06
-# cover: /assets/git.jpeg
-# coverWidth: 920
-# coverHeight: 613
+cover: /assets/java.webp
+coverWidth: 889
+coverHeight: 500
 comments: true
 categories: 
 - 技术
