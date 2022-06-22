@@ -10,3 +10,15 @@ if [ ! -e "public" ]; then
 fi
 
 cp -rf personal/nginx_zh public/nginx_zh
+
+
+# delete all *.Identifier
+find . -name "*.Identifier" > identifier
+
+while read line
+do
+    rm "$line"
+done < identifier
+
+# delete temporary file
+rm identifier
