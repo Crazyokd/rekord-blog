@@ -3,7 +3,7 @@ layout: post
 title: csapp：data-lab
 date: 2022/4/10
 updated: 2022/4/10
-cover: /assets/csapp.jpg
+cover: /assets/csapp.webp
 # coverWidth: 920
 # coverHeight: 613
 comments: true

@@ -3,7 +3,7 @@ layout: post
 title: 一份Git笔记
 date: 2021/10/22
 updated: 2022/3/20
-cover: /assets/git.jpeg
+cover: /assets/git.webp
 # coverWidth: 920
 # coverHeight: 613
 comments: true

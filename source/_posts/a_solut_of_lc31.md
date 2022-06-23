@@ -3,7 +3,7 @@ layout: post
 title: leetcode-31-题解
 date: 2022/3/29
 updated: 2022/3/29
-cover: /assets/leetcode.jpg
+cover: /assets/leetcode.webp
 # coverWidth: 920
 # coverHeight: 613
 comments: true

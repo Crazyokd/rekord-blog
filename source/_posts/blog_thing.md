@@ -94,7 +94,7 @@ tags:
 
 正当我纳闷着要不要尝试学习相关知识并为当前主题提交一条 PR 时。
 居然在项目的pr记录中找到了类似pr。 如下：
-![pr-rekord](/assets/pr-rekord-22.5.20.jpg)
+![pr-rekord](/assets/pr-rekord-22.5.20.webp)
 
 接下来我把博客的主题升级到最新版后，就有相应的功能了。
 

@@ -3,7 +3,7 @@ layout: post
 title: Web页面请求的历程
 date: 2022/05/25
 updated: 2022/05/25
-cover: /assets/Internet.jpg
+cover: /assets/Internet.webp
 coverWidth: 1512
 coverHeight: 786
 comments: true
@@ -17,7 +17,7 @@ tags:
 >
 > 灵感来自于[what-happens-when-zh_CN](https://github.com/skyline75489/what-happens-when-zh_CN)，但本文仅聚焦在网络部分。
 
-![6-32](/assets/5-32.jpg)
+![6-32](/assets/5-32.webp)
 
 图 6-32 图示了我们的场景：一名学生 Bob 将他的便携机与学校的以太网交换机相连，下载一个 Web 页面（比如说 [www.google.com](https://www.google.com.hk/) 主页）。如我们所知，为满足这个看起来简单的请求，背后隐藏了许多细节。
 ## 准备：DHCP 、UDP 、IP 和以太网

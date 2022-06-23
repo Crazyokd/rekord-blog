@@ -3,7 +3,7 @@ layout: post
 title: 学习-Java核心技术卷I-1~6章
 date: 2022/3/15
 updated: 2022/3/15
-cover: /assets/corejavaI.jpg
+cover: /assets/corejavaI.webp
 # coverWidth: 920
 # coverHeight: 613
 comments: true
@@ -66,15 +66,21 @@ Java9引入了另一种使用Java的方法。Jshell程序提供了一个“读�
 
 ### 3.3 数据类型
 - 整型
-	|类型| 存储需求 |
-	|--|--|
-	|int|4B|
-	|short|2B|
-	|long|8B|
-	|byte|1B|
-	
+
+|类型| 存储需求 |
+|----|--------|
+|int|4B|
+|short|2B|
+|long|8B|
+|byte|1B|
 - 浮点类型
-- char类型
+
+|类型| 存储需求 |
+|----|--------|
+|float|4B|
+|double(default)|8B|
+- char类型(2B)
+	> char 只能表示一个字符
 - Unicode和char类型
 - boolean类型
 	* true
@@ -85,10 +91,6 @@ Java9引入了另一种使用Java的方法。Jshell程序提供了一个“读�
 	利用关键字`final`指示常量
 	类常量：`static final`
 - 枚举类型
-	```
-	enum Size {SMALL, MEDIUM, LARGE, EXTRA_LARGE}
-	Size s = Size.MEDIUM;
-	```
 
 ### 3.5 运算符
 - 算术运算符

@@ -3,7 +3,7 @@ layout: post
 title: 黑魂3游玩体验
 date: 2022/3/10
 updated: 2022/3/10
-cover: /assets/darksouls3-bac.jpg
+cover: /assets/darksouls3-bac.webp
 # coverWidth: 920
 # coverHeight: 613
 comments: true
@@ -123,7 +123,7 @@ tags:
 或许仅仅是想多体验下上位的居高临下与颐指气使？
 ## 新的收获
 对于黑魂3里装备的基础攻击后面的一项数值我一向是不明所以但又耿耿于怀的。
-![darksouls3](/assets/dark-soulsIII.jpg)
+![darksouls3](/assets/darksouls3.webp)
 
 然后我就找到了一个up的视频——[Darkbblue/基础系统讲解](https://m.bilibili.com/video/BV1e7411v7Hg)
 

@@ -3,7 +3,7 @@ layout: post
 title: 关于车险
 date: 2022/2/23
 updated: 2022/2/23
-cover: /assets/auto-insu-bac.png
+cover: /assets/auto-insu-bac.webp
 # coverWidth: 920
 # coverHeight: 613
 comments: true
@@ -72,4 +72,4 @@ tags:
         + 无法找到第三方责任险
         + 不计免赔险*
 
-![auto-insurance](../assets/auto-insu.jpg)
+![auto-insurance](../assets/auto-insu.webp)

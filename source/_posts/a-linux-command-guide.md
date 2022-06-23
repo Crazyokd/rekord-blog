@@ -3,7 +3,7 @@ layout: post
 title: 一份Linux命令指南
 date: 2021/11/15
 updated: 2021/11/15
-cover: /assets/linux.jpg
+cover: /assets/linux.webp
 # coverWidth: 920
 # coverHeight: 613
 comments: true

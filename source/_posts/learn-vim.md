@@ -3,7 +3,7 @@ layout: post
 title: 学习Vim
 date: 2021/11/10
 updated: 2021/11/10
-cover: /assets/vim.png
+cover: /assets/vim.webp
 # coverWidth: 920
 # coverHeight: 613
 comments: true

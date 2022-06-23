@@ -3,7 +3,7 @@ layout: post
 title: Git提交规范
 date: 2022/05/07
 updated: 2022/05/07
-cover: /assets/git.jpeg
+cover: /assets/git.webp
 # coverWidth: 920
 # coverHeight: 613
 comments: true

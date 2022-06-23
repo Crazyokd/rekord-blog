@@ -3,7 +3,7 @@ layout: post
 title: 一次手机抓包体验
 date: 2022/2/6
 updated: 2022/2/6
-cover: /assets/fiddler.jpg
+cover: /assets/fiddler.webp
 # coverWidth: 920
 # coverHeight: 613
 comments: true

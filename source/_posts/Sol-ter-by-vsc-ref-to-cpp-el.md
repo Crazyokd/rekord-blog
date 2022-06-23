@@ -3,7 +3,7 @@ layout: post
 title: 解决vscode引用c++外部库报错
 date: 2021/10/16
 updated: 2021/10/16
-cover: /assets/vscode.jpg
+cover: /assets/vscode.webp
 # coverWidth: 920
 # coverHeight: 613
 comments: true

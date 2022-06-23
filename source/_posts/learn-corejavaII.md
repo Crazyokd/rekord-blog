@@ -3,7 +3,7 @@ layout: post
 title: 学习-Java核心技术卷II
 date: 2022/3/22
 updated: 2022/3/22
-cover: /assets/corejavaII.jpg
+cover: /assets/corejavaII.webp
 # coverWidth: 920
 # coverHeight: 613
 comments: true

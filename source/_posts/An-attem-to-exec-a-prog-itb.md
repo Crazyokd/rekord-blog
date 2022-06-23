@@ -3,7 +3,7 @@ layout: post
 title: 程序后台执行的一次尝试
 date: 2021/11/16
 updated: 2021/11/16
-cover: /assets/linux.jpg
+cover: /assets/linux.webp
 # coverWidth: 920
 # coverHeight: 613
 comments: true
