@@ -8,6 +8,7 @@ layout: py
 - [![qoto](https://qoto.org/apple-touch-icon.png)](https://qoto.org/ "qoto")
 - [![DEV](https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico)](https://dev.to/ "DEV")
 - [![GeekNote](https://geeknote.net/assets/favicon-796b8bed7e969bae738cf37c8e84401fe686645e.png)](https://geeknote.net/ "GeekNote")
+- [![DROIDWIN](https://www.droidwin.com/wp-content/uploads/2019/08/cropped-DROIDWIN-FINAL-LOGO.jpg)](https://www.droidwin.com/ "DROIDWIN")
 
  
 ## 那些大佬们
