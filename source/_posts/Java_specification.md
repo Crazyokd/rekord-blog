@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java规范
+title: Java 开发规范
 date: 2022/05/06
 updated: 2022/05/06
 cover: /assets/java.webp
