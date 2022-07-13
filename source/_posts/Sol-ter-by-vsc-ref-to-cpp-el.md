@@ -11,7 +11,7 @@ categories:
 - 技术
 tags:
 - vscode
-- c++
+- C++
 ---
 
 `Visual Studio Code`用了也有一段时间了，其中它的**小巧**、**美观**给我留下了很深的印象。
