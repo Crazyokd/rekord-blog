@@ -29,7 +29,7 @@ repo for my blog.
 - [ ] 优化图片使用
     - [x] 优化文章封面图片使用
     - [ ] 优化博客头像图片使用
-- [ ] 修复 Gitalk 无法登陆的问题
+- [x] 修复 Gitalk 无法登陆的问题
 - [ ] 将 .md 文件 解析为 .html 文件
 
 ## Reference

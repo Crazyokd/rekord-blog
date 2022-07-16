@@ -16,14 +16,12 @@ imageCDN: # 图片 CDN 功能
   enable: false # 开启该功能  
   origin: /../../images/ # 图片原始目录
   to: https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/ # 图片 CDN 域名
-  
+
+# 自定义样式，启用后可在站点的source文件夹下新建custom.css自定义站点样式
+customstyle: false  
+
 # 附加图标库 使用说明：https://docs.nexmoe.com/config/icon
 iconlib: # //at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css
-
-search: 
-  type: engine # 可选engine（用搜索引擎搜索）、swiftype、或local（本地搜索）
-  url: https://cn.bing.com/search?q=site:sxrekord.com # 搜索引擎地址，在type为swiftype时无效 e.g:https://www.google.com/search?q={你的博客链接}
-  id: <swiftype-id> # swiftype的id，见启用教程。在type为engine时无效
 
 cdn: # 这里可以修改站点使用的库的CDN
   disqusjs: 
@@ -39,9 +37,6 @@ menu:
   回到首页: 
     - /
     - icon-home
-#  文章归档:  # 使用说明：https://docs.nexmoe.com/article/archive
-#    - /archive.html
-#    - icon-container
   关于博主:
     - /about.html
     - icon-info-circle
@@ -55,67 +50,96 @@ menu:
     - icon-container
 
 widgets:
-- search
-- hitokoto
-- social
-- category
-- tagcloud
-# - archive #settings: widgetAchive
-# - recent_posts
-# - link #settings: widgetLink
+  - name: search
+    enable: true
+    options:
+      search: 
+        type: engine # 可选engine（用搜索引擎搜索）、swiftype、或local（本地搜索）
+        url: https://cn.bing.com/search?q=site:sxrekord.com # 搜索引擎地址，在type为swiftype时无效 e.g:https://www.google.com/search?q={你的博客链接}
+        id: <swiftype-id> # swiftype的id，见启用教程。在type为engine时无效
+  - name: hitokoto
+    enable: true
+    options:
+      widgetHitokoto: # 一言组件
+        loading_placeholder: '🚀 获取中...' # 正在一言时的占位符
+        loading_error_placeholder: '🐞 获取失败...' # 加载一言失败时的占位符
+        category: # 一言句子类型（可选），不配置的话随机获取，详见 https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0
+  - name: social
+    enable: true
+    options: 
+      social:
+        哔哩哔哩:
+          - https://space.bilibili.com/456872732
+          - icon-bilibili
+          - rgb(231, 106, 141)
+          - rgba(231, 106, 141, .15)
+        GitHub:
+          - https://github.com/Crazyokd/
+          - icon-github
+          - rgb(25, 23, 23)
+          - rgba(25, 23, 23, .15)
+        豆瓣:
+          - https://www.douban.com/people/232567446/
+          - icon-douban-fill
+          - rgb(51, 153, 51)
+          - rgba(51, 51, 51, .15)
+        Steam:
+          - https://steamcommunity.com/id/crazyokd
+          - icon-steam
+          - rgb(0, 51, 139)
+          - rgba(0, 51, 153, .15)
+        Telegram:
+          - https://telegram.me/crazyokd
+          - icon-telegram
+          - rgb(0, 191, 255)
+          - rgba(0, 191, 255, .15)
+        知乎:
+          - https://www.zhihu.com/people/jing-2-73-45
+          - icon-zhihu
+          - rgb(30, 144, 255)
+          - rgba(30, 144, 255, .15)  
+        RSS:
+          - /atom.xml
+          - icon-rss
+          - rgb(235, 152, 0)
+          - rgba(235, 152, 0, .15)  
+        腾讯QQ:
+          - https://wpa.qq.com/msgrd?v=3&uin=1324596506&site=qq&menu=yes
+          - icon-QQ
+          - rgb(2, 125, 250)
+          - rgba(2, 125, 250, .15) 
+        Twitter:
+          - https://twitter.com/Crazyokd
+          - icon-twitter
+          - rgb(19, 155, 240)
+          - rgba(19, 155, 240, .15)
+  - name: category
+    enable: true
+  - name: tagcloud
+    enable: true
+    options:
+      maxTagcloud: 0
+  - name: archive #settings: widgetAchive
+    enable: false
+    options:
+      widgetAchive: #文章归档组件
+        archive_type: 'year' #按月展示还是按年展示
+        show_count: true  #是否展示数量
+  - name: recent_posts
+    enable: false
+  - name: link #settings: widgetLink
+    enable: false
+    options:
+      widgetLink: #链接组件
+        - title: <title>
+          img : <img_path>
+          link : <url>
+        - title: <title>
+          img : <img_path>
+          link : <url>
 
-maxTagcloud: 0  # 标签云组件显示的标签数量，0 表示不限制
-
-social:
-  哔哩哔哩:
-    - https://space.bilibili.com/456872732
-    - icon-bilibili
-    - rgb(231, 106, 141)
-    - rgba(231, 106, 141, .15)
-  GitHub:
-    - https://github.com/Crazyokd/
-    - icon-github
-    - rgb(25, 23, 23)
-    - rgba(25, 23, 23, .15)
-  豆瓣:
-    - https://www.douban.com/people/232567446/
-    - icon-douban-fill
-    - rgb(51, 153, 51)
-    - rgba(51, 51, 51, .15)
-  Steam:
-    - https://steamcommunity.com/id/crazyokd
-    - icon-steam
-    - rgb(0, 51, 139)
-    - rgba(0, 51, 153, .15)
-  Telegram:
-    - https://telegram.me/crazyokd
-    - icon-telegram
-    - rgb(0, 191, 255)
-    - rgba(0, 191, 255, .15)
-  知乎:
-    - https://www.zhihu.com/people/jing-2-73-45
-    - icon-zhihu
-    - rgb(30, 144, 255)
-    - rgba(30, 144, 255, .15)  
-  RSS:
-    - /atom.xml
-    - icon-rss
-    - rgb(235, 152, 0)
-    - rgba(235, 152, 0, .15)  
-  腾讯QQ:
-    - https://wpa.qq.com/msgrd?v=3&uin=1324596506&site=qq&menu=yes
-    - icon-QQ
-    - rgb(2, 125, 250)
-    - rgba(2, 125, 250, .15) 
-  Twitter:
-    - https://twitter.com/Crazyokd
-    - icon-twitter
-    - rgb(19, 155, 240)
-    - rgba(19, 155, 240, .15)
 
 
-# 自定义样式，启用后可在站点的source文件夹下新建custom.css自定义站点样式
-customstyle: false  
 color: # 配色方案，从first到seventh为优先级为1-7的颜色，默认为彩虹配色
   first: # 同时作为主题色
     r: 255 
@@ -146,6 +170,42 @@ color: # 配色方案，从first到seventh为优先级为1-7的颜色，默认�
     g: 144
     b: 255
 
+
+copyTip: "著作权归作者所有。\n商业转载请联系作者获得授权，非商业转载请注明出处。\n来源：%url" # 自定义复制版权文案,使用 %url 代替当前页面URL, 修改为false禁用
+
+# slotHead: ''
+# slotFooter: '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2058306854838448" crossorigin="anonymous"></script>'
+
+# 自定义侧边栏尾部内容
+slotSidebar: '<br><a href="https://beian.miit.gov.cn/" target="_blank">湘ICP备2021007111号</a>
+			<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=43010302001326" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+				<img src="/assets/beian.png" style="float:left;"/>
+				<p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">湘公网安备 43010302001326号</p>
+			</a>'
+
+slotComment: '
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+const gitalk = new Gitalk({
+  clientID: "b640e2db71a95cb19b24",
+  clientSecret: "f095962d7b7040d25063c4713b8dfe4c6441b78e",
+  repo: "rekord-blog",      
+  owner: "Crazyokd",
+  admin: "Crazyokd",
+  id: window.location.pathname    
+});
+gitalk.render("gitalk-container")
+</script>
+'
+copyTip: "著作权归作者所有。\n商业转载请联系作者获得授权，非商业转载请注明出处。\n来源：%url" # 自定义复制版权文案,使用 %url 代替当前页面URL, 修改为false禁用
+slotCopyright: '<strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可'
+
+# slotArticleEnd: ''
+
+
+
 # 向搜索引擎验证你对站点的所有权，用于向搜索引擎提交 sitemap 和管理站点被搜索引擎收录的情况。
 site_verification: 
   google:
@@ -156,42 +216,19 @@ analytics:
   baidu_site_id: 62280469c0e16c563480bdb503ef4f1f
 
 # 评论框，目前支持 gitalk,gitment,valine,disqus,disqusjs,changyan,livere,DiscussBot 使用 false 可以关闭
-comment: gitalk
-gitalk:
-  admin: Crazyokd # 拥有对该repo进行操作的 GitHub username
-  owner: Crazyokd # 持有该 repo 的 GitHub username
-  repo: rekord-blog # 存放评论的 issue 所在的 repo
-  clientID: b640e2db71a95cb19b24 # GitHub Client ID
-  clientSecret: f095962d7b7040d25063c4713b8dfe4c6441b78e # GitHub Client Secret
-gitment:
-  owner: Crazyokd # 持有该 repo 的 GitHub username
-  repo: rekord-blog # 存放评论的 issue 所在的 repo
-  clientID: b640e2db71a95cb19b24 # GitHub Client ID
-  clientSecret: f095962d7b7040d25063c4713b8dfe4c6441b78e # GitHub Client Secret
+# comment: gitalk
+# gitalk:
+#   admin: Crazyokd # 拥有对该repo进行操作的 GitHub username
+#   owner: Crazyokd # 持有该 repo 的 GitHub username
+#   repo: rekord-blog # 存放评论的 issue 所在的 repo
+#   clientID: b640e2db71a95cb19b24 # GitHub Client ID
+#   clientSecret: f095962d7b7040d25063c4713b8dfe4c6441b78e # GitHub Client Secret
+# gitment:
+#   owner: Crazyokd # 持有该 repo 的 GitHub username
+#   repo: rekord-blog # 存放评论的 issue 所在的 repo
+#   clientID: b640e2db71a95cb19b24 # GitHub Client ID
+#   clientSecret: f095962d7b7040d25063c4713b8dfe4c6441b78e # GitHub Client Secret
 
-copyright: '<strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可'
-copyTip: "著作权归作者所有。\n商业转载请联系作者获得授权，非商业转载请注明出处。\n来源：%url" # 自定义复制版权文案,使用 %url 代替当前页面URL, 修改为false禁用
-
-# achive widget behavior
-widgetAchive: #文章归档组件
-  archive_type: 'year' #按月展示还是按年展示
-  show_count: true  #是否展示数量
-
-widgetLink: #链接组件
-  - title: <title>
-    img : <img_path>
-    link : <url>
-  - title: <title>
-    img : <img_path>
-    link : <url>
-
-widgetHitokoto: # 一言组件
-  loading_placeholder: '🚀 获取中...' # 正在一言时的占位符
-  loading_error_placeholder: '🐞 获取失败...' # 加载一言失败时的占位符
-  category: # 一言句子类型（可选），不配置的话随机获取，详见 https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0
-
-# 自定义侧边栏尾部内容
-sidebar: '<br><a target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"></a>'
 
 # hexo generator feed
 feed:
