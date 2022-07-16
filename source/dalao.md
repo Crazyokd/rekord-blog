@@ -7,7 +7,6 @@ layout: py
 - [![V2EX](https://www.v2ex.com/static/icon-192.png)](https://www.v2ex.com/ "V2EX")
 - [![qoto](https://qoto.org/apple-touch-icon.png)](https://qoto.org/ "qoto")
 - [![DEV](https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico)](https://dev.to/ "DEV")
-- [![GeekNote](https://geeknote.net/assets/favicon-796b8bed7e969bae738cf37c8e84401fe686645e.png)](https://geeknote.net/ "GeekNote")
 - [![DROIDWIN](https://www.droidwin.com/wp-content/uploads/2019/08/cropped-DROIDWIN-FINAL-LOGO.jpg)](https://www.droidwin.com/ "DROIDWIN")
 
  
@@ -30,3 +29,4 @@ layout: py
 - [![DIYgod](https://cdn.jsdelivr.net/gh/DIYgod/hexo-theme-sagiri/source/images/DIYgod-avatar2.webp)](https://diygod.me/ "DIYgod")
 - [![GeekPlux](https://avatars.githubusercontent.com/u/3816105?v=4)](https://geekplux.com/ "GeekPlux")
 - [![Hosizuki](https://hosizuki.github.io/pictures/me.jpg)](https://hosizuki.github.io 'Hosizuki')
+- [![xiaoz](https://cdn.xiaoz.me/wp-content/themes/xiaozTheme/static/images/my120.jpg)](https://www.xiaoz.me/ "xiaoz")
