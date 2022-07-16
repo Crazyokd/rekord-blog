@@ -3,6 +3,7 @@
 # This script is used to deploy my custom content.
 
 rm -rf public/nginx_zh
+rm -rf public/music_theory
 rm -rf public/personal
 
 if [ ! -e "public" ]; then 
@@ -10,7 +11,7 @@ if [ ! -e "public" ]; then
 fi
 
 cp -rf personal/nginx_zh public/nginx_zh
-
+cp -rf personal/music_theory public/music_theory
 
 # delete all *.Identifier
 find . -name "*.Identifier" > identifier
