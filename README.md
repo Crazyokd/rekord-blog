@@ -17,9 +17,6 @@ repo for my blog.
 > eg. `npm config set registry https://registry.npm.taobao.org --global`
 
 ## ToDo
-- [x] 添加更多的“每日佬链”
-- [x] 图片来源重构（logo、background）
-- [x] 完善“关于博主”
 - [x] 加入文章归档
 - [x] 提供RSS订阅
 - [x] 加入分析系统
@@ -27,8 +24,13 @@ repo for my blog.
 - [x] 添加音乐
 - [x] 添加[一言](https://github.com/hitokoto-osc)组件
 - [ ] 使用nginx优化网站访问效果
+    - [x] 使用 nginx 静态部署
+    - [ ] 使用 nginx 反向代理
 - [ ] 优化图片使用
+    - [x] 优化文章封面图片使用
+    - [ ] 优化博客头像图片使用
 - [ ] 修复 Gitalk 无法登陆的问题
+- [ ] 将 .md 文件 解析为 .html 文件
 
 ## Reference
 - This blog is based on [hexo-theme-nexmoe](https://github.com/theme-nexmoe/hexo-theme-nexmoe) theme.
