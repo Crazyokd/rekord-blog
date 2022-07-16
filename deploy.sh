@@ -11,7 +11,27 @@ if [ ! -e "public" ]; then
 fi
 
 cp -rf personal/nginx_zh public/nginx_zh
+
+# md to html
+# go install github.com/ueffel/mdtohtml@latest
+# find personal/music_theory -name "*.md" > md
+# while read line
+# do
+#     mdtohtml "$line"
+# done < md
+# rm md
+
+# copy personal/music_theory/*.html to public/music_theory
+# find personal/music_theory \! -name "index.html" > html
 cp -rf personal/music_theory public/music_theory
+# delete all .md file
+find public/music_theory -name "*.md" > md
+while read line
+do
+    rm "$line"
+done < md
+rm md
+
 
 # delete all *.Identifier
 find . -name "*.Identifier" > identifier
