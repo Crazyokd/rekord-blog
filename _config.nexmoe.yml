@@ -171,7 +171,6 @@ color: # 配色方案，从first到seventh为优先级为1-7的颜色，默认�
     b: 255
 
 
-copyTip: "著作权归作者所有。\n商业转载请联系作者获得授权，非商业转载请注明出处。\n来源：%url" # 自定义复制版权文案,使用 %url 代替当前页面URL, 修改为false禁用
 
 # slotHead: ''
 # slotFooter: '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2058306854838448" crossorigin="anonymous"></script>'
