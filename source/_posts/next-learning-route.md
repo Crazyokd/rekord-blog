@@ -3,6 +3,9 @@ layout: post
 title: 接下来的学习路线
 date: 2021/12/21
 updated: 2021/12/21
+cover: /assets/rekord.webp
+coverWidth: 504
+coverHeight: 156
 comments: true
 categories: 
 - 感悟
