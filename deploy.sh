@@ -38,6 +38,7 @@ fi
 cp -rf personal/nginx_zh public/nginx_zh
 cp -rf personal/music_theory public/music_theory
 cp -rf personal/lao public/lao
+cp -rf personal/diary public/diary
 
 # delete all .md file
 deleteMDFromPublic "public/music_theory"
