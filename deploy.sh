@@ -2,7 +2,7 @@
 
 # This script is used to deploy my custom content.
 
-deleteMDFromPublic() {
+function deleteMDFromPublic() {
     find $1 -name "*.md" > md
     while read line
     do
@@ -13,12 +13,11 @@ deleteMDFromPublic() {
 
 # exist some bugs
 # md to html
-mgToHtml() {
-    go install github.com/ueffel/mdtohtml@latest
+function mdToHtml() {
     find $1 -name "*.md" > md
     while read line
     do
-        mdtohtml "$line"
+        sudo ./htmltotext.sh "$line"
     done < md
     rm md
 }
@@ -31,6 +30,10 @@ rm -rf public/personal
 if [ ! -e "public" ]; then 
     mkdir public
 fi
+
+# convert .md file to .html file
+# mdToHtml "personal/lao"
+# mdToHtml "personal/diary"
 
 # copy personal/music_theory/*.html to public/music_theory
 # find personal/music_theory \! -name "index.html" > html

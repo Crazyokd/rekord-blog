@@ -1,50 +1,67 @@
-<!-- Markdown Source -->
-<!--
-## 那些偷偷仰望着的人呐！
-- [Jax Young](https://jaxvanyang.github.io/)
+#!/bin/bash
+# Markdown Pretty Self-Contained HTML Generation Script
+# By Lucas Garron and Rekord
 
-- [yihong0618](https://yihong.run/)
+set -e
 
-- [Ray Eldath](https://ray-eldath.me/)
+if [ "$#" = "0" ]
+then
+	echo "Usage: ${0} file.md"
+	exit 1
+fi
 
-- [GoogTech](https://goog.tech/)
+MARKDOWN_PATH="/usr/local/bin/Markdown.pl"
+IN_FILE_PATH="$1"
+IN_FILE_NAME=`basename "$IN_FILE_PATH"`
+OUT_FILE_PATH="${IN_FILE_PATH%.*}.html"
+OUT_FILE_NAME=`basename "$OUT_FILE_PATH"`
 
-- [Rachel](https://rachelt.one/zh/)
+function printStatus {
+  echo "$@"
+}
 
-- [xiaoyou66](https://xiaoyou66.com/)
+function printMarkdown {
 
-- [Hugefiver](https://rurilove.moe/)
+printStatus "[>   ] Creating $OUT_FILE_PATH..."
 
-- [Airing](https://me.ursb.me/)
+echo -n "" > "$OUT_FILE_PATH"
 
-- [halfrost](https://halfrost.com/)
+printStatus "[=>  ] Embedding Markdown source..."
 
-- [Otstar Lin](https://ixk.me/)
+echo "<!-- Markdown Source -->" >> "$OUT_FILE_PATH"
+echo "<!--" >> "$OUT_FILE_PATH"
+cat "$IN_FILE_PATH" >> "$OUT_FILE_PATH"
+echo "-->" >> "$OUT_FILE_PATH"
 
-- [phodal](https://www.phodal.com/blog/)
+printStatus "[==> ] Starting HTML and including CSS..."
 
-- [ruanyifeng](https://www.ruanyifeng.com/)
+echo "<html>" >> "$OUT_FILE_PATH"
+echo "<head>" >> "$OUT_FILE_PATH"
+echo '<meta http-equiv="Content-type" content="text/html;charset=UTF-8">' >> "$OUT_FILE_PATH"
+echo "<title>$OUT_FILE_NAME</title>" >> "$OUT_FILE_PATH"
+echo "<style>" >> "$OUT_FILE_PATH"
+echo "$1" >> "$OUT_FILE_PATH"
+echo "</style>" >> "$OUT_FILE_PATH"
+echo "</head>" >> "$OUT_FILE_PATH"
+echo "<body>" >> "$OUT_FILE_PATH"
 
-- [Pion1eer](https://www.ruanx.net/)
+# echo "<hr>" >> "$OUT_FILE_PATH"
 
-- [DK博客](http://greatdk.com/)
+printStatus "[===>] Marking down..."
 
-- [春水煎茶](https://writings.sh/about)
+"$MARKDOWN_PATH" "$IN_FILE_PATH" >> "$OUT_FILE_PATH"
+echo "<div class=\"div_foot\">
+        <b>`basename "$OUT_FILE_PATH"`</b> - Generated on <b>`date`</b> by <b>`whoami`</b> using <a href=\"http://daringfireball.net/projects/markdown/\">Markdown</a> and <a href=\"https://github.com/lgarron/md2html\">lgarron/md2html</a>. Source is embedded.
+    </div>" >> "$OUT_FILE_PATH"
+echo "</body>" >> "$OUT_FILE_PATH"
+echo "</html>" >> "$OUT_FILE_PATH"
 
-- [DIYgod](https://diygod.me/)
+printStatus "[====] Done."
 
-- [GeekPlux](https://geekplux.com/)
+}
 
-- [Hosizuki](https://hosizuki.github.io)
-
-- [xiaoz](https://www.xiaoz.me/)
-
-- [Lindsay](https://lin.moe/)-->
-<html>
-<head>
-<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-<title>index.html</title>
-<style>
+# Just be careful not use any backticks in the CSS, and end with a line of HEREDOC`"
+printMarkdown "`cat <<HEREDOC
 /* Taken from QLMarkdown: https://github.com/toland/qlmarkdown */
 /* Extracted and interpreted from adcstyle.css and frameset_styles.css */
 /* body */
@@ -241,35 +258,4 @@ textarea {
     line-height: 50px;
     width: 100%;
 }
-</style>
-</head>
-<body>
-<h2>那些偷偷仰望着的人呐！</h2>
-
-<ul>
-<li><p><a href="https://jaxvanyang.github.io/">Jax Young</a></p></li>
-<li><p><a href="https://yihong.run/">yihong0618</a></p></li>
-<li><p><a href="https://ray-eldath.me/">Ray Eldath</a></p></li>
-<li><p><a href="https://goog.tech/">GoogTech</a></p></li>
-<li><p><a href="https://rachelt.one/zh/">Rachel</a></p></li>
-<li><p><a href="https://xiaoyou66.com/">xiaoyou66</a></p></li>
-<li><p><a href="https://rurilove.moe/">Hugefiver</a></p></li>
-<li><p><a href="https://me.ursb.me/">Airing</a></p></li>
-<li><p><a href="https://halfrost.com/">halfrost</a></p></li>
-<li><p><a href="https://ixk.me/">Otstar Lin</a></p></li>
-<li><p><a href="https://www.phodal.com/blog/">phodal</a></p></li>
-<li><p><a href="https://www.ruanyifeng.com/">ruanyifeng</a></p></li>
-<li><p><a href="https://www.ruanx.net/">Pion1eer</a></p></li>
-<li><p><a href="http://greatdk.com/">DK博客</a></p></li>
-<li><p><a href="https://writings.sh/about">春水煎茶</a></p></li>
-<li><p><a href="https://diygod.me/">DIYgod</a></p></li>
-<li><p><a href="https://geekplux.com/">GeekPlux</a></p></li>
-<li><p><a href="https://hosizuki.github.io">Hosizuki</a></p></li>
-<li><p><a href="https://www.xiaoz.me/">xiaoz</a></p></li>
-<li><p><a href="https://lin.moe/">Lindsay</a></p></li>
-</ul>
-<div class="div_foot">
-        <b>index.html</b> - Generated on <b>Tue Jul 19 10:18:30 CST 2022</b> by <b>root</b> using <a href="http://daringfireball.net/projects/markdown/">Markdown</a> and <a href="https://github.com/lgarron/md2html">lgarron/md2html</a>. Source is embedded.
-    </div>
-</body>
-</html>
+HEREDOC`"

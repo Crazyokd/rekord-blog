@@ -1,40 +1,40 @@
 ## 那些偷偷仰望着的人呐！
-- [![Jax Young](https://jaxvanyang.github.io/assets/images/avatar.png)](https://jaxvanyang.github.io/ "Jax Young")
+- [Jax Young](https://jaxvanyang.github.io/)
 
-- [![yihong0618](https://avatars.githubusercontent.com/u/15976103?v=4)](https://yihong.run/ "yihong0618")
+- [yihong0618](https://yihong.run/)
 
-- [![Ray Eldath](https://ray-eldath.me/img/avatar.jpg)](https://ray-eldath.me/ "Ray Eldath")
+- [Ray Eldath](https://ray-eldath.me/)
 
-- [![GoogTech](https://cdn.jsdelivr.net/gh/googtech/googtech.github.io@gh-pages/assets/img/profile.png)](https://goog.tech/ "GoogTech")
+- [GoogTech](https://goog.tech/)
 
-- [![Rachel](https://avatars.githubusercontent.com/u/13704467?v=4)](https://rachelt.one/zh/ "Rachel")
+- [Rachel](https://rachelt.one/zh/)
 
-- [![xiaoyou66](https://img.xiaoyou66.com/images/2020/02/20/tTSY.jpg)](https://xiaoyou66.com/ "xiaoyou66")
+- [xiaoyou66](https://xiaoyou66.com/)
 
-- [![Hugefiver](https://gravatar.loli.net/avatar/e114a9517bd545a0f93da5f6a8e3538f)](https://rurilove.moe/ "Hugefiver")
+- [Hugefiver](https://rurilove.moe/)
 
-- [![Airing](https://avatars.githubusercontent.com/u/10513408?v=4)](https://me.ursb.me/ "Airing")
+- [Airing](https://me.ursb.me/)
 
-- [![halfrost](https://avatars.githubusercontent.com/u/10825609?v=4)](https://halfrost.com/ "halfrost")
+- [halfrost](https://halfrost.com/)
 
-- [![Otstar Lin](https://ixk.me/img/avatar-full.jpg)](https://ixk.me/ "Otstar Lin")
+- [Otstar Lin](https://ixk.me/)
 
-- [![phodal](https://www.phodal.com/static/phodal/images/phodal.jpg)](https://www.phodal.com/blog/ "phodal")
+- [phodal](https://www.phodal.com/blog/)
 
-- [![ruanyifeng](https://avatars.githubusercontent.com/u/905434?v=4)](https://www.ruanyifeng.com/ "ruanyifeng")
+- [ruanyifeng](https://www.ruanyifeng.com/)
 
-- [![Pion1eer](https://www.ruanx.net/content/images/size/w100/2020/05/blue.jpeg)](https://www.ruanx.net/ "Pion1eer")
+- [Pion1eer](https://www.ruanx.net/)
 
-- [![DK博客](https://greatdk.com/favicon.ico)](http://greatdk.com/ "DK博客")
+- [DK博客](http://greatdk.com/)
 
-- [![春水煎茶](https://avatars.githubusercontent.com/u/1687443?v=4)](https://writings.sh/about "春水煎茶")
+- [春水煎茶](https://writings.sh/about)
 
-- [![DIYgod](https://cdn.jsdelivr.net/gh/DIYgod/hexo-theme-sagiri/source/images/DIYgod-avatar2.webp)](https://diygod.me/ "DIYgod")
+- [DIYgod](https://diygod.me/)
 
-- [![GeekPlux](https://avatars.githubusercontent.com/u/3816105?v=4)](https://geekplux.com/ "GeekPlux")
+- [GeekPlux](https://geekplux.com/)
 
-- [![Hosizuki](https://hosizuki.github.io/pictures/me.jpg)](https://hosizuki.github.io 'Hosizuki')
+- [Hosizuki](https://hosizuki.github.io)
 
-- [![xiaoz](https://cdn.xiaoz.me/wp-content/themes/xiaozTheme/static/images/my120.jpg)](https://www.xiaoz.me/ "xiaoz")
+- [xiaoz](https://www.xiaoz.me/)
 
-- [![Lindsay]()](https://lin.moe/ "Lindsay")
+- [Lindsay](https://lin.moe/)
