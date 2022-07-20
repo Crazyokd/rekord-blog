@@ -43,7 +43,7 @@ menu:
   我的朋友: 
     - /PY.html # 使用说明：https://docs.nexmoe.com/article/py
   每日逛逛:
-    - /community.html
+    - /wander.html
     - icon-eye-fill
   文章归档:
     - /archives.html
