@@ -8,7 +8,7 @@ layout: py
 ## 友情链接
 
 - [![Jax Young](https://jaxvanyang.github.io/assets/images/avatar.png)](https://jaxvanyang.github.io/ "Jax Young")
-
+- [![XXIIVV webring](https://webring.xxiivv.com/icon.black.svg)](https://webring.xxiivv.com/#random "XXIIVV webring")
 
 ## 添加友链
 
