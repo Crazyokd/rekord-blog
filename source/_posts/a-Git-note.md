@@ -2,7 +2,7 @@
 layout: post
 title: 一份Git笔记
 date: 2021/10/22
-updated: 2022/3/20
+updated: 2022/08/02
 cover: /assets/git.webp
 # coverWidth: 920
 # coverHeight: 613
@@ -32,6 +32,9 @@ git config key [value]                      # 查看【或设置】某项配置
 git config --unset key                      # 删除某项配置
 ```
 
+### 配置参考
+- [.gitconfig](https://github.com/Crazyokd/my-config)
+
 ## 帮助文档
 
 ```shell
@@ -42,48 +45,37 @@ man git-<verb>
 git <verb> -h	                            # 获取简易帮助
 ```
 
-
-
 ## 基本操作
 
 ```shell
-#初始化配置
-git config --global user.name "your username"
-git config --global user.email "your email"
-# 以下仅为参考
-git config --global color.ui auto	# 设置git命令输出为彩色
-git config --global core.editor vim     #此处使用vim,Windows中需要指定绝对路径
-git config --global pull.rebase true    # 拉取默认变基
-
 #得到仓库
-#1.初始化仓库
+# 1.初始化仓库
 git init
-#2.克隆仓库
+# 2.克隆仓库
 git clone <url> [<rep_name>]
-git clone ssh://user@domain.com/repo.git	# 通过SSH
+git clone ssh://user@server:path/to/repo.git	# 通过SSH
 
-git status	#查看仓库状态
-git status -s		#--short
+git status [-s|--short]                         # 查看仓库状态
+git log
 
-git add	<file>...	#开始跟踪新文件，或者把已跟踪的文件放到暂存区
+git add	<file>...	                            # 开始跟踪新文件，或者把已跟踪的文件放到暂存区
 
-git commit -m "message"		#提交暂存区文件
-git commit -a -m "message"	#把所有已经跟踪过的文件暂存起来一并提交，从而跳过 git add 步骤
+git commit [-m "message"]		                # 提交暂存区文件
+git commit -a -m "message"	                    # 把所有已经跟踪过的文件暂存起来一并提交，从而跳过 git add 步骤
 
-git ls-files    #查看暂存区中的文件
-git ls-files files...   #查看暂存区中的特定文件或目录
+git ls-files                                    # 查看暂存区中的文件
+git ls-files files...                           # 查看暂存区中的特定文件或目录
 
-git rm --cached files...    #将files从暂存区移除，取消对files的跟踪
-git rm --cached -r dirs...      #将dirs从暂存区移除
-git rm files...     #将files从暂存区和工作区移除，取消对files的跟踪
+git rm --cached files...                        # 将files从暂存区移除，但仍然保留在当前工作目录中，取消对files的跟踪
+git rm --cached -r dirs...                      # 将dirs从暂存区移除，但仍然保留在当前工作目录中
+git rm files...                                 # 将files从暂存区和工作区移除，取消对files的跟踪
 
 git push <remote> <localbranch>:<remotebranch>
 git pull <remote> <remotebranch>:<localbranch>
 
+git mv file_from file_to	                    # 移动文件，移动后还需commit（自动完成add）
 
-git mv file_from file_to	#移动文件，移动后还需commit（自动完成add）
-
-git fetch <remote>	#拉取所有你还没有的数据
+git fetch <remote>	                            # 拉取所有你还没有的数据
 
 git merge <branchname>     #将branchname分支合并到当前分支
 
@@ -92,28 +84,23 @@ git push <remote> --delete <remotebranch>	#删除远程分支
 ```
 
 
-
 ## `.gitignore`
 
 ### 格式规范：
-
 - 所有空行或者以 # 开头的行都会被 Git 忽略。
-
 - 可以使用标准的 glob 模式匹配，它会递归地应用在整个工作区中。
-
 - 匹配模式可以以（/）开头防止递归。
-
 - 匹配模式可以以（/）结尾指定目录。
-
-- 要忽略指定模式以外的文件或目录，可以在模式前加上叹号（!）取反。 
+- 取消忽略指定模式的文件或目录，可以在模式前加上叹号（`!`）取反。 
 
 ### glob 模式： 
+所谓的 glob 模式是指 shell 所使用的简化了的正则表达式。
 
 - 星号（*）匹配零个或多个任意字符；
-- [abc] 匹配 任何一个列在方括号中的字符 （这个例子要么匹配一个 a，要么匹配一个 b，要么匹配一个 c）； 
+- [abc] 匹配任何一个列在方括号中的字符（这个例子要么匹配一个 a，要么匹配一个 b，要么匹配一个 c）； 
 - 问号（?）只 匹配一个任意字符；
-- 如果在方括号中使用短划线分隔两个字符， 表示所有在这两个字符范围内的都可以匹配 （比如 [0-9] 表示匹配所有 0 到 9 的数字）。 
-- 使用两个星号表示匹配任意中间目录，比如 a/**/z 可以 匹配 a/z 、 a/b/z 或 a/b/c/z 等。
+- 如果在方括号中使用短划线分隔两个字符，表示所有在这两个字符范围内的都可以匹配 （比如 [0-9] 表示匹配所有 0 到 9 的数字）。 
+- 使用两个星号表示匹配任意中间目录，比如 a/**/z 可以匹配 a/z 、 a/b/z 或 a/b/c/z 等。
 
 ### 使用示例：
 
@@ -131,18 +118,16 @@ doc/*.txt
 # 忽略 doc/ 目录及其所有子目录下的 .pdf 文件 
 doc/**/*.pdf
 ```
-> 在最简单的情况下，一个仓库可能只根目录下有一个 .gitignore 文件，它递归地应用到整个仓库中。 然而，子目录下也可以有额外的 .gitignore 文件。子目录中的 .gitignore文件中的规则只作用于它所在的目录中。
-
+> 在最简单的情况下，一个仓库可能只根目录下有一个 .gitignore 文件，它递归地应用到整个仓库中。 然而，子目录下也可以有额外的 .gitignore 文件。子目录中的 .gitignore 文件中的规则只作用于它所在的目录中。
 
 
 ## `git diff`
 
 ```shell
-git diff	#此命令比较的是工作目录中当前文件和暂存区域快照之间的差异。 也就是修改之后还没有暂存起来的变化内容。
-git diff --staged	#比对已暂存文件与最后一次提交的文件差异
-git diff --cached	#效果同上
+git diff [<file>...]	                # 此命令比较的是工作目录中当前文件和暂存区域快照之间的差异。 也就是修改之后还没有暂存起来的变化内容。
+git diff --[staged|cached] <file>...	# 比对已暂存文件与最后一次提交的文件差异
 
-git difftool --tool-help	#看你的系统支持哪些 Git Diff 插件
+git difftool --tool-help	            # 看你的系统支持哪些 Git Diff 插件
 ```
 
 ## `git reflog`
@@ -153,18 +138,16 @@ git reflog show
 ## `git log`
 
 ```shell
-git reflog
-git log		#参看提交历史
-git log -p	#按补丁的格式输出
-git log --stat	#查看提交的简略统计信息
-git log --pretty=oneline	#将每个提交放在一行显示
-git log --pretty=format:"%h - %an, %ar :%s"	#指定输出格式
-git log --graph	#形象的展示你的分支、合并历史
-git log --decorate	#查看各个分支当前所指的对象
+git log		                                        # 参看提交历史【指定显示条数】
+git log -p [-n]	                                    # 按补丁的格式输出
+git log --stat	                                    # 查看提交的简略统计信息
+git log --pretty=oneline	                        # 将每个提交放在一行显示
+git log --pretty=format:"%h - %an, %ar :%s"	        # 指定输出格式
+git log --graph	                                    # 形象的展示你的分支、合并历史
+git log --decorate	                                # 查看各个分支当前所指的对象
 
-git log  -<n>	#指定显示条数
 git log --since=2.weeks
-git log -S string	#显示那些添加或删除了该字符串的提交
+git log -S string	                                # 显示那些添加或删除了该字符串的提交
 ```
 
 ## `git stash`
@@ -187,61 +170,61 @@ git blame <file>	# 查看file的修改记录
 git reset --hard HEAD	# 放弃工作目录下的所有修改
 ```
 
-## 撤销修改
+## 撤销操作
 
 ```shell
-git commit --amend	#重新提交暂存区,本次提交将覆盖上一次提交
-git restore --staged <file>...	#取消暂存
-git restore <file>	#用最近一次提交覆盖该文件
+git commit --amend	                # 重新提交暂存区,本次提交将覆盖上一次提交
+git restore --staged <file>...	    # 取消暂存
+git restore <file>...	            # 用最近一次提交覆盖该文件
 ```
-
 
 
 ## `git remote`
 
 ```shell
-git remote	#列出所有远程服务器的简写
-git remote -v	
+git remote [-v]                         # 列出所有远程服务器的简写
+git remote show <remote>	            # 查看某个远程仓库
 
-git remote add <shortname> <url>    #添加远程仓库
-
-git remote show <remote>	#查看某个远程仓库
+git remote add <shortname> <url>        # 添加远程仓库
 
 git remote rename <fromname> <toname>
 git remote remove <shortname>
 ```
 
 
-
 ## `git tag`
+Git 支持两种标签：轻量标签（lightweight）与附注标签（annotated）
+- 轻量标签像一个不会改变的分支——它只是某个特定提交的引用。
+- 附注标签是存储在 Git 数据库中的一个完整对象，它们是可以被校验的，其中包含打标签者的名字、电子邮件地址、日期时间，此外还有一个标签信息，并且可以使用 GNU Privacy Guard (GPG) 签名并验证.
+
+**默认情况下，git push 命令并不会传送标签到远程仓库服务器上。在创建完标签后你必须显式的推送标签到共享服务器上。**
 
 ```shell
-git tag [-l]	#列出标签
-git tag -l "tagname"    #列出tagname，可使用通配符
-git show <tagname>	#查看标签信息和与之对应的提交信息
+git tag [-l]	                                # 列出标签
+git tag -l "tagname"                            # 列出tagname，可使用通配符
+git show <tagname>	                            # 查看标签信息和与之对应的提交信息
 
-git tag -a <tagname> -m <message>	#创建附注标签
-git tag <tagname>	#创建轻量标签
+git tag -a <tagname> -m <message>	            # 创建附注标签
+git tag <tagname>	                            # 创建轻量标签
 
-git tag -a <tagname> <SHA>	#给SHA所对应的提交打标签
+git tag -a <tagname> <SHA>	                    # 给SHA所对应的提交打标签
 
-git push <remote> <tagname>	#将标签推送到远程仓库
-git push <remote> --tags	#推送所有不在远程仓库的标签（不区分轻量标签和附注标签）
+git push <remote> <tagname>	                    # 将标签推送到远程仓库
+git push <remote> --tags	                    # 推送所有不在远程仓库的标签（不区分轻量标签和附注标签）
 
-git tag -d <tagname>	#删除本地标签
-git push <remote> :refs/tags/<tagname>	#移除远程仓库标签
-git push <remote> --delete <tagname>	#移除远程仓库标签
+git tag -d <tagname>	                        # 删除本地标签
+git push <remote> :refs/tags/<tagname>	        # 移除远程仓库标签
+git push <remote> --delete <tagname>	        # 移除远程仓库标签
+git checkout <tagname>                          # 检出标签
 ```
-
 
 
 ## Git别名
 
 ```shell
-git config --global alias.<name> '<internalcommand>'	#为git命令创建别名
-git config --global alias.<name> '!<externalcommand>'	#为外部命令创建别名
+git config --global alias.<name> '<internalcommand>'	# 为git命令(无需git前缀)创建别名，eg. git config --global alias.co checkout
+git config --global alias.<name> '!<externalcommand>'	# 为外部命令创建别名
 ```
-
 
 
 ## 分支管理
@@ -299,7 +282,7 @@ git branch --no-merged <branch>	#查看未合并到branch分支的所有分支
 git ls-remote <remote>	#查看远程仓库的所有远程分支
 git remote show <remote>	#查看远程分支的详细信息
 
-git fetch <remote>	# fetch branches and/or tags;将所有的远程分支同步到本地
+git fetch <remote>	                                # fetch branches and/or tags;将所有的远程分支同步到本地
 git push <remote> <localbranch>:<remotebranch>
 
 git checkout -b <branch> <remote>/<remotebranch>    # 基于远程分支创建分支
