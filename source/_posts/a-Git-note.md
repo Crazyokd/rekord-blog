@@ -22,18 +22,15 @@ Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为�
 
 2. ~/.gitconfig 或 ~/.config/git/config 文件：只针对当前用户。 你可以传递 --global 选项让 Git 读写此文件，这会对你系统上所有的仓库生效。
 
-3. 当前使用仓库的 Git 目录中的 config 文件（即 .git/config）：针对该仓库。 你可以传递 --local 选项让 Git 强制读写此文件，虽然默认情况下用的就是它。 （当然，你需要进入某个 Git 仓库中才能让该选项生效。）
+3. 当前使用仓库的 Git 目录中的 config 文件（即 .git/config ）：针对该仓库。 你可以传递 --local 选项让 Git 强制读写此文件，虽然默认情况下用的就是它。 （当然，你需要进入某个 Git 仓库中才能让该选项生效。）
 
 ### 相关命令
 ```shell
-git config --list
-git config --[local/global/system] --list	# 查看当前仓库/全局/系统 的Git配置
-git config --list --show-origin		#查看所有的配置以及它们所在的文件
-git config key value                #设置配置
-git config --unset key              #删除配置
+git config --list [--show-origin]           # 查看当前使用的所有配置【以及它们所在的文件】
+git config --[local/global/system] --list	# 查看 当前仓库/全局/系统 的Git配置
+git config key [value]                      # 查看【或设置】某项配置
+git config --unset key                      # 删除某项配置
 ```
-
-
 
 ## 帮助文档
 
@@ -41,8 +38,8 @@ git config --unset key              #删除配置
 #获取帮助
 git help <verb>
 git <verb> --help
-git <verb> -h	#简易帮助
 man git-<verb>
+git <verb> -h	                            # 获取简易帮助
 ```
 
 
