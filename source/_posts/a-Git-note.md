@@ -59,9 +59,13 @@ git status [-s|--short]                         # 查看仓库状态
 git log
 
 git add	<file>...	                            # 开始跟踪新文件，或者把已跟踪的文件放到暂存区
+git add --patch                                 # 部分暂存文件
 
 git commit [-m "message"]		                # 提交暂存区文件
 git commit -a -m "message"	                    # 把所有已经跟踪过的文件暂存起来一并提交，从而跳过 git add 步骤
+
+git describe <branch>                           # 生成一个构建号
+git archive <branch> --prefix='dir/'            # 创建快照归档
 
 git ls-files                                    # 查看暂存区中的文件
 git ls-files files...                           # 查看暂存区中的特定文件或目录
@@ -126,6 +130,10 @@ doc/**/*.pdf
 ```shell
 git diff [<file>...]	                # 此命令比较的是工作目录中当前文件和暂存区域快照之间的差异。 也就是修改之后还没有暂存起来的变化内容。
 git diff --[staged|cached] <file>...	# 比对已暂存文件与最后一次提交的文件差异
+
+git diff --check    # 找出可能的空白错误并将它们列出来
+
+git diff branch1...branch2              # 显示自branch2分支与branch1分支的共同祖先起，branch2分支中的工作
 
 git difftool --tool-help	            # 看你的系统支持哪些 Git Diff 插件
 ```
@@ -239,8 +247,7 @@ git config --global alias.<name> '!<externalcommand>'	# 为外部命令创建别
 
 ![image-20211021112052798](https://user-images.githubusercontent.com/74645100/141408501-04add94b-f158-4fdc-9502-1ffa19712c8d.png)
 
-HEAD指针是指向当前分支的指针
-
+HEAD指针是指向当前所在本地分支的指针
 
 
 ### 本地分支
@@ -267,7 +274,6 @@ git branch --no-merged <branch>	#查看未合并到branch分支的所有分支
 > **当你试图合并两个分支时， 如果顺着一个分支走下去能够到达另一个分支，那么 Git 在合并两者的时候， 只会简单的将指针向前推进（指针右移），因为这种情况下的合并操作没有需要解决的分歧——这就叫做 “快进（fast-forward）”。**
 
 
-
 > 你可以在合并冲突后的任意时刻使用 git status 命令来查看那些因包含合并冲突而处于未合并（unmerged）状态的文件。
 在你解决了所有文件里的冲突之后，对每个文件使用 git add 命令来将其标记为冲突已解决。 一旦暂存这些原本有冲突的文件，Git 就会将它们标记为冲突已解决。
 如果你对结果感到满意，并且确定之前有冲突的的文件都已经暂存了，这时你可以输入 git commit 来完成合并提交。
@@ -282,39 +288,43 @@ git branch --no-merged <branch>	#查看未合并到branch分支的所有分支
 git ls-remote <remote>	#查看远程仓库的所有远程分支
 git remote show <remote>	#查看远程分支的详细信息
 
-git fetch <remote>	                                # fetch branches and/or tags;将所有的远程分支同步到本地
+git fetch <remote>	    # fetch branches and/or tags;将<remote>所有的远程分支同步到本地
 git push <remote> <localbranch>:<remotebranch>
 
 git checkout -b <branch> <remote>/<remotebranch>    # 基于远程分支创建分支
-git checkout --track <remote>/<branch>	            # 效果同上
 
-git branch -u <remote>/<remotebranch>   # 设置当前分支的上游分支/跟踪分支
-
-git branch -vv  # 列出所有本地分支及其对应的上游分支
-git fetch --all	#抓取所有的远程仓库
+git fetch --all	# 抓取所有的远程仓库
 git push <remote> --delete <remotebranch>	#删除远程分支
 ```
 
+### 跟踪分支
+从一个远程跟踪分支检出一个本地分支会自动创建所谓的“跟踪分支”（它跟踪的分支叫做“上游分支”）。
+跟踪分支是与远程分支有直接关系的本地分支。如果在一个跟踪分支上输入 `git pull` ，Git 能自动地识别去哪个服务器上抓取、合并到哪个分支。
+
+当克隆一个仓库时，它通常会自动地创建一个跟踪 `origin/master` 的 `master` 分支。
+
+当设置好跟踪分支后，可以通过简写 @{upstream} 或 @{u} 来引用它的上游分支。
+
+```shell
+git checkout --track <remote>/<branch>
+git branch -u <remote>/<remotebranch>   # 设置当前分支的上游分支/跟踪分支
+git branch -vv      # 列出所有本地分支及其对应的上游分支
+```
 
 
-## 变基
+### 变基
 变基使得提交历史更加整洁。
 
 你在查看一个经过变基的分支的历史记录时会发现，尽管实际的开发工作是并行的，但它们看上去就像是串行的一样，提交历史是一条直线没有分叉。
 
 ```shell
-git rebase <branch>	#将当前分支上的所有修改变基到branch分支上
-git rebase --onto <branch1> <branch2> <branch3>	#取出branch3分支，找出它从branch2分支分歧之后的补丁，然后把这些补丁在branch1分支上重放一遍。
-git rebase <branch1> <branch2>	#将branch2变基到branch1
+git rebase <branch>	# 将当前分支上的所有修改变基到branch分支上
+git rebase --onto <branch1> <branch2> <branch3>	# 取出branch3分支，找出它从branch2分支分歧之后的补丁，然后把这些补丁在branch1分支上重放一遍。
+git rebase <branch1> <branch2>	# 将branch2变基到branch1
 ```
 
 **如果提交存在于你的仓库之外，而别人可能基于这些提交进行开发，那么不要执行变基**
 
-
-
 ___
 
 > 本文章参考自[**Pro Git**](https://git-scm.com/book/en/v2)第二版.
-
-**持续更新......**
-
