@@ -59,7 +59,7 @@ git status [-s|--short]                         # 查看仓库状态
 git log
 
 git add	<file>...	                            # 开始跟踪新文件，或者把已跟踪的文件放到暂存区
-git add --patch                                 # 部分暂存文件
+git add [-p|--patch]                            # 部分暂存文件
 
 git commit [-m "message"]		                # 提交暂存区文件
 git commit -a -m "message"	                    # 把所有已经跟踪过的文件暂存起来一并提交，从而跳过 git add 步骤
@@ -139,8 +139,15 @@ git difftool --tool-help	            # 看你的系统支持哪些 Git Diff 插�
 ```
 
 ## `git reflog`
+
+当你在工作时，Git 会在后台保存一个引用日志(reflog)，引用日志记录了最近几个月你的 HEAD 和分支引用所指向的历史。
+
+每当你的 HEAD 所指向的位置发生了变化，Git 就会将这个信息存储到引用日志这个历史记录里。
+
+引用日志只存在于本地仓库，它只是一个记录你在自己仓库里做过什么的日志。其他人拷贝的仓库里的引用日志不会和你的相同，而你新克隆一个仓库时，引用日志是空的。
+
 ```shell
-git reflog show
+git reflog [show]
 ```
 
 ## `git log`
@@ -156,16 +163,26 @@ git log --decorate	                                # 查看各个分支当前所
 
 git log --since=2.weeks
 git log -S string	                                # 显示那些添加或删除了该字符串的提交
+
+git log --abbrev-commit                             # 显示的 SHA-1 简短且唯一
+
+git log branch1..branch2                            # 在branch2分支而不在branch1分支中的提交
+git log --left-right branch1...branch2                           # 被两个分支之一包含但又不被两者同时包含
 ```
 
-## `git stash`
+## 贮藏
 ```shell
-git stash
+git stash [-u] [--patch] [push]         # 将新的贮藏推送到栈上
+git stash list                          # 查看贮藏的东西
+git stash apply stash@{n}               # 应用一个贮藏
+git stash drop stash@{n}                # 移除贮藏
+git stash pop stash@{n}                 # 应用并移除贮藏
+git stash branch <new branchname>       # 以指定的分支名创建一个新分支，检出贮藏工作时所在的提交，重新在那应用工作并在应用成功后丢弃贮藏
 ```
 
-## `git grep`
+## 搜索
 ```shell
-git grep pattern
+git grep [-n] pattern
 ```
 
 ## `git blame`
@@ -173,15 +190,29 @@ git grep pattern
 git blame <file>	# 查看file的修改记录
 ```
 
-## `git reset`
+## reset揭秘
+reset 移动 HEAD 指向的分支指针
+
 ```shell
-git reset --hard HEAD	# 放弃工作目录下的所有修改
+git reset --[soft|mixed|hard] <SHA-1> <file...>                 # 放弃工作目录下的所有修改
 ```
+
+|  | HEAD | Index | Workdir |
+|--| ---- | ----- | ------- |
+|commit level | | | |
+|reset --soft [commit] | REF | NO | NO |
+|reset [commit] | ref | yes | no |
+| reset --hard [commit]| REF | yes | yes |
+| checkout [commit]| head | yes | yes |
+|file level | | | |
+| reset [commit] <paths> | no | yes | no |
+|checkout [commit] <paths> | no | yes | yes |
+
 
 ## 撤销操作
 
 ```shell
-git commit --amend	                # 重新提交暂存区,本次提交将覆盖上一次提交
+git commit --amend [--no-edit]	    # 重新提交暂存区,本次提交将覆盖上一次提交
 git restore --staged <file>...	    # 取消暂存
 git restore <file>...	            # 用最近一次提交覆盖该文件
 ```
@@ -327,4 +358,4 @@ git rebase <branch1> <branch2>	# 将branch2变基到branch1
 
 ___
 
-> 本文章参考自[**Pro Git**](https://git-scm.com/book/en/v2)第二版.
+> 本文参考自[**Pro Git**](https://git-scm.com/book/en/v2)第二版.
