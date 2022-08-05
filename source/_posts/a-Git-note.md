@@ -52,8 +52,8 @@ git <verb> -h	                            # 获取简易帮助
 # 1.初始化仓库
 git init
 # 2.克隆仓库
-git clone <url> [<rep_name>]
-git clone ssh://user@server:path/to/repo.git	# 通过SSH
+git clone [--recurse-submodules] <url> [<rep_name>]
+git clone [--recurse-submodules] ssh://user@server:path/to/repo.git	# 通过SSH
 
 git status [-s|--short]                         # 查看仓库状态
 git log
@@ -185,9 +185,22 @@ git stash branch <new branchname>       # 以指定的分支名创建一个新�
 git grep [-n] pattern
 ```
 
-## `git blame`
+## Git 调试
 ```shell
-git blame <file>	# 查看file的修改记录
+git blame [-L n1,n2] <file>	    # 查看file的修改记录
+
+git bisect start                # 二分查找错误
+git bisect bad
+git bisect good <commit>
+git bisect reset
+```
+
+## 子模块
+
+```shell
+git submodule add <url>         # 将一个已存在的仓库添加为正在工作的仓库的子模块
+git submodule init              # 初始化本地配置文件
+git submodule update            # 从该项目中抓取所有数据并检出父项目中列出的合适提交
 ```
 
 ## reset揭秘
@@ -355,6 +368,21 @@ git rebase <branch1> <branch2>	# 将branch2变基到branch1
 ```
 
 **如果提交存在于你的仓库之外，而别人可能基于这些提交进行开发，那么不要执行变基**
+
+## Git原理
+- `description` 文件仅供 GitWeb 程序使用
+- `logs` 目录包含引用日志
+- `config` 文件包含项目特有的配置选项
+- `info` 目录包含一个全局性排除文件，用以放置那些不希望被记录在 .gitignore 文件中的忽略模式
+- `hooks` 目录包含客户端或服务端的钩子脚本
+- `objects` 目录存储所有数据内容
+- `refs` 目录存储指向数据（分支、远程仓库和标签等）的提交对象的指针
+- `HEAD` 文件指向目前被检出的分支
+- `index` 文件保存暂存区信息
+
+### Git对象
+Git 的核心部分是一个简单的键值对数据库（key-value data store）。你可以向 Git 仓库中插入任意类型的内容，它会返回一个唯一的键，通过该键可以在任意时刻再次取回该内容。
+一旦你将内容存储在了对象数据库中，那么可以通过 `cat-file` 命令从 Git 那里取回数据。
 
 ___
 
