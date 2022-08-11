@@ -58,3 +58,16 @@ done < identifier
 
 # delete temporary file
 rm identifier
+
+
+# fix hexo-prism-plugin curly bracket error
+line=`sed '13!d' node_modules/hexo-prism-plugin/src/index.js`
+len=${#line}
+if [ $len -lt 40 ]; then
+    var1="'\"'"
+    var2="'\"', '\&#123;': '{', '\&#125;': '}'"
+    sed -i "s|$var1|$var2|" node_modules/hexo-prism-plugin/src/index.js
+    if [ $? -eq 0 ]; then
+        echo "fix hexo-prism-plugin curly bracket error"
+    fi
+fi
