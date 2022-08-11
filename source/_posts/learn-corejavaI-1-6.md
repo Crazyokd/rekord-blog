@@ -51,7 +51,7 @@ Java9引入了另一种使用Java的方法。Jshell程序提供了一个“读�
 >  源代码的文件名必须与公共类的名字相同，并用`.java`作为拓展名。
 
 ### 3.2 注释
-```
+```java
 // 单行注释
 
 /*
@@ -107,7 +107,7 @@ Java9引入了另一种使用Java的方法。Jshell程序提供了一个“读�
 	从概念上来讲，Java字符串就是Unicode字符序列。例如，字符串“Java\u2122”由5个Unicode字符组成。
 	Java没有内置的字符串类型，而是在标准Java类库中提供了一个预定义类，很自然地叫做String。
 	每个用双括号括起来的字符串都是String类的一个实例：
-	```
+	```java
 	String e = "";
 	String greeting = "Hello";
 	```
@@ -128,7 +128,7 @@ Java9引入了另一种使用Java的方法。Jshell程序提供了一个“读�
 
 ### 3.7 输入与输出
 - 读取普通输入
-	```
+	```java
 	import java.util.*;
 	Scanner in = new Scanner(System.in);
 	String name = in.nextLine();
@@ -136,20 +136,20 @@ Java9引入了另一种使用Java的方法。Jshell程序提供了一个“读�
 	int age = in.nextInt();
 	```
 - 读取密码
-	```
+	```java
 	Console cons = System.console();
 	String username = cons.readLine("User name:");
 	char[] passwd = cons.readPassword("Password:"):
 	```
 - 格式化输出
-	```
+	```java
 	System.out.printf("%8.2f", x);
 	// 创建一个格式化的字符串，而不打印输出
 	String message = String.format("Hello, %s. Next year, you'll be %d", name, age);
 	System.out.printf("%tc", new Date());
 	```
 - 文件输入与输出
-	```
+	```java
 	// 读取文件
 	Scanner in = new Scanner(Path.of("myfile.txt"), StandardCharsets.UTF_8);
 	//写入文件
@@ -161,9 +161,9 @@ Java9引入了另一种使用Java的方法。Jshell程序提供了一个“读�
 	> 文件位于相对于Java虚拟机启动目录的位置
 	> 启动目录就是命令解释器的当前目录
 	> 可以使用如下命令找到这个目录的位置：
-			```
+		```java
 			String dir = System.getProperty("user.dir");
-	  ```
+	  	```
  
  
  ### 3.8 控制流程
@@ -181,7 +181,7 @@ Java9引入了另一种使用Java的方法。Jshell程序提供了一个“读�
  
  ### 3.10 数组
  - 声明数组
-	```
+	```java
 	int[] a;
 	int a[];
 	int[] a = new int[100];
@@ -203,13 +203,13 @@ Java9引入了另一种使用Java的方法。Jshell程序提供了一个“读�
 	// collection 这一集合表达式必须是一个数组或者是一个实现了 Iterable 接口的类对象
 	for (variable : collection) statement
 	```
-	```
+	```java
 	for (int element : a)
 		System.out.println(element);
 	```
  - 数组拷贝
  - 命令行参数
-	```shell
+	```bash
 	java Class -g cruel world
 	```
  - 数组排序
@@ -254,7 +254,7 @@ Java9引入了另一种使用Java的方法。Jshell程序提供了一个“读�
 	> 构造器方法名同类名
 	> 构造器总是结合 new 运算符来调用。不能对一个已经存在的对象调用构造器来达到重新设置实例字段的目的。
 - 用 var 声明局部变量
-	```
+	```java
 	Employee harry = new Employee("Harry Hacker", 5000, 1989, 10, 1);
 	var harry = new Employee("Harry Hacker", 5000, 1989, 10, 1);
 	```
@@ -315,7 +315,7 @@ Java9引入了另一种使用Java的方法。Jshell程序提供了一个“读�
 	> JAR 文件使用 ZIP 格式组织文件和子目录。
 	> 类路径所列出的目录和归档文件是搜寻类的**起始点**。
 - 设置类路径
-	```shell
+	```bash
 	java -classpath dir MyProg
 	java -classpath dir1:dir2:dir3 MyProg
 
@@ -325,7 +325,7 @@ Java9引入了另一种使用Java的方法。Jshell程序提供了一个“读�
 ### 4.8 JAR 文件
 一个 JAR 文件即可以包含类文件，也可以包含诸如图像和声音等其他类型的文件。此外，JAR文件是压缩的，它使用了我们熟悉的 ZIP 压缩格式。
 - 创建 JAR 文件
-	```
+	```bash
 	jar cvf jarFileName file1 file2 ...
 	jar options file1 file2 ...
 	```
@@ -368,7 +368,7 @@ JDK 包含一个很有用的工具，叫做 javadoc，它可以由源文件生�
 	1. 提供一个名为package-info.java 的 Java 文件。这个文件必须包含一个初始的以/**和*/界定的 Javadoc 注释，后面是一个 package 语句。它不能包含更多的代码或注释。
 	2. 提供一个名为package.html 的 HTML 文件。会抽取标记 `<body>...<body>`之间的所有文本。
 - 注释抽取
-	```shell
+	```bash
 	javadoc -d docDirectory nameofPackage
 	javadoc -d docDirectory nameofPackage1 nameofPackage2
 	javadoc -d docDirectory *.java

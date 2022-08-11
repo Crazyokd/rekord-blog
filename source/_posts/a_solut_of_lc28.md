@@ -31,7 +31,6 @@ KMP 算法的复杂度为`O(m+n)`。
 
 代码示例：
 ```java
-
 class Solution {
     // KMP 算法
     // ss: 原串(string)  pp: 匹配串(pattern)

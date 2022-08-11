@@ -25,7 +25,7 @@ Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为�
 3. 当前使用仓库的 Git 目录中的 config 文件（即 .git/config ）：针对该仓库。 你可以传递 --local 选项让 Git 强制读写此文件，虽然默认情况下用的就是它。 （当然，你需要进入某个 Git 仓库中才能让该选项生效。）
 
 ### 相关命令
-```shell
+```bash
 git config --list [--show-origin]           # 查看当前使用的所有配置【以及它们所在的文件】
 git config --[local/global/system] --list	# 查看 当前仓库/全局/系统 的Git配置
 git config key [value]                      # 查看【或设置】某项配置
@@ -37,7 +37,7 @@ git config --unset key                      # 删除某项配置
 
 ## 帮助文档
 
-```shell
+```bash
 #获取帮助
 git help <verb>
 git <verb> --help
@@ -47,7 +47,7 @@ git <verb> -h	                            # 获取简易帮助
 
 ## 基本操作
 
-```shell
+```bash
 #得到仓库
 # 1.初始化仓库
 git init
@@ -108,7 +108,7 @@ git push <remote> --delete <remotebranch>	#删除远程分支
 
 ### 使用示例：
 
-```shell
+```plain
 # 忽略所有的 .a 文件 
 *.a
 # 但跟踪所有的 lib.a，即便你在前面忽略了 .a 文件 
@@ -127,7 +127,7 @@ doc/**/*.pdf
 
 ## `git diff`
 
-```shell
+```bash
 git diff [<file>...]	                # 此命令比较的是工作目录中当前文件和暂存区域快照之间的差异。 也就是修改之后还没有暂存起来的变化内容。
 git diff --[staged|cached] <file>...	# 比对已暂存文件与最后一次提交的文件差异
 
@@ -146,13 +146,13 @@ git difftool --tool-help	            # 看你的系统支持哪些 Git Diff 插�
 
 引用日志只存在于本地仓库，它只是一个记录你在自己仓库里做过什么的日志。其他人拷贝的仓库里的引用日志不会和你的相同，而你新克隆一个仓库时，引用日志是空的。
 
-```shell
+```bash
 git reflog [show]
 ```
 
 ## `git log`
 
-```shell
+```bash
 git log		                                        # 参看提交历史【指定显示条数】
 git log -p [-n]	                                    # 按补丁的格式输出
 git log --stat	                                    # 查看提交的简略统计信息
@@ -171,7 +171,7 @@ git log --left-right branch1...branch2                           # 被两个分�
 ```
 
 ## 贮藏
-```shell
+```bash
 git stash [-u] [--patch] [push]         # 将新的贮藏推送到栈上
 git stash list                          # 查看贮藏的东西
 git stash apply stash@{n}               # 应用一个贮藏
@@ -181,12 +181,12 @@ git stash branch <new branchname>       # 以指定的分支名创建一个新�
 ```
 
 ## 搜索
-```shell
+```bash
 git grep [-n] pattern
 ```
 
 ## Git 调试
-```shell
+```bash
 git blame [-L n1,n2] <file>	    # 查看file的修改记录
 
 git bisect start                # 二分查找错误
@@ -197,7 +197,7 @@ git bisect reset
 
 ## 子模块
 
-```shell
+```bash
 git submodule add <url>         # 将一个已存在的仓库添加为正在工作的仓库的子模块
 git submodule init              # 初始化本地配置文件
 git submodule update            # 从该项目中抓取所有数据并检出父项目中列出的合适提交
@@ -206,7 +206,7 @@ git submodule update            # 从该项目中抓取所有数据并检出父�
 ## reset揭秘
 reset 移动 HEAD 指向的分支指针
 
-```shell
+```bash
 git reset --[soft|mixed|hard] <SHA-1> <file...>                 # 放弃工作目录下的所有修改
 ```
 
@@ -224,7 +224,7 @@ git reset --[soft|mixed|hard] <SHA-1> <file...>                 # 放弃工作�
 
 ## 撤销操作
 
-```shell
+```bash
 git commit --amend [--no-edit]	    # 重新提交暂存区,本次提交将覆盖上一次提交
 git restore --staged <file>...	    # 取消暂存
 git restore <file>...	            # 用最近一次提交覆盖该文件
@@ -233,7 +233,7 @@ git restore <file>...	            # 用最近一次提交覆盖该文件
 
 ## `git remote`
 
-```shell
+```bash
 git remote [-v]                         # 列出所有远程服务器的简写
 git remote show <remote>	            # 查看某个远程仓库
 
@@ -251,7 +251,7 @@ Git 支持两种标签：轻量标签（lightweight）与附注标签（annotate
 
 **默认情况下，git push 命令并不会传送标签到远程仓库服务器上。在创建完标签后你必须显式的推送标签到共享服务器上。**
 
-```shell
+```bash
 git tag [-l]	                                # 列出标签
 git tag -l "tagname"                            # 列出tagname，可使用通配符
 git show <tagname>	                            # 查看标签信息和与之对应的提交信息
@@ -273,7 +273,7 @@ git checkout <tagname>                          # 检出标签
 
 ## Git别名
 
-```shell
+```bash
 git config --global alias.<name> '<internalcommand>'	# 为git命令(无需git前缀)创建别名，eg. git config --global alias.co checkout
 git config --global alias.<name> '!<externalcommand>'	# 为外部命令创建别名
 ```
@@ -296,7 +296,7 @@ HEAD指针是指向当前所在本地分支的指针
 
 ### 本地分支
 
-```shell
+```bash
 git branch	#显示所有本地分支
 git branch -a   #显示所有分支（本地分支+远程分支）
 git branch -r 	#查看所有远程分支
@@ -328,7 +328,7 @@ git branch --no-merged <branch>	#查看未合并到branch分支的所有分支
 
 远程跟踪分支是远程分支状态的引用。它们是你无法移动的本地引用。一旦你进行了网络通信， Git 就会为你移动它们以精确反映远程仓库的状态。请将它们看做书签， 这样可以提醒你该分支在远程仓库中的位置就是你最后一次连接到它们的位置。
 
-```shell
+```bash
 git ls-remote <remote>	#查看远程仓库的所有远程分支
 git remote show <remote>	#查看远程分支的详细信息
 
@@ -349,7 +349,7 @@ git push <remote> --delete <remotebranch>	#删除远程分支
 
 当设置好跟踪分支后，可以通过简写 @{upstream} 或 @{u} 来引用它的上游分支。
 
-```shell
+```bash
 git checkout --track <remote>/<branch>
 git branch -u <remote>/<remotebranch>   # 设置当前分支的上游分支/跟踪分支
 git branch -vv      # 列出所有本地分支及其对应的上游分支
@@ -361,7 +361,7 @@ git branch -vv      # 列出所有本地分支及其对应的上游分支
 
 你在查看一个经过变基的分支的历史记录时会发现，尽管实际的开发工作是并行的，但它们看上去就像是串行的一样，提交历史是一条直线没有分叉。
 
-```shell
+```bash
 git rebase <branch>	# 将当前分支上的所有修改变基到branch分支上
 git rebase --onto <branch1> <branch2> <branch3>	# 取出branch3分支，找出它从branch2分支分歧之后的补丁，然后把这些补丁在branch1分支上重放一遍。
 git rebase <branch1> <branch2>	# 将branch2变基到branch1

@@ -85,7 +85,7 @@ Vim 中可以使用 `%` 对 `(` 和 `)`，`[` 和 `]`，`{` 和 `}` 进行匹配
 
 > 现在你的 buffer 中应该已经有两个文件了，你可以用 `:buffers` 或 `:ls` 命令查看，看到buffer 列表了吧，大概是这个样子的：
 
-```
+```plain
 :ls
   1 #h   "file-one.md"                  line 47
   2 %a   "file-two.md"                  line 1

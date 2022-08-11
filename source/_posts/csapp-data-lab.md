@@ -16,7 +16,7 @@ tags:
 ## bitXor
 题目要求仅使用`~`和`&`实现异或功能。
 不难发现 `(~x & y)` 和 `(x & ~y)`对相同位的针对意味都十分明显，因为只要对应位相同，上面两个式子结果必定为0。从而题目得解。
-```C++
+```cpp
 //1
 /*
  * bitXor - x^y using only ~ and &
@@ -33,7 +33,7 @@ int bitXor(int x, int y) {
 
 ## tmin
 由于可以使用左移，故十分简单，不再赘述。
-```C++
+```cpp
 /*
  * tmin - return minimum two's complement integer
  *   Legal ops: ! ~ & ^ | + << >>
@@ -49,7 +49,8 @@ int tmin(void) {
 不能使用左移，也不能使用大常数，所以想通过构造一个 Tmax 然后再异或取非就行不通了。
 这个时候可以把目光聚焦在参数本身。不难发现，如果 x 为 Tmax，将 x+1 将会导致溢出，实际表现就是 Tmax+1 = Tmin，而 Tmin 的特点就是正负的位级表现相同。所以题目就迎刃而解了。
 > **另外还要注意 0 的正负位级表现也相同！**
-```C++
+
+```cpp
 //2
 /*
  * isTmax - returns 1 if x is the maximum, two's complement number,
@@ -66,7 +67,7 @@ int isTmax(int x) {
 ## allOddBits
 假设 x 为 allOddBits，不难肯定 ```0x55555555 | x```必定为全一，题目得解。
 
-```C++
+```cpp
 /*
  * allOddBits - return 1 if all odd-numbered bits in word set to 1
  *   where bits are numbered from 0 (least significant) to 31 (most significant)
@@ -86,7 +87,7 @@ int allOddBits(int x) {
 ```
 ## negate
 基操了属于是。
-```C++
+```cpp
 /*
  * negate - return -x
  *   Example: negate(1) = -1.
@@ -102,7 +103,7 @@ int negate(int x) {
 ## isAsciiDigit
 下面的注释写的很清楚了。
 这里主要再说一下，可以使用加一个数判断某一个数是否大于另一个数。
-```C++
+```cpp
 //3
 /*
  * isAsciiDigit - return 1 if 0x30 <= x <= 0x39 (ASCII codes for characters '0' to '9')
@@ -124,7 +125,7 @@ int isAsciiDigit(int x) {
 ## conditional
 可以结合 `!(x ^ 0)`轻易判断出 x 是否为0，从而构造出 t。
 另外 t 要保证要么全0；要么全1，从而使得 x 和 y 中的一个保持不变，一个置0。
-```C++
+```cpp
 /*
  * conditional - same as x ? y : z
  *   Example: conditional(2,4,5) = 4
@@ -142,7 +143,7 @@ int conditional(int x, int y, int z) {
 这题我采用的是分情况讨论。
 注意这题不能直接一个减法解决，因为**减法结果可能溢出**。
 另外还要注意**一个负数转化为对应的正数也可能发生溢出**。
-```C++
+```cpp
 /*
  * isLessOrEqual - if x <= y  then return 1, else return 0
  *   Example: isLessOrEqual(4,5) = 1.
@@ -162,7 +163,7 @@ int isLessOrEqual(int x, int y) {
 ## logicalNeg
 如果 x 为0，满足正负一致。
 另外注意区分Tmin。
-```C++
+```cpp
 //4
 /*
  * logicalNeg - implement the ! operator, using all of
@@ -181,7 +182,7 @@ int logicalNeg(int x) {
 最后在大佬[jax](https://jaxvanyang.github.io/)的帮助下，才得出下面的题解。
 以下代码来源其本人解法，但我对其正负区分部分进行了优化，也可以说是教学相长了。
 大体思路就是先将最高位1前面的所有低位通过 移位+或 全置0，然后统计1的数量即可。
-```C++
+```cpp
 /* howManyBits - return the minimum number of bits required to represent x in
  *             two's complement
  *  Examples: howManyBits(12) = 5
@@ -259,7 +260,7 @@ int howManyBits(int x) {
 首先按三部分分离所有数位。
 然后分情况讨论。
 > 通过本例题，你也能明显发现非规格化数字设计的是多么精妙。
-```C++
+```cpp
 //float
 /*
  * floatScale2 - Return bit-level equivalent of expression 2*f for
@@ -290,7 +291,7 @@ unsigned floatScale2(unsigned uf) {
 ## floatFloat2Int
 这题也是按照 IEEE 的设计特点来分情况讨论。
 请特别注意如果发生溢出结果都是 Tmin，不用考虑正负因素。
-```C++
+```cpp
 /*
  * floatFloat2Int - Return bit-level equivalent of expression (int) f
  *   for floating point argument f.
@@ -331,7 +332,7 @@ int floatFloat2Int(unsigned uf) {
 ## floatPower2
 由于 IEEE 设计浮点数的特点就是基于`x*2^y`。所以这题非常简单。
 另外别忘了按照题目要求处理 too small 和 too large。
-```C++
+```cpp
 /*
  * floatPower2 - Return bit-level equivalent of the expression 2.0^x
  *   (2.0 raised to the power x) for any 32-bit integer x.

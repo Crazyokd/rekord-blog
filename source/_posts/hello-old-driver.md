@@ -216,7 +216,7 @@ if __name__ == '__main__':
 
 `sync.sh`
 
-```shell
+```bash
 #!/bin/sh
 
 website_url='http://www.liuli.pw'
@@ -302,7 +302,7 @@ git push origin master -f
 
 `weibo_poster.sh`
 
-```shell
+```bash
 #/bin/sh
 
 weibo_text='早上好(｀・ω・´)” 今天琉璃神社挂了吗？'

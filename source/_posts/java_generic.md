@@ -54,6 +54,7 @@ Java泛型（generics）是JDK5中引入的一个新特性，泛型提供了编�
 - 泛型类，如果没有指定具体的数据类型，此时，操作类型是Object
 - 泛型的类型参数只能是类类型，不能是基本数据类型
 - 泛型类型在逻辑上可以看成是多个不同的类型，但实际上都是相同类型，代码如下：
+
 ```java
 package com.sxrekord.generic;  
   
@@ -85,6 +86,7 @@ class GenericTest {
 ### 3. 从泛型类派生子类
 
 - 子类也是泛型类，子类和父类的泛型类型要一致
+
 ```java
 //父类
 public class Parent<E> {
@@ -117,6 +119,7 @@ public class ChildFirst<T, S> extends Parent<T> {
 }
 ```
 - 子类不是泛型类，父类要明确泛型的数据类型
+
 ```java
 class ChildGeneric extends Generic<String>
 /**
@@ -178,6 +181,7 @@ public <E> void print(E... e){
 ### 5. 泛型方法总结
 
 - 泛型方法能使方法独立于类而产生变化
+
 ```java
 package com.sxrekord.generic;  
   
@@ -248,6 +252,7 @@ class StaticGenericTest {
 ### 1. 什么是类型通配符
 
 类型通配符一般是使用"?"代替具体的类型实参。所以，类型通配符是类型实参，而不是类型形参。
+
 ```java
 package com.sxrekord.generic;  
   
@@ -512,6 +517,7 @@ class AnimalTest {
 ### 3. 分类：
 - 无限制类型擦除：
 ![无限制类型擦除](/assets/无限制类型擦除.png)
+
 ```java
 package com.sxrekord.generic.erase;  
   
@@ -550,6 +556,7 @@ class ErasureTest {
 ```
 
 - 有限制类型擦除
+
 ```java
 package com.sxrekord.generic.erase;  
   
@@ -587,6 +594,7 @@ class ErasureTest {
  */
 ```
 - 擦除方法中类型定义的参数
+
 ```java
 package com.sxrekord.generic.erase;  
   
@@ -645,6 +653,7 @@ class ErasureTest {
 ```
 - 桥接方法
 ![桥接方法](/assets/桥接方法.png)
+
 ```java
 package com.sxrekord.generic.erase;  
   
@@ -684,6 +693,7 @@ class InfoTest {
 ### 1. 泛型数组的创建
 
 - 可以声明带泛型的数组引用，但是不能直接创建带泛型的数组对象
+
 ```java
 package com.sxrekord.generic;  
   
@@ -709,6 +719,7 @@ import java.util.ArrayList;
 }
 ```
 - 可以通过java.lang.reflect.Array的newInstance(Class,int)创建T[]数组
+
 ```java
 public class Fruit<T> {
     private T[] array;
@@ -724,6 +735,7 @@ public class Fruit<T> {
 ### 1. 反射常用的泛型类
 - Class
 - Constructor
+
 ```java
 public class Person {
     private String name;

@@ -67,6 +67,7 @@ public interface MyAnno extends java.lang.annotation.Annotation{
 概念：用于描述注解的注解。
 
 - @Target：描述能够作用的位置
+
 ```java
 @Target(value = {ElementType.TYPE}) //表示该MyAnno注解只能作用于类上
 public @interface MyAnno {

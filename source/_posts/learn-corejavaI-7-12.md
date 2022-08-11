@@ -58,7 +58,7 @@ tags:
 - 启用和禁用断言
 	* 可以在运行程序时用 -enableassertions 或 -ea 选项启用断言。
 	* 可以在某个类或整个包中启用断言
-		```shell
+		```bash
 		java -ea:MyClass -ea:com.mycompany.mylib MyApp
 		```
 	* 可以用选项 -disableassertions 或 -da 在某个特定类和包中禁用断言。有些类不是由类加载器加载，而是直接由虚拟机加载的。可以使用这些开关有选择的启用或禁用那些类中的断言。

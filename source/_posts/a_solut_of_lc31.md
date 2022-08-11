@@ -56,7 +56,7 @@ tags:
 4. 如果在步骤 1 找不到符合的相邻元素对，说明当前 [begin,end) 为一个降序顺序，则直接跳到步骤 3
 
 ## 代码展示
-```c++
+```cpp
 class Solution {
 public:
     void nextPermutation(vector<int>& nums) {

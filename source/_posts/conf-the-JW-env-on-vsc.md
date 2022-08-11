@@ -34,7 +34,7 @@ tags:
 > `Java Server Pages (JSP)`可选
 
 ## 目录结构
-```
+```plain
 project
     |__package_name
     |       |
@@ -76,7 +76,7 @@ project
 
 ### 解释.java文件
 使用下列命令手动编译：
-```shell
+```bash
 javac .\package_name\**.java -d .\WEB-INF\classes\  
 ```
 

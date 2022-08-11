@@ -68,7 +68,7 @@ OpenSSH 的客户端是二进制程序 ssh。
 ssh 的详细用法请参考`man ssh`命令。接下来仅介绍一些最常见和最重要的用法。
 
 ### 生成密钥
-```shell
+```bash
 ssh-keygen
 ```
 
@@ -78,12 +78,12 @@ ssh-keygen
 OpenSSH 规定，用户公钥保存在服务器的`~/.ssh/authorized_keys`文件。你要以哪个用户的身份登录到服务器，密钥就必须保存在该用户主目录的`~/.ssh/authorized_keys`文件。只要把公钥添加到这个文件之中，就相当于公钥上传到服务器了。每个公钥占据一行。如果该文件不存在，可以手动创建。
 
 OpenSSH 自带一个`ssh-copy-id`命令，可以自动将公钥拷贝到远程服务器的`~/.ssh/authorized_keys`文件。如果`~/.ssh/authorized_keys`文件不存在，`ssh-copy-id`命令会自动创建该文件。
-```shell
+```bash
 ssh-copy-id -i key_file user@host
 ```
 
 ### 登录服务器
-```shell
+```bash
 ssh user@hostname
 ```
 > ssh 连接远程服务器后，首先会有一个验证过程，验证远程服务器是否为陌生地址。
@@ -96,7 +96,7 @@ SSH 客户端的全局配置文件是`/etc/ssh/ssh_config`。用户个人的配�
 
 用户个人的配置文件可以按照不同服务器，列出各自的连接参数，从而不必每一次登录都输入重复的参数。下面是一个例子。
 
-```
+```plain
 Host *
      Port 2222
 
@@ -117,7 +117,7 @@ Host remoteserver
 
 ssh 客户端配置文件的每一行，就是一个配置命令。配置命令与对应的值之间，可以使用空格，也可以使用等号。
 
-```
+```plain
 Compression yes
 # 等同于
 Compression = yes
@@ -138,7 +138,7 @@ SSH 连接的握手阶段，客户端必须跟服务端约定加密参数集（c
 
 加密参数集包含了若干不同的加密参数，它们之间使用下划线连接在一起，下面是一个例子。
 
-```
+```plain
 TLS_RSA_WITH_AES_128_CBC_SHA
 ```
 

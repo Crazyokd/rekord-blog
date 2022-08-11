@@ -111,7 +111,7 @@ $ man 3 printf
 - 使用`alias`定义别名
 
 示例:
-```shell
+```bash
 alias name='string'
 
 alias   #查看系统所有别名
@@ -119,19 +119,19 @@ alias   #查看系统所有别名
 - 使用`unalias`取消别名
 
 示例：
-```shell
+```bash
 unalias command
 ```
 #### 输入输出重定向
 示例:
-```shell
+```bash
 command 2> file     #将标准错误流重定向到file
 command > file 2>&1     #将标准错误流和标准输出流重定向到file
 command &> file     #将标准错误流和标准输出流重定向到file
 ```
 #### echo
 示例:
-```shell
+```bash
 echo 字符串     #字符串可以不带引号
 echo 通配符     #匹配当前目录下的文件名
 echo $((算术表达式))
@@ -145,7 +145,7 @@ echo -e     #解释转义字符
 #将所有字符原始输出
 ```
 #### 立刻生效
-```shell
+```bash
 source filename     在当前shell中从filename中读取命令并执行
 ```
 ### 4. 参考资料
@@ -579,7 +579,7 @@ source filename     在当前shell中从filename中读取命令并执行
 
 示例：
 
-```shell
+```bash
 tar -cvf log.tar log2012.log            # 仅打包，不压缩
 tar -zcvf log.tar.gz log2012.log        # 打包后，以 gzip 压缩
 tar -jcvf log.tar.bz2 log2012.log       # 打包后，以 bzip2 压缩
@@ -594,7 +594,7 @@ tar -zxvf log30.tar.gz log2013.log      # 只将 tar 内的部分文件解压出
 > gzip 是在 Linux 系统中经常使用的一个对文件进行压缩和解压缩的命令，既方便又好用。gzip 不仅可以用来压缩大的、较少使用的文件以节省磁盘空间，还可以和 tar 命令一起构成 Linux 操作系统中比较流行的压缩文件格式。据统计，gzip 命令对文本文件有 60%～ 70%的压缩率。减少文件大小有两个明显的好处，一是可以减少存储空间，二是通过网络传输文件时，可以减少传输的时间。
 
 示例：
-```shell
+```bash
 gzip * # 将所有文件压缩成 .gz 文件
 gzip -l * # 详细显示压缩文件的信息，并不解压
 gzip -dv * # 解压上例中的所有压缩文件，并列出详细的信息
@@ -606,7 +606,7 @@ gzip -dr test/      # 递归地解压目录
 > zip 命令可以用来解压缩文件，或者对文件进行打包操作。zip 是个使用广泛的压缩程序，文件经它压缩后会另外产生具有“.zip”扩展名的压缩文件。
 
 示例：
-```shell
+```bash
 # 将 /home/Blinux/html/ 这个目录下所有文件和文件夹打包为当前目录下的 html.zip
 zip -q -r html.zip /home/Blinux/html
 ```
@@ -614,7 +614,7 @@ zip -q -r html.zip /home/Blinux/html
 unzip 命令用于解压缩由 zip 命令压缩的“.zip”压缩包。
 
 示例：
-```shell
+```bash
 unzip test.zip              # 解压 zip 文件
 unzip -n test.zip -d /tmp/  # 在指定目录下解压缩
 unzip -o test.zip -d /tmp/  # 在指定目录下解压缩，如果有相同文件存在则覆盖
