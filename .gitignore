@@ -6,3 +6,7 @@ node_modules/
 public/
 .deploy*/
 _multiconfig.yml
+
+# HCLonely/hexo-bilibili-bangumi
+source/bangumis.json
+source/_data/

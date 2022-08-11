@@ -36,6 +36,7 @@ repo for my blog.
 - This blog is based on [hexo-theme-nexmoe](https://github.com/theme-nexmoe/hexo-theme-nexmoe) theme.
 - For the use of hexo, please refer to the [Hexo](https://hexo.io/zh-cn/docs/).
 - use [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed) to generate rss-feed.
+- use [hexo-bilibili-bangumi](https://github.com/HCLonely/hexo-bilibili-bangumi) to generate [/bili/index.html](https://sxrekord.com/bili/index.html) and [/cinemas/index.html](https://sxrekord.com/cinemas/index.html)
 
 ## License
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.

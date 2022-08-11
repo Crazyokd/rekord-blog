@@ -14,9 +14,9 @@ Hey，我是<strong>Rekord</strong>，目前大三，还是菜鸡。
 - steam
 - 音乐
 - 阅读
-- 电影
+- [电影](/cinemas/index.html)
 - 漫画
-- 动漫
+- [动漫](/bili/index.html)
 
 另外似乎有**收集**的强迫症！
 
