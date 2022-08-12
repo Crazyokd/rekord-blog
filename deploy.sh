@@ -43,13 +43,13 @@ function deleteMDFromPublic() {
     rm md
 }
 
-# exist some bugs
 # md to html
 function mdToHtml() {
+    pip3 install mistune
     find $1 -name "*.md" > md
     while read line
     do
-        sudo ./htmltotext.sh "$line"
+        python3 md2html.py "$line"
     done < md
     rm md
 }
