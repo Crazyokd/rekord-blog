@@ -99,6 +99,9 @@ if [ $len -lt 40 ]; then
     fi
 fi
 
+# use plain layout
+sed -i "s/post/plain/" node_modules/hexo-bilibili-bangumi/lib/bangumi-generator.js
+
 
 # restore alias
 if [ "rm" != "$nameRM" ]; then
