@@ -11,7 +11,7 @@ hexo cinema -u
 nameRM="rm"
 nameCP="cp"
 
-function hasAlias() {
+function resetAlias() {
     alias $1 > error 2>&1
     if [ $? -eq 0 ]; then
         echo "reset $1"
@@ -28,8 +28,8 @@ function hasAlias() {
     fi
 }
 
-hasAlias "rm"
-hasAlias "cp"
+resetAlias "rm"
+resetAlias "cp"
 rm error
 
 
