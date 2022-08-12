@@ -8,11 +8,12 @@ import mistune
 import sys
 import datetime
 import time
+import os
 
 
 sourcePath = sys.argv[1]
 fileName = sourcePath[sourcePath.rfind("/") + 1:len(sourcePath) - 2] + 'html'
-destinationPath = sourcePath[:sourcePath.rfind("/") + 1] + fileName
+destinationPath = 'public' + sourcePath[sourcePath.find("/"):sourcePath.rfind("/") + 1] + fileName
 
 with open(sourcePath, 'r', encoding='utf-8', newline='') as file:
     mdContent = file.read()
@@ -34,7 +35,7 @@ head = """<!-- Markdown Source -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>""" + fileName + """</title>
-    <link rel="stylesheet" href="md_render.css">
+    <link rel="stylesheet" href="../md_render.css">
 </head>
 <body>
 """
@@ -45,6 +46,9 @@ foot = """<div class="div_foot">
     </body>
 </html>
 """
+
+if not os.path.exists(destinationPath[:destinationPath.rfind('/')]):
+    os.makedirs(destinationPath[:destinationPath.rfind('/')])
 
 with open(destinationPath, 'w', encoding='utf-8', newline='') as file:
     file.write(head + mistune.html(mdContent) + foot)
