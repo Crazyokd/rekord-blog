@@ -1,5 +1,6 @@
 ---
 title: 关于博主
+layout: plain
 abbrlink: about
 ---
 
