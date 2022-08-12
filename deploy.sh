@@ -2,6 +2,11 @@
 
 # This script is used to deploy my custom content.
 
+# update bangumi and cinema page
+hexo bangumi -u
+hexo cinema -u
+
+
 # reset alias
 nameRM="rm"
 nameCP="cp"
