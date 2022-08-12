@@ -5,5 +5,9 @@
 pkill hexo
 
 # launch hexo use 80 port
-npm install
+rm -rf package-lock.json
+rm -rf node_modules
+sudo npm cache clear --force
+sudo npm install
+
 hexo server -p 80 &
