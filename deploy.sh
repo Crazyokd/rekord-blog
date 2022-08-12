@@ -2,6 +2,33 @@
 
 # This script is used to deploy my custom content.
 
+# reset alias
+nameRM="rm"
+nameCP="cp"
+
+function hasAlias() {
+    alias $1 > error 2>&1
+    if [ $? -eq 0 ]; then
+        echo "reset $1"
+        name=`alias $1 | awk 'BEGIN{FS="="}{ print $(NF)}'`
+        name=${name//\'/}
+        name=${name//\"/}
+        if [ $1 == "cp" ]; then
+            nameCP=$name
+            unalias cp
+        else 
+            nameRM=$name
+            unalias rm
+        fi
+    fi
+}
+
+hasAlias "rm"
+hasAlias "cp"
+rm error
+
+
+
 function deleteMDFromPublic() {
     find $1 -name "*.md" > md
     while read line
@@ -70,4 +97,13 @@ if [ $len -lt 40 ]; then
     if [ $? -eq 0 ]; then
         echo "fix hexo-prism-plugin curly bracket error"
     fi
+fi
+
+
+# restore alias
+if [ "rm" != "$nameRM" ]; then
+    alias rm="$nameRM"
+fi
+if [ "cp" != "$nameCP" ]; then
+    alias cp="$nameCP"
 fi
