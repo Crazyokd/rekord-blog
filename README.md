@@ -28,10 +28,10 @@ repo for my blog.
     - [ ] 使用 nginx 反向代理
 - [ ] 优化图片使用
     - [x] 优化文章封面图片使用
-    - [ ] 优化博客头像图片使用
+    - [x] 优化博客头像图片使用
 - [ ] 将 .md 文件 解析为 .html 文件
 - [x] 修复代码块高亮渲染
-
+- [ ] 修复代码块行首空格
 
 ## Reference
 - This blog is based on [hexo-theme-nexmoe](https://github.com/theme-nexmoe/hexo-theme-nexmoe) theme.
