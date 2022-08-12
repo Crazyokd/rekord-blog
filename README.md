@@ -29,14 +29,16 @@ repo for my blog.
 - [ ] 优化图片使用
     - [x] 优化文章封面图片使用
     - [ ] 优化博客头像图片使用
-- [x] 修复 Gitalk 无法登陆的问题
 - [ ] 将 .md 文件 解析为 .html 文件
+- [x] 修复代码块高亮渲染
+
 
 ## Reference
 - This blog is based on [hexo-theme-nexmoe](https://github.com/theme-nexmoe/hexo-theme-nexmoe) theme.
 - For the use of hexo, please refer to the [Hexo](https://hexo.io/zh-cn/docs/).
 - use [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed) to generate rss-feed.
 - use [hexo-bilibili-bangumi](https://github.com/HCLonely/hexo-bilibili-bangumi) to generate [/bili/index.html](https://sxrekord.com/bili/index.html) and [/cinemas/index.html](https://sxrekord.com/cinemas/index.html)
+- use [prism](https://prismjs.com/) as code highlight rendering engine.
 
 ## License
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
