@@ -39,6 +39,7 @@ repo for my blog.
 - use [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed) to generate rss-feed.
 - use [hexo-bilibili-bangumi](https://github.com/HCLonely/hexo-bilibili-bangumi) to generate [/bili/index.html](https://sxrekord.com/bili/index.html) and [/cinemas/index.html](https://sxrekord.com/cinemas/index.html)
 - use [prism](https://prismjs.com/) as code highlight rendering engine.
+- use [mistune](https://github.com/lepture/mistune) to parse markdown to html.
 
 ## License
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
