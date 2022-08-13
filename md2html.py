@@ -18,6 +18,9 @@ destinationPath = 'public' + sourcePath[sourcePath.find("/"):sourcePath.rfind("/
 with open(sourcePath, 'r', encoding='utf-8', newline='') as file:
     mdContent = file.read()
 
+# escape "-->"
+mdContent = mdContent.replace("-->", "->")
+
 user = "Rekord"
 generateTime = str(datetime.datetime.today() + datetime.timedelta(hours=8-int(time.strftime('%z')[0:3])))
 head = """<!-- Markdown Source -->
