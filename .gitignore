@@ -10,8 +10,3 @@ _multiconfig.yml
 # HCLonely/hexo-bilibili-bangumi
 source/bangumis.json
 source/_data/
-
-# ignore personal/**/*.html
-personal/**/*.html
-!personal/nginx_zh/*.html
-!personal/music_theory/*.html
