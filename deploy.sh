@@ -48,7 +48,6 @@ function deleteIdentifier() {
 
 # md to html
 function mdToHtml() {
-    pip3 install mistune > error.Identifier
     find $1 -name "*.md" > md
     while read line
     do
@@ -76,6 +75,12 @@ cp -rf personal/music_theory public/music_theory
 
 cp -f personal/md_render.css public/md_render.css
 # convert .md file to .html file
+pip3 list | grep mistune > error.Identifier 2>&1
+if [ $? -ne 0 ]; then
+    echo "install mistune."
+    pip3 install mistune > error.Identifier
+
+fi
 mdToHtml "personal/lao"
 mdToHtml "personal/diary"
 
