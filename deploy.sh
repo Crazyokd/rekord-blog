@@ -56,22 +56,39 @@ function mdToHtml() {
     rm md
 }
 
+# cp files but not include .md
+function cpFiles() {
+    cp -rf $1 "public${1: 8}/"
+    find $1 | grep .*\.md$ > cp_file
+    while read line
+    do
+        rm -rf "public${line: 8}"
+    done < cp_file
+    rm cp_file
+}
 
 # clean public
-rm -rf public/md_render.css
-rm -rf public/nginx_zh
-rm -rf public/music_theory
-rm -rf public/lao
-rm -rf public/diary
-rm -rf public/personal
+function cleanPublic() {
+    rm -rf public/md_render.css
+    rm -rf public/nginx_zh
+    rm -rf public/music_theory
+    rm -rf public/lao
+    rm -rf public/diary
+    rm -rf public/linux
+    rm -rf public/personal
+}
+
+
+cleanPublic
 
 if [ ! -e "public" ]; then 
     mkdir public
 fi
 
 
-cp -rf personal/nginx_zh public/nginx_zh
-cp -rf personal/music_theory public/music_theory
+cpFiles "personal/nginx_zh"
+cpFiles "personal/music_theory"
+cpFiles "personal/linux"
 
 cp -f personal/md_render.css public/md_render.css
 # convert .md file to .html file
@@ -79,11 +96,10 @@ pip3 list | grep mistune > error.Identifier 2>&1
 if [ $? -ne 0 ]; then
     echo "install mistune."
     pip3 install mistune > error.Identifier
-
 fi
 mdToHtml "personal/lao"
 mdToHtml "personal/diary"
-
+mdToHtml "personal/linux"
 
 deleteIdentifier
 
