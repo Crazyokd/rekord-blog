@@ -36,6 +36,7 @@ head = """<!-- Markdown Source -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>""" + fileName + """</title>
     <link rel="stylesheet" href="../md_render.css">
+    <link rel="icon" href="https://cdn.sxrekord.com/blog/favicon.ico">
 </head>
 <body>
 """
