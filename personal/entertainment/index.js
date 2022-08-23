@@ -4,14 +4,20 @@ window.onload = function () {
 
     const website_input = document.querySelector('.input_div input');
     website_input.addEventListener('keydown', (event) => {
-        // console.log(event.code);
         if (event.code == 'Enter') {
             generate();
         }
     })
     website_input.addEventListener('focus', (event) => {
         // hint website
-        console.log('input focus');
+    })
+    
+    document.addEventListener('keydown', (event) => {
+        // console.log(event.code);
+        const letterPattern = /^(Key[A-Z])|(Minus)|(Period)|(Digit[0-9])$/;
+        if (letterPattern.test(event.code)) {
+            website_input.focus();;
+        }
     })
 }
 
@@ -48,27 +54,27 @@ function generateLink(data) {
         return;
     }
     const index = Number.parseInt(data.length * Math.random());
-    const website = 'https://' + document.querySelector('.input_div input').value + '/watch?v=' + String(data[index].ser);
+    const domain = document.querySelector('.input_div input');
+    const website = 'https://' + domain.value + '/watch?v=' + String(data[index].ser);
     
-    // check whether url valid
-    // if (!isURLValid(website)) {
-    //     window.alert('The URL is invalid');
-    // }
+    const domainPattern = /^[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]*)+$/;
 
-    // check value
-    let isValid = false;
-    isValid = true;
-    
-    if (isValid) {
-        // generate li label
-        const newLiLabel = document.createElement('li');
-        newLiLabel.innerHTML = '<a href="' + String(website) + '" target="_blank">' + String(data[index].name) + '</a>';
-        document.querySelector('#video_list').appendChild(newLiLabel);
+    // check whether url valid
+    if (!domainPattern.test(domain.value) || !isURLValid(website)) {
+        window.alert('The URL is invalid');
+        domain.value = '';
+        return;
     }
+
+    // generate li label
+    const newLiLabel = document.createElement('li');
+    newLiLabel.innerHTML = '<a href="' + String(website) + '" target="_blank">' + String(data[index].name) + '</a>';
+    document.querySelector('#video_list').appendChild(newLiLabel);
     data.splice(index, 1);
 }
 
 function isURLValid(url) {
+    return true;
     const xmlhttp = getXmlHttpRequest();
     // 第三个参数表示是否异步
     xmlhttp.open("GET", url, false); 
