@@ -23,30 +23,27 @@ window.onload = function () {
 
 
     // search function
-    const search_input = document.querySelector('.search_div input');
-    search_input.addEventListener('keydown', (event) => {
-        // 取消事件冒泡
-        window.event? window.event.cancelBubble = true : e.stopPropagation();
-        if (event.code == 'Enter') {
-            if (!data) {
-                readFile('data.json');
-                window.alert('正在读取数据文件，请在等待片刻后再次搜索。');
-                return;
-            }
-            
-            let hasRecord = false;
+    document.querySelector('#search_btn').addEventListener('click', (event) => {
+        if (!data) {
+            readFile('data.json');
+            window.alert('正在读取数据文件，请在等待片刻后再次搜索。');
+            return;
+        }
+
+        let inputSer = prompt("please input serial number: ");
+        let hasRecord = false;
+        if (inputSer != null && /^[0-9]+$/.test(inputSer)) {
             data.forEach((element, index) => {
-                if (element.ser == search_input.value) {
-                    let isGenerate = confirm('是否生成 “' + element.name +'”');
-                    if (isGenerate) {
+                if (element.ser == inputSer) {
+                    hasRecord = true;
+                    if (confirm('是否生成 “' + element.name +'”')) {
                         generateLink(data, index);
                     }
-                    hasRecord = true;
                 }
             });
-            if (!hasRecord) {
-                window.alert('数据库中没有记录，考虑添加进来？');
-            }
+        }
+        if (!hasRecord) {
+            window.alert('数据库中没有记录，考虑添加进来？');
         }
     })
 }
