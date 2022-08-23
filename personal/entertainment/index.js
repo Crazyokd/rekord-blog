@@ -31,18 +31,22 @@ function readFile(url) {
 }
 
 function generateLink(data) {
-    const name = data[Number.parseInt(data.length * Math.random())].name;
-    const ser = data[Number.parseInt(data.length * Math.random())].ser;
-    const website = 'https://' + document.querySelector('.input_div input').value + '/watch?v=' + String(ser);
-
+    if (data.length <= 0) {
+        window.alert('数据已全部加载！');
+        return;
+    }
+    const index = Number.parseInt(data.length * Math.random());
+    const website = 'https://' + document.querySelector('.input_div input').value + '/watch?v=' + String(data[index].ser);
+    
     // check value
     let isValid = false;
     isValid = true;
-
+    
     if (isValid) {
         // generate li label
         const newLiLabel = document.createElement('li');
-        newLiLabel.innerHTML = '<a href="' + String(website) + '" target="_blank">' + String(name) + '</a>';
+        newLiLabel.innerHTML = '<a href="' + String(website) + '" target="_blank">' + String(data[index].name) + '</a>';
         document.querySelector('#video_list').appendChild(newLiLabel);
     }
+    data.splice(index, 1);
 }
