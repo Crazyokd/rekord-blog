@@ -1,21 +1,24 @@
 let data = null;
 window.onload = function () {
-    const generate_btn = document.querySelector('.input_div button');
-    // click generate button to get value.
-    generate_btn.onclick = function () {
-        if (!data) {
-            // read file
-            readFile('data.json');
-        } else {
-            generateLink(data);
+    document.querySelector('.input_div button').onclick = generate;
+
+    const website_input = document.querySelector('.input_div input');
+    website_input.addEventListener('keydown', (event) => {
+        // console.log(event.code);
+        if (event.code == 'Enter') {
+            generate();
         }
-    }
+    })
+    website_input.addEventListener('focus', (event) => {
+        // hint website
+        console.log('input focus');
+    })
 }
 
 // 同文件夹下的json文件路径
 function readFile(url) {
     // 申明一个XMLHttpRequest
-    const request = new XMLHttpRequest();
+    const request = getXmlHttpRequest();
     // 设置请求方法与路径
     request.open("get", url);
     // 不发送数据到服务器
@@ -30,6 +33,15 @@ function readFile(url) {
     }
 }
 
+function generate() {
+    if (!data) {
+        // read file
+        readFile('data.json');
+    } else {
+        generateLink(data);
+    }
+}
+
 function generateLink(data) {
     if (data.length <= 0) {
         window.alert('数据已全部加载！');
@@ -38,6 +50,11 @@ function generateLink(data) {
     const index = Number.parseInt(data.length * Math.random());
     const website = 'https://' + document.querySelector('.input_div input').value + '/watch?v=' + String(data[index].ser);
     
+    // check whether url valid
+    // if (!isURLValid(website)) {
+    //     window.alert('The URL is invalid');
+    // }
+
     // check value
     let isValid = false;
     isValid = true;
@@ -50,3 +67,25 @@ function generateLink(data) {
     }
     data.splice(index, 1);
 }
+
+function isURLValid(url) {
+    const xmlhttp = getXmlHttpRequest();
+    // 第三个参数表示是否异步
+    xmlhttp.open("GET", url, false); 
+    xmlhttp.send();
+    if (xmlhttp.readyState == 4) {
+        if (xmlhttp.status == 200) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+function getXmlHttpRequest() {
+    if (window.XMLHttpRequest) {
+        return new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        return new ActiveXObject("Microsoft.XMLHTTP");
+    }
+};
