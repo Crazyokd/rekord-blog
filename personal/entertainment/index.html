@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entertainment</title>
+    <script src="index.js"></script>
+    <style>
+        body > div {
+            background-color: antiquewhite;
+            width: 500px;
+            margin: 10px auto;
+            text-align: center;
+        }
+        .input_div {
+            height: 40px;
+            line-height: 40px;
+        }
+
+        ul {
+            padding: 0px;
+        }
+        ul > li{
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+        #generate_btn {
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="input_div">
+        <form name="website">
+
+            please input website: <input type="text"/><button id="generate_btn">generate</button>
+        </form>
+    </div>
+
+    <div>
+        video list
+        <!-- <table>
+            <thead>
+                <td>link</td>
+                <td>delete</td>
+            </thead>
+
+            <tbody>
+
+            </tbody>
+        </table> -->
+        <ul id="video_list">
+        </ul>
+    </div>
+</body>
+</html>
