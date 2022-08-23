@@ -89,6 +89,7 @@ fi
 cpFiles "personal/nginx_zh"
 cpFiles "personal/music_theory"
 cpFiles "personal/linux"
+cpFiles "personal/entertainment"
 
 cp -f personal/md_render.css public/md_render.css
 # convert .md file to .html file
@@ -102,7 +103,6 @@ mdToHtml "personal/diary"
 mdToHtml "personal/linux"
 
 deleteIdentifier
-
 
 
 # fix hexo-prism-plugin curly bracket error
