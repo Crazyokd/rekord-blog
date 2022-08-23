@@ -8,6 +8,7 @@ window.onload = function () {
             generate();
         }
     })
+
     website_input.addEventListener('focus', (event) => {
         // hint website
     })
@@ -16,7 +17,33 @@ window.onload = function () {
         // console.log(event.code);
         const letterPattern = /^(Key[A-Z])|(Minus)|(Period)|(Digit[0-9])$/;
         if (letterPattern.test(event.code)) {
-            website_input.focus();;
+            website_input.focus();
+        }
+    })
+
+
+    // search function
+    const search_input = document.querySelector('.search_div input');
+    search_input.addEventListener('keydown', (event) => {
+        // 取消事件冒泡
+        window.event? window.event.cancelBubble = true : e.stopPropagation();
+        if (event.code == 'Enter') {
+            if (!data) {
+                readFile('data.json');
+                window.alert('正在读取数据文件，请在等待片刻后再次搜索。');
+                return;
+            }
+            
+            let hasRecord = false;
+            data.forEach((element, index) => {
+                if (element.ser == search_input.value) {
+                    window.alert(element.name);
+                    hasRecord = true;
+                }
+            });
+            if (!hasRecord) {
+                window.alert('数据库中没有记录，考虑添加进来？');
+            }
         }
     })
 }
@@ -34,7 +61,6 @@ function readFile(url) {
         // 返回状态为200，即为数据获取成功
         if (request.status == 200) {
             data = JSON.parse(request.responseText);
-            generateLink(data);
         }
     }
 }
@@ -43,17 +69,19 @@ function generate() {
     if (!data) {
         // read file
         readFile('data.json');
+        window.alert('正在读取数据文件，请在等待片刻后再次生成。');
     } else {
         generateLink(data);
     }
 }
 
-function generateLink(data) {
+function generateLink(data, search_index) {
     if (data.length <= 0) {
         window.alert('数据已全部加载！');
         return;
     }
-    const index = Number.parseInt(data.length * Math.random());
+    let index = search_index;
+    index = index || Number.parseInt(data.length * Math.random());
     const domain = document.querySelector('.input_div input');
     const website = 'https://' + domain.value + '/watch?v=' + String(data[index].ser);
     
