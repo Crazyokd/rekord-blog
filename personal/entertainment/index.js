@@ -39,7 +39,7 @@ window.onload = function () {
                 if (element.ser == search_input.value) {
                     let isGenerate = confirm('是否生成 “' + element.name +'”');
                     if (isGenerate) {
-                        generate();
+                        generateLink(data, index);
                     }
                     hasRecord = true;
                 }
