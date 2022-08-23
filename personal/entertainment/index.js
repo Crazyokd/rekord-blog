@@ -37,7 +37,10 @@ window.onload = function () {
             let hasRecord = false;
             data.forEach((element, index) => {
                 if (element.ser == search_input.value) {
-                    window.alert(element.name);
+                    let isGenerate = confirm('是否生成 “' + element.name +'”');
+                    if (isGenerate) {
+                        generate();
+                    }
                     hasRecord = true;
                 }
             });
@@ -48,8 +51,7 @@ window.onload = function () {
     })
 }
 
-// 同文件夹下的json文件路径
-function readFile(url) {
+function readFile(url, isGenerateLink = false) {
     // 申明一个XMLHttpRequest
     const request = getXmlHttpRequest();
     // 设置请求方法与路径
@@ -61,6 +63,9 @@ function readFile(url) {
         // 返回状态为200，即为数据获取成功
         if (request.status == 200) {
             data = JSON.parse(request.responseText);
+            if (isGenerateLink) {
+                generateLink(data);
+            }
         }
     }
 }
@@ -68,8 +73,7 @@ function readFile(url) {
 function generate() {
     if (!data) {
         // read file
-        readFile('data.json');
-        window.alert('正在读取数据文件，请在等待片刻后再次生成。');
+        readFile('data.json', true);
     } else {
         generateLink(data);
     }
