@@ -101,6 +101,7 @@ fi
 mdToHtml "personal/lao"
 mdToHtml "personal/diary"
 mdToHtml "personal/linux"
+mdToHtml "personal/resource"
 
 deleteIdentifier
 
