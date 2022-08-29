@@ -77,6 +77,7 @@ function cleanPublic() {
     rm -rf public/linux
     rm -rf public/entertainment
     rm -rf public/resource
+    rm -rf public/interview
     rm -rf public/personal
 }
 
@@ -104,6 +105,7 @@ mdToHtml "personal/lao"
 mdToHtml "personal/diary"
 mdToHtml "personal/linux"
 mdToHtml "personal/resource"
+mdToHtml "personal/interview"
 
 deleteIdentifier
 
