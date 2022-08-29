@@ -75,6 +75,8 @@ function cleanPublic() {
     rm -rf public/lao
     rm -rf public/diary
     rm -rf public/linux
+    rm -rf public/entertainment
+    rm -rf public/resource
     rm -rf public/personal
 }
 
