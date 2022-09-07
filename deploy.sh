@@ -79,6 +79,7 @@ function cleanPublic() {
     rm -rf public/resource
     rm -rf public/interview
     rm -rf public/personal
+    rm -rf public/book
 }
 
 
@@ -93,6 +94,7 @@ cpFiles "personal/nginx_zh"
 cpFiles "personal/music_theory"
 cpFiles "personal/linux"
 cpFiles "personal/entertainment"
+cpFiles "personal/book"
 
 cp -f personal/md_render.css public/md_render.css
 # convert .md file to .html file
