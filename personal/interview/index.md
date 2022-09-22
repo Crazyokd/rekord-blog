@@ -12,3 +12,8 @@
     - [Top K](https://osjobs.net/topk/)
     - [JavaGuide](https://javaguide.cn/)
     - [小林coding](https://www.xiaolincoding.com/)
+    - [daipeng](https://pdai.tech/md/interview/x-interview.html)
+    - [web前端面试 - 面试官系列](https://vue3js.cn/interview)
+    - [LintCode 炼码](https://www.lintcode.com/)
+    - [CodeTop企业题库](https://codetop.cc/home)
+    - [Codewars](https://www.codewars.com/)
