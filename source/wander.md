@@ -12,3 +12,4 @@ layout: py
 - [](https://bbs.nga.cn/ "NGA.CN")
 - [](https://ld246.com/ "链滴")
 - [](https://www.nexusmods.com/ "NEXUSMODS")
+- [![OSS Insight](https://ossinsight.io/img/logo.png)](https://ossinsight.io/ "OSS Insight")
