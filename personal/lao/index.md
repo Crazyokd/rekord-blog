@@ -42,3 +42,5 @@
 - [Hao的个人博客](https://hoooao.github.io/)
 
 - [wuyudi 杂文](https://honeysuckle-terrier-6c8.notion.site/3c0df75d3d8b471ab67e97ecc82e10a4)
+
+- [老卫的博客](https://waylau.com/)
