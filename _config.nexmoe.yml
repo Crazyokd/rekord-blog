@@ -103,11 +103,6 @@ widgets:
           - icon-rss
           - rgb(235, 152, 0)
           - rgba(235, 152, 0, .15)  
-        腾讯QQ:
-          - https://wpa.qq.com/msgrd?v=3&uin=1324596506&site=qq&menu=yes
-          - icon-QQ
-          - rgb(2, 125, 250)
-          - rgba(2, 125, 250, .15) 
         Twitter:
           - https://twitter.com/Crazyokd
           - icon-twitter
