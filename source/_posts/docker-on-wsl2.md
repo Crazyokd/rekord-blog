@@ -100,7 +100,7 @@ docker rm <the-container-id>
 
 ```bash
 # login to the Docker Hub
-login -u YOUR-USER-NAME
+docker login -u YOUR-USER-NAME
 # use the docker tag to give the image a new name
 docker tag image-name YOUR-USER-NAME/image-name
 # push image
