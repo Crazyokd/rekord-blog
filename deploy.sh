@@ -72,7 +72,6 @@ function cleanPublic() {
     rm -rf public/md_render.css
     rm -rf public/nginx_zh
     rm -rf public/music_theory
-    rm -rf public/lao
     rm -rf public/diary
     rm -rf public/linux
     rm -rf public/entertainment
@@ -103,7 +102,6 @@ if [ $? -ne 0 ]; then
     echo "install mistune."
     pip3 install mistune > error.Identifier
 fi
-mdToHtml "personal/lao"
 mdToHtml "personal/diary"
 mdToHtml "personal/linux"
 mdToHtml "personal/resource"
