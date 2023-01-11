@@ -19,7 +19,8 @@ tags:
 动手能力差这点我是有自知之明的，但是折腾一下午还是收获不少，以下分别细说：
 ### 其一是装机过程
 - 烧录镜像我用的是[Rufus](https://rufus.ie/zh/)，但都说[Ventoy](https://github.com/ventoy/Ventoy)更好用，这玩意上过几天trending，当时我还刷到过，但是烧录镜像时没想起来，只能说以后有机会再试试了。不过有一说一，Rufus也完全够用。
-
+    ![rufus](https://cdn.sxrekord.com/blog/rufus.png)
+    
 - 接下来就是在Windows中选择高级启动，然后在Bios中关闭Windows安全启动以及提高U盘（*我烧录镜像到U盘中*）启动优先级。重启后就可以选择Arch Linux启动了。
 
 - 联网这些不细说了，根据自己的网络环境选择相应的命令即可。
