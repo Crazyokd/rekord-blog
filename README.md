@@ -31,7 +31,6 @@ repo for my blog.
     - [x] 优化博客头像图片使用
 - [x] 将 .md 文件 解析为 .html 文件
 - [x] 修复代码块高亮渲染
-- [ ] 修复代码块行首空格
 
 ## Reference
 - This blog is based on [hexo-theme-nexmoe](https://github.com/theme-nexmoe/hexo-theme-nexmoe) theme.
