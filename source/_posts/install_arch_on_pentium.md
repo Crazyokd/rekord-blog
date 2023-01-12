@@ -76,6 +76,58 @@ grub-install --target=i386-pc /dev/sdX # where i386-pc is deliberately used rega
 ```
 
 ## Post Installation
+### yay
+AUR 为 archlinux user repository。任何用户都可以上传自己制作的 AUR 包，这也是 Arch Linux 可用软件众多的原因。由于任何人都可上传，也存在对应的风险，一般选用大众认可的包即可。
+使用 [yay](https://github.com/Jguer/yay) 可以安装 AUR 中的包。
+
+```shell
+cd /opt # 我选择将下载的文件放在/opt目录
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
+makepkg -si
+```
+
+### 显卡驱动
+通过以下命令可得到显卡及驱动信息：
+
+```shell
+lspci -v | grep 'VGA'
+# 查看可用的驱动和正在使用的驱动
+lspci -v | less # 然后在less中搜索‘VGA’
+```
+
+通过以上命令查询到我的[显卡详情](https://www.techpowerup.com/gpu-specs/radeon-hd-8350-oem.c1976)，然后参照[官方对照文档](https://wiki.archlinux.org/title/Xorg#AMD)，最终选择[ATI](https://wiki.archlinux.org/title/ATI)作为显卡驱动
+
+### 包管理
+
+```shell
+sudo pacman -Qdt                # 找出孤立包 Q为查询本地软件包数据库 d标记依赖包 t标记不需要的包 dt合并标记孤立包
+sudo pacman -Rs $(pacman -Qtdq) # 删除孤立软件包
+
+sudo pacman -Fy                 # 更新命令查询文件列表数据库
+sudo pacman -F xxx              # 当不知道某个命令属于哪个包时，用来查询某个xxx命令属于哪个包
+
+sudo pacman -Sc                 # 清理缓存
+```
+
+### 系统服务
+以`dhcpcd`服务为例：
+
+```shell
+systemctl start dhcpcd          # 启动服务
+systemctl stop dhcpcd           # 停止服务
+systemctl restart dhcpcd        # 重启服务
+systemctl reload dhcpcd         # 重新加载服务以及它的配置文件
+systemctl status dhcpcd         # 查看服务状态
+systemctl enable dhcpcd         # 设置开机启动服务
+systemctl enable --now dhcpcd   # 设置服务为开机启动并立即启动这个单元:
+systemctl disable dhcpcd        # 取消开机自动启动
+systemctl daemon-reload dhcpcd  # 重新载入 systemd 配置 扫描新增或变更的服务单元 不会重新加载变更的配置 加载变更的配置用 reload
+```
+
+---
+
 后续主要的用途打算是作为一台**伪·服务器**使用。在局域网内通过ssh连接从而进行各种Linux操作。
 
 另外这台机器还有500G的硬盘呢！😋
