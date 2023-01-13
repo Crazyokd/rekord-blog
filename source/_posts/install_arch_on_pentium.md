@@ -126,6 +126,9 @@ systemctl disable dhcpcd        # 取消开机自动启动
 systemctl daemon-reload dhcpcd  # 重新载入 systemd 配置 扫描新增或变更的服务单元 不会重新加载变更的配置 加载变更的配置用 reload
 ```
 
+### 播放视频
+播放视频的命令行软件我选择的是 `mpv`，但是下载了一个视频后播放时发现没有声音，最终选择了 `alsamixer` 作为命令行的声音控制软件。
+
 ---
 
 后续主要的用途打算是作为一台**伪·服务器**使用。在局域网内通过ssh连接从而进行各种Linux操作。
