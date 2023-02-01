@@ -8,7 +8,7 @@ coverWidth: 279
 coverHeight: 131
 comments: true
 categories: 
-- 折腾
+- 技术
 tags:
 - docker
 ---

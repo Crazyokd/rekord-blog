@@ -8,7 +8,7 @@ cover: /assets/vscode.webp
 # coverHeight: 613
 comments: true
 categories: 
-- 技术
+- 折腾
 tags:
 - vscode
 - Java
