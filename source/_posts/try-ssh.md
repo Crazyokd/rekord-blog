@@ -2,10 +2,10 @@
 layout: post
 title: 尝尝 SSH
 date: 2022/4/7
-updated: 2022/4/7
+updated: 2023/07/17
 cover: /assets/ssh.webp
-# coverWidth: 920
-# coverHeight: 613
+coverWidth: 920
+coverHeight: 613
 comments: true
 categories: 
 - 技术
@@ -104,6 +104,8 @@ Host remoteserver
      HostName remote.example.com
      User neo
      Port 2112
+     IdentityFile ~/.ssh/id_rsa # 配合IdentitiesOnly同时使用，表示仅使用指定的认证文件进行验证，默认会将所有可用的身份验证标识（如私钥）提供给服务器进行尝试。
+     IdentitiesOnly yes
 ```
 
 上面代码中，`Host *`表示对所有主机生效，后面的`Port 2222`表示所有主机的默认连接端口都是2222，这样就不用在登录时特别指定端口了。
@@ -150,9 +152,3 @@ TLS_RSA_WITH_AES_128_CBC_SHA
 -   CBC：加密算法的模式
 -   SHA：数字签名的 Hash 函数
 
-### 密钥
-密钥（key）是一个非常大的数字，通过加密算法得到。对称加密只需要一个密钥，非对称加密需要两个密钥成对使用，分为公钥（public key）和私钥（private key）。
-
-SSH 密钥登录采用的是非对称加密，每个用户通过自己的密钥登录。其中，私钥必须私密保存，不能泄漏；公钥则是公开的，可以对外发送。它们的关系是，公钥和私钥是一一对应的，每一个私钥都有且仅有一个对应的公钥，反之亦然。
-
-如果数据使用公钥加密，那么只有使用对应的私钥才能解密，其他密钥都不行；反过来，如果使用私钥加密（这个过程一般称为“签名”），也只有使用对应的公钥解密。
