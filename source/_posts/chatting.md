@@ -70,7 +70,7 @@ clone到本地，花了好几天将前后端代码都看完了，然后在原来
 
 - 前端架构
     
-    ```
+    ```plain
     ├─.github 
     │ ├─dependabot.yml 
     │ └─workflows 
@@ -152,7 +152,7 @@ clone到本地，花了好几天将前后端代码都看完了，然后在原来
     
 - 后端架构
     
-    ```
+    ```plain
     ├─.github 
     │ └─workflows 
     │   └─ci.yml 
