@@ -57,11 +57,18 @@ prefix + w # 切换窗口；指令：tmux select-window -t <window-number>
 
 如果你经常使用 vim，建议在配置文件中添加如下设置：
 ```tmux
-# Navigate panes using jkhl (no prefix)
-bind-key j select-pane -D
-bind-key k select-pane -U
-bind-key h select-pane -L
-bind-key l select-pane -R
+# Navigate panes using jkhl
+# -r 表示可重复按键，大概500ms以内，重复的h、j、k、l按键都将有效
+bind-key -r j select-pane -D
+bind-key -r k select-pane -U
+bind-key -r h select-pane -L
+bind-key -r l select-pane -R
+
+# 绑定prefix + Ctrl+hjkl键为面板上下左右调整边缘的快捷指令
+bind -r ^k resizep -U 10 # 绑定Ctrl+k为往↑调整面板边缘10个单元格
+bind -r ^j resizep -D 10 # 绑定Ctrl+j为往↓调整面板边缘10个单元格
+bind -r ^h resizep -L 10 # 绑定Ctrl+h为往←调整面板边缘10个单元格
+bind -r ^l resizep -R 10 # 绑定Ctrl+l为往→调整面板边缘10个单元格
 ```
 
 ## 快捷键
