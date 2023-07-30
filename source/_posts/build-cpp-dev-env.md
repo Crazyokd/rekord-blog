@@ -62,4 +62,4 @@ python3 install.py --clangd-completer
 
 由于我这里主要需要的是 C-family languages，所以使用了 `--clangd-completer` 编译选项，如果需要全部安装，可以使用 `--all` 选项，详细的语言选项可参考[ycm编译参数](https://github.com/ycm-core/YouCompleteMe#c-family-semantic-completion:~:text=YouCompleteMe%0A./install.py-,The%20following%20additional%20language%20support%20options%20are%20available%3A,-C%23%20support%3A%20install)
 
-命令执行完毕后，代码应该就能自动补全了，可以使用 `ctrl+n/p` 在补全选项中进行切换选择。
+命令执行完毕后，代码应该就能自动补全了，可以使用 `ctrl+n/p`/`TAB` 在补全选项中进行切换选择。
