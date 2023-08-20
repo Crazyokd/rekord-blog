@@ -96,6 +96,23 @@ tmux info
 tmux source-file ~/.tmux.conf # 加载配置
 ```
 
+# 其他问题
+使用tmux后会发现终端无法上下滚动了，按键和鼠标滚轮都无效。
+这时候可以考虑使用 `prefix + [` 进入滚动模式，然后就可以使用上下箭头、pageup或pagedown上下滚动了，但是不能使用 shift pageup/pagedown 。
+如果你熟悉vim，也可以考虑开启vi的移动和滚动方式。
+如果想使用鼠标滚轮进行滚动，需要在配置文件中加入以下配置：
+
+```plain
+# For the Tmux version 2.1 and up
+set -g mouse on
+# For the Tmux version below 2.1
+set -g mode-mouse on
+
+# enable vi key-binding in scroll mode
+set-window-option -g mode-keys vi
+```
+
+
 # 参考
 - [Tmux使用教程-阮一峰](https://www.ruanyifeng.com/blog/2019/10/tmux.html)
 - [Tmux使用手册](http://louiszhai.github.io/2017/09/30/tmux/)
