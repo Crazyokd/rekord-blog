@@ -2,7 +2,7 @@
 layout: post
 title: 配置 vim + c/cpp 开发环境
 date: 2023/07/18
-updated: 2023/07/18
+updated: 2023/09/09
 cover: /assets/vim.webp
 coverWidth: 920
 coverHeight: 400
@@ -63,3 +63,19 @@ python3 install.py --clangd-completer
 由于我这里主要需要的是 C-family languages，所以使用了 `--clangd-completer` 编译选项，如果需要全部安装，可以使用 `--all` 选项，详细的语言选项可参考[ycm编译参数](https://github.com/ycm-core/YouCompleteMe#c-family-semantic-completion:~:text=YouCompleteMe%0A./install.py-,The%20following%20additional%20language%20support%20options%20are%20available%3A,-C%23%20support%3A%20install)
 
 命令执行完毕后，代码应该就能自动补全了，可以使用 `ctrl+n/p`/`TAB` 在补全选项中进行切换选择。
+
+---
+
+# 改用coc.nvim
+使用了ycm一段时间后发现，ycm稍显笨重，配置起来并不方便，搜索一番后故改用[coc.nvim](https://github.com/neoclide/coc.nvim)。
+
+coc.nvim类似于一个lsp管理平台，需要什么lsp就安装什么插件，通过它的一些内置命令从而能够便捷的管理各种lsp插件。
+
+使用coc.nvim配置C/C++开发环境时，后端仍然是[clangd](https://clangd.llvm.org/)。
+
+clangd是这样识别配置文件的：
+- 寻找当前文件的父目录
+- 寻找当前文件的父目录下的build子目录
+
+然后在这两个目录中寻找`compile_commands.json`或`compile_flags.txt`文件。其中前者优先级比后者高，存在前者将忽略后者。
+> 这里面存在一个小坑，当打开.h文件时，clangd会认为这是一个C文件，从而不支持C++语法，此时可以通过修改编译参数为`-xcxx`强制识别。
