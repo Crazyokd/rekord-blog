@@ -96,30 +96,61 @@ tf：单步中断标志位，它记录相关指令执行后，tf是否为1，如
 
 if：为0不响应可屏蔽中断，可通过`sti`（设为1）和`cli`指令设置值
 
-# 运算指令
+# 算术运算指令
 
-add、sub、inc、dec、imul、idiv、aaa（操作BCD码）
+## 加法
 
-and、or、not、xor、test（类似于cmp，区别是对两个操作数AND）
+| ADD | 加法 |  |
+| --- | --- | --- |
+| ADC | 带进位的加法 | 操作对象1 = 操作对象1 + 操作对象2 + cf |
+| INC |  | INC BYTE PTR[BX] |
+| AAA | 加法的ASCII调整(ASCII Adjust for Addition) | 针对非压缩十进制数 |
+| DAA | 加法的十进制调整(Decimal Adjust for Addition) | 针对压缩十进制数 |
 
-adc 操作对象1 操作对象2：
+## 减法
 
-操作对象1 = 操作对象1 + 操作对象2 + cf
+| SUB | 减法 |  |
+| --- | --- | --- |
+| SBB | 带借位的减法 | 操作对象1 = 操作对象1 - 操作对象2 - cf |
+| DEC |  |  |
+| NEG | 取负 |  |
+| CMP | 比较 | 操作对象1 - 操作对象2 |
+| AAS | 减法的ASCII调整(ASCII Adjust for Subtraction) |  |
+| DAS | 减法的十进制调整(Decimal Adjust for Subtraction) |  |
 
-sbb 操作对象1 操作对象2：
+## 乘法
 
-操作对象1 = 操作对象1 - 操作对象2 - cf
+| MUL | 无符号数乘法 | AX = AL * 源 || (DX,AX) = AX * 源 | 源操作数不能是立即数，当源操作数是存储单元时，必须在操作数前加BYTE或WORD |
+| --- | --- | --- | --- |
+| IMUL | 整数乘法(Integer multiply) |  |  |
+| AAM | 乘法的ASCII调整 |  |  |
 
-cmp 操纵对象1, 操作对象2
+## 除法
 
-两个对象相减，不保存结果到第一个对象中，但会修改相应的标志寄存器
+| DIV | 无符号数除法 |  |
+| --- | --- | --- |
+| IDIV |  |  |
+| AAD | 除法的ASCII调整 | 除法运算前执行 |
+| CBW | 把字节转换成字 | 把寄存器AL中的符号位扩充到AH的所有位 |
+| CWD | 把字转换为双字 | 把寄存器AX中的符号位扩充到DX的所有位 |
 
-逻辑移位指令：shl/shr（将移出的那一位写入CF），将空出的那一位用0填充。如果移动次数大于1，必须将移动次数放在cl中。
+# 逻辑运算和移位指令
 
-```nasm
-shl al, 1
-shr al, cl
-```
+## 逻辑运算
+
+| NOT |  | 对标志位无影响 |
+| --- | --- | --- |
+| AND |  |  |
+| OR |  |  |
+| XOR |  |  |
+| TEST |  | 对两个操作数进行逻辑与操作，并修改标志位，但不回送结果 |
+
+## 算术逻辑移位
+
+| SHL/SHA | 逻辑/算术左移 | 最低位补0，最高有效位写入cf；如果移动次数大于1，必须将移动次数放在cl中。 |
+| --- | --- | --- |
+| SHR | 逻辑右移 | 将移出的那一位写入CF，将空出的那一位用0填充；如果移动次数大于1，必须将移动次数放在cl中。 |
+| SAR(arithmetic) | 算术右移 | 最低位移入CF，最高位保持不变；如果移动次数大于1，必须将移动次数放在cl中。 |
 
 ## 循环移位
 
@@ -130,13 +161,47 @@ shr al, cl
 | RCL dst,cnt | Rotate through Carry Left | 带进位左移 cnt 位 |
 | RCR dst,cnt | Rotate through Carry Right | 带进位右移 cnt 位 |
 
-# 传送指令
+# 数据传送指令
 
-mov、push、pop、xchg（xchg ax, bx ;交换两个操作数）
+## 通用数据传送指令
 
-pushf/popf: 将标志寄存器压栈/弹栈
+| mov | 字节或字的传送 | IP寄存器不能用作源操作数或目的操作数，目的操作数也不允许用立即数和CS寄存器。两个操作数中必有一个是寄存器，但不能都是段寄存器 |
+| --- | --- | --- |
+| push | 入栈 |  |
+| pop | 出栈 |  |
+| XCHG | 交换字或字节 | 段寄存器不能作为操作数，也不能直接交换两个存储单元中的内容 |
+| XLAT | 表转换 | BX、AL |
 
-## 串处理指令
+## 输入输出指令
+
+| in | 输入 | AL/AX、DX | in al, 85h |
+| --- | --- | --- | --- |
+| out | 输出 | AL/AX、DX | out 85h, al |
+
+## 地址目标传送指令
+
+| LEA | 转入有效地址 | 源操作数必须是存储单元，而目的操作数必须是除段寄存器外的16位寄存器 |  |
+| --- | --- | --- | --- |
+| LDS | 装入数据段寄存器 | 源操作数必须是存储单元，而目的操作数必须是除段寄存器外的16位寄存器。源操作数的低两位送入目的操作数，高两位送入DS | lds si, [450h] |
+| LES | 转入附加段寄存器 |  | les di, [bx] |
+
+## 标志传送指令
+
+| LAHF | 标志寄存器低字节装入AH（load ah from Flags） | 把标志寄存器SF、ZF、AF、PF和CF分别传送到AH寄存器的位7、6、4、2、0。 |
+| --- | --- | --- |
+| SAHF | AH内容装入标志寄存器低字节（store ah into Flags） |  |
+| PUSHF | 标志寄存器入栈 | 把整个寄存器的内容推入堆栈 |
+| POPF | 标志寄存器出栈 |  |
+
+# 字符串处理指令
+
+| 指令名称 | 字节/字操作 | 字节操作 | 字操作 |  |
+| --- | --- | --- | --- | --- |
+| 字符串传送 | movs 目的串, 源串 | movsb | movsw |  |
+| 字符串比较 | cmps 目的串, 源串 | cmpsb | cmpsw |  |
+| 字符串扫描 | scans 目的串 | scansb | scansw | 从AL/AX寄存器的内容减去es:di为指针的目的串元素，结果反映在标志位上，但不改变源操作数 |
+| 字符串装入 | lods 源串 | lodsb | lodsw | 把ds:si作为指针的串元素，传送到AL/AX中 |
+| 字符串存储 | stos 目的串 | stosb | stosw | 把al/ax中的一个字节或字传送到es:di为目标指针的目的串中。 |
 
 `movsb/movsw`
 
@@ -151,70 +216,77 @@ if df = 0: add si, 2, add di, 2
 else add si, 2, add di, 2
 ```
 
-- movsb/movsw 一般和 rep 配合使用，语法为 `rep movsb/movsw`，用汇编语法可以这样描述：
-    
-    ```nasm
-    s: movsb
-    loop s
-    ```
-    
-- `cld`指令可以将df设置为0
-    
-    `std`指令可以将df设置为1
-    
+movsb/movsw 一般和 rep 配合使用，语法为 `rep/repe/repz/repne/repnz movsb/movsw`
 
-# 转移指令
+`cld`指令可以将df设置为0
+
+`std`指令可以将df设置为1
+
+# 控制转移指令
 
 可以修改IP，或同时修改CS和IP的指令称为转移指令。
+
+## 无条件转移和过程调用指令
 
 - 段内转移，如jmp ax
     - 短转移（-128-127），如`jmp short 标号`
     - 近转移（2B补码），如`jmp near ptr 标号`
 - 段间转移，如jmp 1000:0，如`jmp far ptr 标号`
 
-可以配合offset操作符，offset操作符能够获取标号的偏移地址，如`start: mov ax, offset start`
-
-或使用寄存器，如`jmp reg`
-
-或使用内存，如`jmp word ptr [bx]`
-
-## 过程
-
-call/ret/retf
-
-## 中断
-
-int、iret
+| JMP | 无条件转移 |
+| --- | --- |
+| CALL | 过程调用 |
+| RET | 过程返回 |
 
 ## 条件转移
 
-所有的条件转移都是短转移
+所有的条件转移均为段内短转移
 
-jcxz指令含义为：`if ((cx) == 0) jmp short 标号;`
+| JZ/JE、JC/JNC、JNZ/JNE、JS/JNS、JO/JNO、JP/JPE、JNP/JPO | 直接标志转移 |
+| --- | --- |
+| JA/JNBE等（see table below for detail） | 间接标志转移 |
 
-以下这些条件指令常常伴随cmp指令一同使用
+| 类别 | 指令助记符 | 测试条件 | 指令功能 |
+| --- | --- | --- | --- |
+| 无符号数比较测试 | JA/JNBE | CF|ZF = 0 | above |
+|  | JAE/JNB | CF = 0 |  |
+|  | JB/JNAE | CF = 1 | below |
+|  | JBE/JNA | CF|ZF = 1 |  |
+| 有符号数比较测试 | JG/JNLE | (SF^OF) | ZF = 0 | great than |
+|  | JGE/JNL | SF ^ OF = 0 |  |
+|  | JL/JNGE | SF ^ OF = 1 | less than |
+|  | JLE/JNG | (SF ^ OF) | ZF = 1 |  |
 
-je
+## 条件循环控制
 
-jne
+| LOOP | cx≠0 |  |
+| --- | --- | --- |
+| loope/loopz | cx≠0 && zf == 1 | 若减一后cx≠0&&zf=1，则转到指令所指定的标号处重复执行 |
+| loopne/loopnz | cx≠0 && zf == 0 |  |
+| jcxz | cx==0 | 若cx为0跳转（jump if cx zero），它不对cx寄存器进行自动减一的操作 |
 
-jb(below)
+## 中断
 
-jnb
+| INT | 软中断/陷阱中断 |  |
+| --- | --- | --- |
+| INTO | 溢出中断 |  |
+| IRET | 中断返回 | 它总是被安排在中断服务程序的出口处 |
 
-ja(above)
+# 处理器控制指令
 
-jna
-
-## 循环指令
-
-所有的循环转移都是短转移。
-
-cpu执行loop指令时，会将cx减一，然后判断cx的值是否等于0，不等于0即继续循环。
-
-# 处理机控制指令
-
-cld、std、cli、sti
+| CLC | 进位标志清0 | clear carry |
+| --- | --- | --- |
+| CMC | 进位标志取反 | complement carry |
+| stc |  | set carry |
+| CLD |  | clear direction |
+| STD |  | set direction |
+| CLI | IF = 0 | clear interrupt |
+| STI | IF = 1 | set interrupt |
+| esc | 外部同步指令 | 换码指令 |
+| wait | 外部同步指令 |  |
+| lock | 外部同步指令 |  |
+| HLT |  | 暂停CPU |
+| NOP |  | No Operation |
 
 # 数据定义指令
 
@@ -224,12 +296,16 @@ dw
 
 dd：define double word
 
+dq: define quardword(4 word)
+
+dt: 10 byte
+
 可以配合dup操作符使用减少冗余。如`db 3 dup (0, 1, 2)`表示定义了九个字节，分别为0,1,2,0,…
 
 # 传送长度
 
 - 有寄存器依据名字判断
-- 没有寄存器使用X ptr显式声明，如`mov word ptr ds:[0], 1`或`inc tyte ptr [bx]`
+- 没有寄存器使用X ptr显式声明，如`mov word ptr ds:[0], 1`或`inc byte ptr [bx]`
 - push/pop命令只进行字操作
 
 # 标号
@@ -306,11 +382,13 @@ code segment
 | df | DN(down) | UP(up) |
 
 # 内中断
+内部中断不需要硬件支持，不受IF标志控制，不执行中断总线周期，除单步中断可通过TF标志允许或禁止外，其余都是不可屏蔽中断。
 
 - 除法错误（0）
 - 单步执行（1）
-- 执行into指令（4）
-- 执行int指令
+- 执行into指令且OF=1时触发溢出中断（4）
+- 执行`int n`指令触发软中断
+- 断点中断（3）
 
 8086用称为中断类型码的数据来标识中断信息的来源，中断类型码为一个字节。
 
@@ -345,6 +423,10 @@ pop IP
 pop CS
 popf
 ```
+
+## 中断优先级和中断嵌套
+
+中断嵌套仅用于可屏蔽中断中。
 
 ## 单步中断
 
@@ -434,3 +516,5 @@ BIOS 提供了 int 9 中断例程，用来进行基本的键盘输入处理，�
 3. 对键盘系统进行相关的控制，比如说，向相关芯片发出应答信息。
 
 BIOS 键盘缓冲区是系统启动后用于存放 int 9 中断例程所接收的键盘输入的内存区。该内存区可以存储15个键盘输入，因为 int 9 中断例程除了接收扫描码外，还要产生和扫描码对应的字符码，所以在 BIOS 键盘缓冲区中，一个键盘输入用一个字单元存放，高位字节存放扫描码，低位字节存放字符码。
+
+# 总线
