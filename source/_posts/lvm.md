@@ -258,7 +258,7 @@ resize2fs /dev/myVolumeGroup/myLogicalVolume # for ext4
 
 # SEE ALSO
 
-```
+```plain
 lvm(8)lvm.conf(5)lvmconfig(8)
 
 pvchange(8)pvck(8)pvcreate(8)pvdisplay(8)pvmove(8)pvremove(8)pvresize(8)pvs(8)pvscan(8)
