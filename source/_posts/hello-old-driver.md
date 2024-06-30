@@ -4,8 +4,8 @@ title: hello-old-driver
 date: 2021/10/7
 updated: 2021/10/7
 cover: /assets/github.webp
-# coverWidth: 920
-# coverHeight: 613
+coverWidth: 719
+coverHeight: 397
 comments: true
 categories: 
 - 技术
