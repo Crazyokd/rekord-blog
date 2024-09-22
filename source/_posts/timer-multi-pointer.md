@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 一个对多引用指针访问和释放的解决方案（定时器）
-date: 2024/9/22
-updated: 2024/9/22
+date: 2024/9/21
+updated: 2024/9/21
 cover: https://cdn.sxrekord.com/blog/cpp.png
 coverWidth: 800
 coverHeight: 899
