@@ -1,0 +1,168 @@
+#---------------------------
+# 页头
+# Header
+#---------------------------
+navbar:
+  blog_title: 'Rekord'
+  menu:
+    - { key: 'home', link: '/', icon: 'iconfont icon-home-fill' }
+    - { key: 'archive', link: '/archives/', icon: 'iconfont icon-archive-fill' }
+    - { key: 'category', link: '/categories/', icon: 'iconfont icon-category-fill' }
+    - { key: 'tag', link: '/tags/', icon: 'iconfont icon-tags-fill' }
+    - { key: 'links', link: '/links/', icon: 'iconfont icon-link-fill' }
+    - { key: 'about', link: '/about/', icon: 'iconfont icon-user-fill' }
+
+#---------------------------
+# 页脚
+# Footer
+#---------------------------
+footer:
+  # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
+  # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
+  content: '
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+    <br><a href="https://beian.miit.gov.cn/" target="_blank">湘ICP备2021007111号</a>
+    <br>
+    <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=43010302001326" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+    <img src="https://cdn.sxrekord.com/blog/beian.png" style="float:left;"/>
+        <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">湘公网安备 43010302001326号</p>
+    </a>
+    <br><a href="https://www.foreverblog.cn/go.html" target="_blank"> <img src="https://img.foreverblog.cn/wormhole_1.gif" alt="" style="width:auto;height:30px;" title="穿梭虫洞-随机访问十年之约友链博客"></a>
+    <a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener" title="开往-友链接力">
+    <img src="https://www.travellings.cn/assets/logo.gif" alt="开往-友链接力" width="120">
+    </a>
+  '
+
+  # 展示网站的 PV、UV 统计数
+  # Display website PV and UV statistics
+  statistics:
+    enable: false
+
+    # 统计数据来源，如果使用 leancloud 需要设置 `web_analytics: leancloud` 中的参数；如果使用 busuanzi 可能会有请求失败的情况
+    # Data source. If use leancloud, you need to set the parameter in `web_analytics: leancloud`
+    # Options: busuanzi | leancloud
+    source: "leancloud"
+
+#---------------------------
+# 首页
+# Index Page
+#---------------------------
+index:
+  # 首页副标题的独立设置
+  # Independent config of home page subtitle
+  slogan:
+    enable: true
+
+    # 为空则按 hexo config.subtitle 显示
+    # If empty, text based on `subtitle` in hexo config
+    text: "Welcome to Rekord's Blog!"
+
+#---------------------------
+# 文章页
+# Post Page
+#---------------------------
+post:
+  comments:
+    enable: true
+    # type: gitalk
+    type: waline
+
+#---------------------------
+# 评论插件
+# Comment plugins
+#
+# 开启评论需要先设置上方 `post: comments: enable: true`，然后根据 `type` 设置下方对应的评论插件参数
+# Enable comments need to be set `post: comments: enable: true`, then set the corresponding comment plugin parameters below according to `type`
+#---------------------------
+
+# Waline
+# 从 Valine 衍生而来，额外增加了服务端和多种功能
+# Derived from Valine, with self-hosted service and new features
+# See: https://waline.js.org/
+waline:
+  serverURL: https://rekord-blog-vercel-3yz2c6gdm-crazyokds-projects.vercel.app/
+  path: window.location.pathname
+  meta: ['nick', 'mail', 'link']
+  requiredMeta: ['nick']
+  lang: 'zh-CN'
+  emoji: ['https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo']
+  dark: 'html[data-user-color-scheme="dark"]'
+  wordLimit: 0
+  pageSize: 10
+
+# Gitalk
+# 基于 GitHub Issues
+# Based on GitHub Issues
+# See: https://github.com/gitalk/gitalk#options
+gitalk:
+  clientID: b640e2db71a95cb19b24
+  clientSecret: f095962d7b7040d25063c4713b8dfe4c6441b78e
+  repo: rekord-blog
+  owner: Crazyokd
+  admin: Crazyokd
+  language: zh-CN
+  labels: ['Gitalk']
+  perPage: 10
+  pagerDirection: last
+  distractionFreeMode: false
+  createIssueManually: true
+  # 默认 proxy 可能会失效，解决方法请见下方链接
+  # The default proxy may be invalid, refer to the links for solutions
+  # https://github.com/gitalk/gitalk/issues/429
+  # https://github.com/Zibri/cloudflare-cors-anywhere
+  proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token
+
+#---------------------------
+# 关于页
+# About Page
+#---------------------------
+about:
+  banner_img: https://fluid.s3.bitiful.net/bg/4xvpqo.png?w=1920&fmt=webp
+  avatar: https://cdn.sxrekord.com/blog/logo.jpg
+  name: Rekord
+  introduce: Stay Hungry. Stay Foolish.
+  # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
+  # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
+
+  icons:
+    - { class: 'iconfont icon-github-fill', link: 'https://github.com/Crazyokd', tip: 'GitHub' }
+    - { class: 'iconfont icon-steam', link: 'https://steamcommunity.com/id/crazyokd', tip: 'Steam' }
+    - { class: 'iconfont icon-rss', link: 'atom.xml', tip: 'Steam' }
+
+#---------------------------
+# 404页
+# 404 Page
+#---------------------------
+page404:
+  enable: true
+  banner_img: https://fluid.s3.bitiful.net/bg/g8xjqe.png?w=1920&fmt=webp
+
+#---------------------------
+# 友链页
+# Links Page
+#---------------------------
+links:
+  enable: true
+  banner_img: https://fluid.s3.bitiful.net/bg/73twhs.png?w=1920&fmt=webp
+  items:  # intro 与 image 可省略
+    - {
+      title: 'Install Fluid',
+
+      intro: '安装主题',
+      link: 'https://hexo.fluid-dev.com/docs/start/',
+      image: '/img/favicon.png'
+    }
+    - {
+      title: 'Fluid Docs',
+      intro: '主题使用指南',
+      link: 'https://hexo.fluid-dev.com/docs/',
+      image: '/img/favicon.png'
+    }
+    - {
+      title: 'Fluid Repo',
+      intro: '主题 GitHub 仓库',
+      link: 'https://github.com/fluid-dev/hexo-theme-fluid',
+      image: '/img/favicon.png'
+    }
