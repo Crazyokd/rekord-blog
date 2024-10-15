@@ -1,7 +1,7 @@
 ---
 title: 博客那点事
 date: 2022/05/20
-updated: 2024/10/14
+updated: 2024/10/15
 index_img: https://cdn.sxrekord.com/blog/rekord.png
 banner_img: https://cdn.sxrekord.com/blog/rekord.png
 categories: 
@@ -123,6 +123,15 @@ tags:
 1. 配色较艳，比如文章的分类和标签等都使用了红/绿等艳丽颜色装饰，而整体配色也是偏橙红。
 2. 文章渲染后整体间距过大。
 
-更换主题前遇到的最大阻碍是懒（“能用就行”的想法不时跳出来反对自己），其次是对评论的难以割舍（虽然一共也没几条）。
+更换主题前遇到的最大阻碍是懒（“能用就行”的想法不时跳出来反对自己），其次是对评论的难以割舍，虽然一共也没几条，但大多是来自陌生人的善意和鼓励。
 
-不过最终还是克服拖延捣鼓起来，这次选用的新主题叫[fluid](https://github.com/fluid-dev/hexo-theme-fluid)，文档详实，样式目前也很满意（希望能一直满意）。
+不过最终还是克服拖延捣鼓起来，这次选用的新主题叫[fluid](https://github.com/fluid-dev/hexo-theme-fluid)，[文档](https://hexo.fluid-dev.com/docs/start/)详实，样式目前也很满意（希望能一直满意），而且还提供了一个非常好的[示例博客](https://github.com/fluid-dev/hexo-fluid-blog)。
+
+评论系统这次改用了他人推荐的`waline`，其实它的[文档](https://waline.js.org/guide/get-started/)非常细致，但还是折腾了一上午，原因在于将waline当成valine进行配置...
+至于二者间的关系可参考[Waline#FAQ](https://waline.js.org/advanced/faq.html#%E5%92%8C-valine-%E6%98%AF%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB)。
+> 排查过程中发现正常的vercel客户端与fluid中的客户端抓包情况不同。还以为是fluid做了什么额外的更改...
+
+本博客仍然添加了对gitalk的支持，但遗憾的是fluid不支持同时使用多种评论系统。
+此外，可能是因为文章信息有所变化，导致gitalk无法沿用以前的issue内容。所以以后评论系统默认将采用waline。
+
+waline也贴心的提供了[后台管理系统](https://rekord-blog-vercel-3yz2c6gdm-crazyokds-projects.vercel.app/ui)，供管理员查询/操作评论信息。
