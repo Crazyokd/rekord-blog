@@ -1,6 +1,7 @@
 ---
 title: SMS in MME
 date: 2024/8/2
+updated: 2024/8/2
 index_img: https://cdn.sxrekord.com/blog/sms-in-mme.png
 categories: 
 - 技术

@@ -1,6 +1,7 @@
 ---
 title: 一次手机抓包体验
 date: 2022/2/6
+updated: 2022/2/6
 index_img: https://cdn.sxrekord.com/blog/fiddler.png
 categories: 
 - 折腾

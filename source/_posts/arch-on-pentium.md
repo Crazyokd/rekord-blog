@@ -1,6 +1,7 @@
 ---
 title: 在 Pentium Dual-Core E6700 上安装 ArchLinux
 date: 2023/01/11
+updated: 2023/01/11
 index_img: https://cdn.sxrekord.com/blog/arch_on_pentium.png
 categories: 
 - 折腾

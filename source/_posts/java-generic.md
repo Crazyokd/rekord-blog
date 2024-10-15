@@ -1,6 +1,7 @@
 ---
 title: Java 泛型
 date: 2022/07/05
+updated: 2022/07/05
 index_img: https://cdn.sxrekord.com/blog/java.png
 banner_img: https://cdn.sxrekord.com/blog/java.png
 categories: 

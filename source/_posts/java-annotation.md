@@ -1,6 +1,7 @@
 ---
 title: Java 注解
 date: 2022/07/07
+updated: 2022/07/07
 index_img: https://cdn.sxrekord.com/blog/java.png
 banner_img: https://cdn.sxrekord.com/blog/java.png
 categories: 

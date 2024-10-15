@@ -1,6 +1,7 @@
 ---
 title: 黑魂3游玩体验
 date: 2022/3/10
+updated: 2022/3/10
 index_img: https://cdn.sxrekord.com/blog/darksouls3-bac.webp
 banner_img: https://cdn.sxrekord.com/blog/darksouls3-bac.webp
 categories: 

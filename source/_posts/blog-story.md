@@ -1,6 +1,7 @@
 ---
 title: 博客那点事
 date: 2022/05/20
+updated: 2024/10/14
 index_img: https://cdn.sxrekord.com/blog/rekord.png
 banner_img: https://cdn.sxrekord.com/blog/rekord.png
 categories: 

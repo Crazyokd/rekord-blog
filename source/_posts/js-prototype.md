@@ -1,6 +1,7 @@
 ---
 title: JavaScript 中的原型与原型链
 date: 2023/02/01
+updated: 2023/02/01
 index_img: https://cdn.sxrekord.com/blog/js.png
 banner_img: https://cdn.sxrekord.com/blog/js.png
 categories: 

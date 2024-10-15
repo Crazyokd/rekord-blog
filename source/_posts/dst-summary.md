@@ -1,6 +1,7 @@
 ---
 title: 饥荒游戏体验优化指南
 date: 2023/09/30
+updated: 2023/09/30
 index_img: https://cdn.sxrekord.com/blog/dst.png
 banner_img: https://cdn.sxrekord.com/blog/dst.png
 categories: 

@@ -1,6 +1,7 @@
 ---
 title: 尝尝ssh
 date: 2022/4/7
+updated: 2022/4/7
 index_img: https://cdn.sxrekord.com/blog/ssh.jpg
 banner_img: https://cdn.sxrekord.com/blog/ssh.jpg
 categories: 

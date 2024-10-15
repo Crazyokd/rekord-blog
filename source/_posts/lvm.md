@@ -1,6 +1,7 @@
 ---
 title: LVM
 date: 2024/01/14
+updated: 2024/01/14
 index_img: https://cdn.sxrekord.com/blog/lvm.jpg
 banner_img: https://cdn.sxrekord.com/blog/lvm.jpg
 categories: 

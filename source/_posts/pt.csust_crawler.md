@@ -1,6 +1,7 @@
 ---
 title: pt.csust_crawler
 date: 2022/06/13
+updated: 2022/06/13
 index_img: https://cdn.sxrekord.com/blog/code.jpg
 categories: 
 - 折腾

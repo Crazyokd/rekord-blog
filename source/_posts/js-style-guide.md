@@ -1,6 +1,7 @@
 ---
 title: JavaScript Style Guide
 date: 2022/08/21
+updated: 2022/08/21
 index_img: https://cdn.sxrekord.com/blog/js.png
 banner_img: https://cdn.sxrekord.com/blog/js.png
 categories: 

@@ -1,6 +1,7 @@
 ---
 title: Java char 类型
 date: 2022/06/16
+updated: 2022/06/16
 index_img: https://cdn.sxrekord.com/blog/java.png
 banner_img: https://cdn.sxrekord.com/blog/java.png
 categories: 

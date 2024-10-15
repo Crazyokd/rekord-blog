@@ -1,6 +1,7 @@
 ---
 title: 编译、链接、头文件
 date: 2023/08/20
+updated: 2023/08/20
 index_img: https://cdn.sxrekord.com/blog/cplus.png
 banner_img: https://cdn.sxrekord.com/blog/cplus.png
 categories: 

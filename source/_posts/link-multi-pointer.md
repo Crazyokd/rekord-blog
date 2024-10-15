@@ -1,6 +1,7 @@
 ---
 title: 一个对多引用链表的解决方案
 date: 2024/9/22
+updated: 2024/9/22
 index_img: https://cdn.sxrekord.com/blog/cplus.png
 banner_img: https://cdn.sxrekord.com/blog/cplus.png
 categories: 

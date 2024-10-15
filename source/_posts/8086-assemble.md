@@ -1,6 +1,7 @@
 ---
 title: 8086汇编
 date: 2023/10/10
+updated: 2023/10/10
 index_img: https://cdn.sxrekord.com/blog/dosbox.png
 banner_img: https://cdn.sxrekord.com/blog/dosbox.png
 categories:

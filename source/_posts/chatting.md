@@ -1,6 +1,7 @@
 ---
 title: Let’s chatting on web
 date: 2023/04/12
+updated: 2023/04/12
 index_img: https://cdn.sxrekord.com/blog/code.jpg
 categories:
 - 折腾

@@ -1,6 +1,7 @@
 ---
 title: 解决vscode中引用c++外部库报错
 date: 2021/10/16
+updated: 2021/10/16
 index_img: https://cdn.sxrekord.com/blog/cplus.png
 banner_img: https://cdn.sxrekord.com/blog/cplus.png
 categories: 

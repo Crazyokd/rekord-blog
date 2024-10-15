@@ -1,6 +1,7 @@
 ---
 title: Web页面请求的历程
 date: 2022/05/25
+updated: 2022/05/25
 index_img: https://cdn.sxrekord.com/blog/Internet.webp
 categories: 
 - 技术

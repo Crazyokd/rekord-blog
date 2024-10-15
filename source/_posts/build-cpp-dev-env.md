@@ -1,6 +1,7 @@
 ---
 title: 配置 vim + c/cpp 开发环境
 date: 2023/07/18
+updated: 2023/07/18
 index_img: https://cdn.sxrekord.com/blog/cplus.png
 banner_img: https://cdn.sxrekord.com/blog/cplus.png
 categories:

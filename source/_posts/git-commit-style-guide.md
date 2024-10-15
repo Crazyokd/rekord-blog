@@ -1,6 +1,7 @@
 ---
 title: Git提交规范
 date: 2022/05/07
+updated: 2022/05/07
 index_img: https://cdn.sxrekord.com/blog/git.webp
 banner_img: https://cdn.sxrekord.com/blog/git.webp
 categories: 

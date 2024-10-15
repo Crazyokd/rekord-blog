@@ -2,6 +2,7 @@
 title: luaxml
 index_img: https://cdn.sxrekord.com/blog/code.jpg
 date: 2024-10-14 15:00:20
+updated: 2024-10-14 15:00:20
 categories:
 - 折腾
 tags:

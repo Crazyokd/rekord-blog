@@ -1,6 +1,7 @@
 ---
 title: Tmux Guideline
 date: 2023/07/17
+updated: 2023/07/17
 index_img: https://cdn.sxrekord.com/blog/tmux.png
 banner_img: https://cdn.sxrekord.com/blog/tmux.png
 categories:

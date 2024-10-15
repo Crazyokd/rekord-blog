@@ -1,6 +1,7 @@
 ---
 title: Linux终端快捷键 & Windows terminal常用命令 & Windows资源管理器快捷键
 date: 2021/11/6
+updated: 2021/11/6
 index_img: https://cdn.sxrekord.com/blog/shortcut.jpg
 categories: 
 - 技术

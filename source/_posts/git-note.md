@@ -1,6 +1,7 @@
 ---
 title: 一份Git笔记
 date: 2021/10/22
+updated: 2021/10/22
 index_img: https://cdn.sxrekord.com/blog/git.webp
 categories:
 - 技术

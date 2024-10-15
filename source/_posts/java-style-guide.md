@@ -1,6 +1,7 @@
 ---
 title: Java 开发规范
 date: 2022/05/06
+updated: 2022/05/06
 index_img: https://cdn.sxrekord.com/blog/java.png
 banner_img: https://cdn.sxrekord.com/blog/java.png
 categories: 

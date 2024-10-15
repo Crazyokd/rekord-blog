@@ -1,6 +1,7 @@
 ---
 title: lol
 date: 2024-10-12 14:56:42
+updated: 2024-10-12 14:56:42
 index_img: https://cdn.sxrekord.com/blog/code.jpg
 categories:
 - 折腾

@@ -1,6 +1,7 @@
 ---
 title: Google C++ Style Guide
 date: 2023/09/28
+updated: 2023/09/28
 index_img: https://cdn.sxrekord.com/blog/cplus.png
 banner_img: https://cdn.sxrekord.com/blog/cplus.png
 categories: 

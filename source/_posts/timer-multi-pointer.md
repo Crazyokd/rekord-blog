@@ -1,6 +1,7 @@
 ---
 title: 一个对多引用指针访问和释放的解决方案（定时器）
 date: 2024/9/21
+updated: 2024/9/21
 index_img: https://cdn.sxrekord.com/blog/cplus.png
 banner_img: https://cdn.sxrekord.com/blog/cplus.png
 categories: 

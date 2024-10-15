@@ -1,6 +1,7 @@
 ---
 title: 接下来的学习路线
 date: 2021/12/21
+updated: 2021/12/21
 index_img: https://cdn.sxrekord.com/blog/rekord.png
 banner_img: https://cdn.sxrekord.com/blog/rekord.png
 categories: 

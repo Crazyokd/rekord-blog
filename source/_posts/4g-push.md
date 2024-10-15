@@ -1,6 +1,7 @@
 ---
 title: 4G 短信和语音推送
 date: 2024/7/29
+updated: 2024/7/29
 index_img: https://cdn.sxrekord.com/blog/asterisk.png
 categories: 
 - 技术

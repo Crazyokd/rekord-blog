@@ -1,6 +1,7 @@
 ---
 title: 关于车险
 date: 2022/2/23
+updated: 2022/2/23
 index_img: https://cdn.sxrekord.com/blog/auto-insurance.webp
 banner_img: https://cdn.sxrekord.com/blog/auto-insurance.webp
 categories: 

@@ -1,6 +1,7 @@
 ---
 title: asterisk-cpp源码解读
 date: 2024/6/29
+updated: 2024/6/29
 index_img: https://cdn.sxrekord.com/blog/code.jpg
 categories: 
 - 技术

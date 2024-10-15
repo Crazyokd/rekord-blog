@@ -1,6 +1,7 @@
 ---
 title: 证书
 date: 2024/01/20
+updated: 2024/01/20
 index_img: https://cdn.sxrekord.com/blog/certificate.png
 banner_img: https://cdn.sxrekord.com/blog/certificate.png
 categories: 

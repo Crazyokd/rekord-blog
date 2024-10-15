@@ -1,6 +1,7 @@
 ---
 title: 2023年终总结
 date: 2023/12/31
+updated: 2023/12/31
 index_img: https://cdn.sxrekord.com/blog/rekord.png
 banner_img: https://cdn.sxrekord.com/blog/rekord.png
 categories: 

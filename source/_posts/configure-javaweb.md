@@ -1,6 +1,7 @@
 ---
 title: 在VSCode上配置JavaWeb环境
 date: 2021/11/25
+updated: 2021/11/25
 index_img: https://cdn.sxrekord.com/blog/java.png
 banner_img: https://cdn.sxrekord.com/blog/java.png
 categories: 
