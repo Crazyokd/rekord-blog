@@ -5,7 +5,7 @@
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
-    "deploy": "rsync -rzC --delete --progress . sxrekord:/var/www/rekord-blog/ --exclude-from=.gitignore",
+    "deploy": "rsync -auzC --delete --progress . sxrekord:/var/www/rekord-blog/ --exclude-from=.gitignore && ssh sxrekord -t 'cd /var/www/rekord-blog && hexo generate'",
     "server": "hexo server"
   },
   "hexo": {

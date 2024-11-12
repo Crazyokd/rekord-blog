@@ -184,6 +184,13 @@ links:
   banner_img: https://fluid.s3.bitiful.net/bg/73twhs.png?w=1920&fmt=webp
   items:  # intro 与 image 可省略
     - {
+      title: 'KARPED1EM',
+
+      intro: '咔皮呆的小窝',
+      link: 'https://leever.cn/',
+      image: 'https://leever.cn/images/pages/Avatar.webp'
+    }
+    - {
       title: 'Install Fluid',
 
       intro: '安装主题',

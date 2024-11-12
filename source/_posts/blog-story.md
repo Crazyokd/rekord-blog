@@ -1,7 +1,7 @@
 ---
-title: 博客那点事
+title: 博客那些事
 date: 2022/05/20
-updated: 2024/10/15
+updated: 2024/10/16
 index_img: https://cdn.sxrekord.com/blog/rekord.png
 banner_img: https://cdn.sxrekord.com/blog/rekord.png
 categories: 
@@ -127,7 +127,7 @@ tags:
 
 不过最终还是克服拖延捣鼓起来，这次选用的新主题叫[fluid](https://github.com/fluid-dev/hexo-theme-fluid)，[文档](https://hexo.fluid-dev.com/docs/start/)详实，样式目前也很满意（希望能一直满意），而且还提供了一个非常好的[示例博客](https://github.com/fluid-dev/hexo-fluid-blog)。
 
-评论系统这次改用了他人推荐的`waline`，其实它的[文档](https://waline.js.org/guide/get-started/)非常细致，但还是折腾了一上午，原因在于将waline当成valine进行配置...
+评论系统这次改用了他人推荐的[waline](https://github.com/walinejs/waline)，其实它的[文档](https://waline.js.org/guide/get-started/)非常细致，但还是折腾了一上午，原因在于将waline当成valine进行配置...
 至于二者间的关系可参考[Waline#FAQ](https://waline.js.org/advanced/faq.html#%E5%92%8C-valine-%E6%98%AF%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB)。
 > 排查过程中发现正常的vercel客户端与fluid中的客户端抓包情况不同。还以为是fluid做了什么额外的更改...
 
@@ -135,3 +135,23 @@ tags:
 此外，可能是因为文章信息有所变化，导致gitalk无法沿用以前的issue内容。所以以后评论系统默认将采用waline。
 
 waline也贴心的提供了[后台管理系统](https://rekord-blog-vercel-3yz2c6gdm-crazyokds-projects.vercel.app/ui)，供管理员查询/操作评论信息。
+
+## 部署tip
+新的博客还是决定先部署在自己的云服务器上，毕竟东西全部掌握在自己手上才是王道。
+但是以前存在一个问题，就是在每次本地编辑好文章后我会尽快更新到GitHub仓库，此后还需要登录云服务器拉取最新内容并手动生成静态文件。
+而在国内的云服务器中拉取GitHub资源也是一言难尽，当时简单写了一个脚本实现一直拉取直到成功：
+```shell
+#!/bin/bash
+
+command="git pull origin main"
+
+while ! $command; do
+  echo "Command failed, retrying..."
+  sleep 1
+done
+
+echo "Command executed successfully."
+```
+
+但这次才发现Hexo本身就提供了deploy命令，随便翻了翻不同实现，大多是对相关命令的简单封装，比如git、rsync等。
+不想轻易增加依赖，故选择直接将`package.json`中的deploy script修改成对应的`rsync`命令，以后在更新博客内容后仅需执行`npm run deploy`即可。
