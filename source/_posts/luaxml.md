@@ -2,14 +2,12 @@
 title: luaxml
 index_img: https://cdn.sxrekord.com/blog/code.jpg
 date: 2024-10-14 15:00:20
-updated: 2024-10-14 15:00:20
+updated: 2024-11-12 15:43:00
 categories:
 - 折腾
 tags:
 - Lua
 ---
-
-# 前言
 
 由于业务要求，需要使用lua操作xml，本想着这算不得什么问题，但没想到在GitHub大致搜了一圈都没有找到比较好用且还在维护的`lua for xml`​库。
 
@@ -83,7 +81,6 @@ tags:
 
 3. 不够易用。在它的场景中，parser和handler的实现是分离的，当parser解析到最小子集的有意义信息时，会回调handler的对应函数（handler在parser构造时传递进来）。通过这种设计方式，用户可以自定义实现handler，以实现不同场景。但是对大部分用户而言，并不需要多个handler，普通的`parse/get/set/print`​基本足够，而且具备自定义handler能力的用户，或许更倾向于修改已有的handler？
 
-‍
 
 通过上面的现状分析，我们对应的也有了一套定向解决上述痛点的需求模型。
 
@@ -186,10 +183,9 @@ lua内部表示如下：
 
 # 用法
 
-1. 支持使用xpath形式调用`set/get/get_attrs`​函数。
-
-2. 支持使用`load/load_ffile/save/print`​函数输入输出xml字符串。
-3. ​`调用parse`​函数解析字符串。
+1. 支持使用xpath形式像对待表成员一样设置/获取元素。
+2. 支持使用`load/load_ffile/save`函数输入输出xml字符串。
+3. 调用`parse`函数解析字符串。
 
 # 成品
 
