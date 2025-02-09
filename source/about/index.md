@@ -3,4 +3,4 @@ title: about
 layout: about
 ---
 
-about me.
+Stay Hungry. Stay Foolish.

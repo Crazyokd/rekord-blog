@@ -13,6 +13,9 @@ repo for my blog.
 ## Deploy
 I modified the deploy script in [package.json](package.json) so I can deploy to server by running `npm run deploy`.
 
+## Upload Image
+Upload static images by running `npm run upload`.
+
 ## Reference
 - This blog is based on [fluid](https://github.com/fluid-dev/hexo-theme-fluid) theme.
 - For the use of hexo, please refer to the [Hexo](https://hexo.io/zh-cn/docs/).
