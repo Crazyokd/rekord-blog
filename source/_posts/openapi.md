@@ -77,7 +77,7 @@ swagger-ui的设计使得测试基本可以在浏览器上进行，通过浏览�
 
 但是最大的问题还是在于浏览器存在跨域问题。
 
-将[swagger-ui](https://github.com/swagger-api/swagger-ui)对应的[dist](https://github.com/swagger-api/swagger-ui/tree/master/dist)托管在http服务器上非常轻松，比如使用`python -m http`​或`Live Server`​插件，再不济也有`nginx`​（不过由于权限问题，灵活性还是稍差一截）。
+将[swagger-ui](https://github.com/swagger-api/swagger-ui)对应的[dist](https://github.com/swagger-api/swagger-ui/tree/master/dist)托管在http服务器上非常轻松，比如使用`python -m http.server 8080`或`Live Server`插件，再不济也有`nginx`（不过由于权限问题，灵活性还是稍差一截）。
 
 但是跨域问题如何处理最快捷&灵活呢？下面列举几种可行方案：
 
