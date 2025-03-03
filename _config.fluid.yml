@@ -184,6 +184,13 @@ links:
   banner_img: https://fluid.s3.bitiful.net/bg/73twhs.png?w=1920&fmt=webp
   items:  # intro 与 image 可省略
     - {
+      title: 'Scour',
+
+      intro: '发小',
+      link: 'https://scour.com.cn',
+      image: 'https://scour-blog.oss-cn-beijing.aliyuncs.com/avatar.jpg'
+    }
+    - {
       title: 'KARPED1EM',
 
       intro: '咔皮呆的小窝',
