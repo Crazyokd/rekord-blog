@@ -100,6 +100,10 @@ post:
     # CreativeCommons license
     # Options: BY | BY-SA | BY-ND | BY-NC | BY-NC-SA | BY-NC-ND
     license: 'BY'
+  mermaid:
+    enable: true
+    specific: true
+    options: { theme: 'default' }
   comments:
     enable: true
     # type: gitalk
