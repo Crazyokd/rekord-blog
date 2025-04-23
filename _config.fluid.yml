@@ -202,6 +202,12 @@ links:
       image: 'https://leever.cn/images/pages/Avatar.webp'
     }
     - {
+      title: '拾壹博客',
+      intro: '一个专注于技术分享的博客平台',
+      link: 'https://www.shiyit.com',
+      image: 'https://img.shiyit.com/base/mojian/20250122/new-logo.png'
+    }
+    - {
       title: 'Install Fluid',
 
       intro: '安装主题',
