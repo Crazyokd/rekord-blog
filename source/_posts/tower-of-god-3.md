@@ -1,7 +1,7 @@
 ---
 title: 神之塔第二季（地狱列车前篇）
-index_img: https://blog.delivered.co.kr/wp-content/uploads/2024/09/TOG-featured.jpg
-banner_img: https://blog.delivered.co.kr/wp-content/uploads/2024/09/TOG-featured.jpg
+index_img: https://cdn.sxrekord.com/v2/TOG-featured.jpg
+banner_img: https://cdn.sxrekord.com/v2/TOG-featured.jpg
 date: 2025-02-09 10:16:47
 updated: 2025-02-09 10:16:47
 categories:

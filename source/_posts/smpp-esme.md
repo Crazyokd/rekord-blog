@@ -3,7 +3,7 @@ title: smpp-esme
 mermaid: true
 index_img: https://cdn.sxrekord.com/blog/code.jpg
 date: 2025-03-16 09:48:57
-updated: 2025-03-16 09:48:57
+updated: 2025-04-23 09:48:57
 categories:
 - 技术
 tags:
@@ -165,6 +165,23 @@ stateDiagram
 
 
 ```
+
+# Caveat
+
+短信内容编解码方式主要分为以下两种：
+- coding=0，对应[gsm7bit]()
+- coding=8，对应[ucs2]()
+
+除了coding和短信内容以外，还会携带一个短信长度字段，但其值是编码方式特定的，决定方式如下：
+1. 若编码方式为gsm7bit，则长度为原始文本ascii字符数。
+比如原始文本为"123456789"，gsm编码后结果为"31d98c56b3dd7039"，其实际字节长度为8，但长度字段需填写strlen("123456789")即9.
+2. 若编码方式为ucs2，则长度为实际字节数。
+比如“好了好了”这样的文本将采用ucs2编码，每个字符占两个字节，故长度为4*2=8.
+
+同理，解码的时候也需要多加注意。若编码方式为gsm7bit，仅需要解码前(len-len/8)个字节，而且一定不要忘了在最后的结果数组上执行result[len] = 0，因为还是可能多出一个字符。
+> 长度转换公式:
+> gsm7bit->ascii : len * 8 / 7
+> ascii->gsm7bit : len - (len / 8)
 
 # 参考链接
 

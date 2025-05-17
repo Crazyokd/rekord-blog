@@ -103,7 +103,7 @@ post:
   mermaid:
     enable: true
     specific: true
-    options: { theme: 'default' }
+    options: { theme: 'forest' }
   comments:
     enable: true
     # type: gitalk
@@ -208,11 +208,10 @@ links:
       image: 'https://img.shiyit.com/base/mojian/20250122/new-logo.png'
     }
     - {
-      title: 'Install Fluid',
-
-      intro: '安装主题',
-      link: 'https://hexo.fluid-dev.com/docs/start/',
-      image: '/img/favicon.png'
+      title: 'BemoDB',
+      intro: 'Bolaxious的文档库🥰',
+      link: 'https://mengbooo.github.io/BemoDB',
+      image: 'https://avatars.githubusercontent.com/u/143786942?v=4'
     }
     - {
       title: 'Fluid Docs',
@@ -226,3 +225,9 @@ links:
       link: 'https://github.com/fluid-dev/hexo-theme-fluid',
       image: '/img/favicon.png'
     }
+  custom:
+    enable: true
+    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>博客名：Rekord&apos;s Blog</li><li>简介：Stay Hungry, Stary Foolish</li><li>链接：https://sxrekord.com</li><li>图片：https://cdn.sxrekord.com/blog/favicon.ico</li></ul>'
+  comments:
+    enable: true
+    type: waline

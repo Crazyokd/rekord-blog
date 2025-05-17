@@ -1,11 +1,11 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
+  "name": "rekord-blog",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
-    "deploy": "rsync -auzC --delete --progress . sxrekord:/var/www/rekord-blog/ --exclude-from=.gitignore && ssh sxrekord -t 'cd /var/www/rekord-blog && hexo generate'",
+    "deploy": "rsync -auzC --delete --progress . server:/var/www/rekord-blog/ --exclude-from=.gitignore && ssh server -t 'cd /var/www/rekord-blog && hexo generate'",
     "upload": "rm ~/.qshell/users/ -rf && ./qshell qupload2 --bucket rekord-image-home --check-exists --src-dir source/assets --key-prefix=v2/",
     "server": "hexo server"
   },
