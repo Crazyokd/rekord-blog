@@ -69,7 +69,7 @@ transport.poolCount = 1
 
 ## 网络拓扑
 
-![image](https://cdn.sxrekord.com/v2/image-20250523194727-g7532nm.png)
+![网络拓扑](https://cdn.sxrekord.com/v2/image-20250523194727-g7532nm.png)
 
 ## 结果
 
@@ -107,15 +107,15 @@ stalwart将邮件交互的各个阶段和步骤都进行了拆分，这样就能
 
 客户端勾选SSL后认证失败，请勾选Allow plain text authentication.
 
-![image](https://cdn.sxrekord.com/v2/image-20250523201757-7gcqb8x.png)
+![Allow plain](https://cdn.sxrekord.com/v2/image-20250523201757-7gcqb8x.png)
 
 EHLO失败，请将Reject Non-FQDN设置为false。
 
-![image](https://cdn.sxrekord.com/v2/image-20250523202217-m49nqng.png)
+![Reject Non-FQDN](https://cdn.sxrekord.com/v2/image-20250523202217-m49nqng.png)
 
 域内发送邮件失败，请允许Relay：
 
-![image](https://cdn.sxrekord.com/v2/image-20250523201924-av1d4j3.png)
+![Allow Relay](https://cdn.sxrekord.com/v2/image-20250523201924-av1d4j3.png)
 
 # 参考
 - https://service.mail.qq.com/detail/124/64?expand=11
