@@ -1,7 +1,7 @@
 ---
 title: SMS in MME
 date: 2024/8/2
-updated: 2025/3/31
+updated: 2025/5/27 18:52:00
 index_img: https://cdn.sxrekord.com/blog/sms-in-mme.png
 categories: 
 - 技术
@@ -31,7 +31,7 @@ tags:
 在IMS中短信AS（在我们这套系统中取名为smsc）负责短信业务处理，链路传输使用UDP/SIP。
 
 
-在没有IMS网络的情况下，也可以将语音业务fallback到3G中进行。MME网元可通过连接3G的SGSAP网元实现各种CS业务。
+在没有IMS网络的情况下，也可以将语音业务fallback到3G中进行。MME网元可通过SGSAP连接3G的MSC/VLR网元实现各种CS业务。
 
 
 那么什么是nas短信呢？
@@ -101,7 +101,7 @@ tags:
 
 # 架构
 
-![image](https://cdn.sxrekord.com/blog/sms-in-mme.png)
+![网络拓扑](https://cdn.sxrekord.com/blog/sms-in-mme.png)
 
 # 后记
 
