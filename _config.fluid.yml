@@ -169,7 +169,9 @@ about:
   icons:
     - { class: 'iconfont icon-github-fill', link: 'https://github.com/Crazyokd', tip: 'GitHub' }
     - { class: 'iconfont icon-steam', link: 'https://steamcommunity.com/id/crazyokd', tip: 'Steam' }
-    - { class: 'iconfont icon-rss', link: 'atom.xml', tip: 'Steam' }
+    - { class: 'iconfont icon-rss', link: 'atom.xml', tip: 'RSS' }
+    - { class: 'iconfont icon-bilibili', link: 'https://space.bilibili.com/456872732', tip: 'Bilibili' }
+    - { class: 'iconfont icon-douban-fill', link: 'https://www.douban.com/people/232567446', tip: 'Douban' }
 
 #---------------------------
 # 404页
