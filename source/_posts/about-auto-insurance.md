@@ -7,7 +7,7 @@ banner_img: https://cdn.sxrekord.com/blog/auto-insurance.webp
 categories: 
 - 生活
 tags:
-- 车险
+- 常识
 ---
 
 ## 起因
