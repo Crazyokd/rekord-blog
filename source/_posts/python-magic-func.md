@@ -63,7 +63,7 @@ Foo('a', x=10)
 
 ## 描述符
 
-后面会单出一篇重点介绍。
+见[Python中的描述符](http://sxrekord.com/python-descriptor/)。
 
 # 容器
 
@@ -86,6 +86,14 @@ Foo('a', x=10)
 ---
 
 实际开发时如果真的想实现一些自定义的容器类，建议还是直接继承`collections.abc`包下的基础容器，这样能确保你实现必要的函数。
+
+# 上下文管理
+`__enter__(self)`
+`__exit__(self)`
+
+# 迭代器
+`__iter__(self)`
+`__next(self)`
 
 # 类型转换
 
