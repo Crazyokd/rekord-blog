@@ -216,6 +216,12 @@ links:
       image: 'https://avatars.githubusercontent.com/u/143786942?v=4'
     }
     - {
+      title: 'liangbm3’s blog',
+      intro: '总有人间一两风，填我十万八千梦。',
+      link: 'https://liangbm3.site/',
+      image: 'https://liangbm3.site/avatar.png'
+    }
+    - {
       title: 'Fluid Docs',
       intro: '主题使用指南',
       link: 'https://hexo.fluid-dev.com/docs/',
