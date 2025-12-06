@@ -3,7 +3,7 @@ title: Python魔法方法
 index_img: https://cdn.sxrekord.com/v2/Python.png
 banner_img: https://cdn.sxrekord.com/v2/Python.png
 date: 2025-09-13 11:44:13
-updated: 2025-09-13 11:44:13
+updated: 2025-12-06 19:04:13
 categories:
 - 技术
 tags:
@@ -48,9 +48,16 @@ Foo('a', x=10)
 # <__main__.Foo object at 0x7fc49dc78490>
 ```
 
-> 更高阶的内容后面会单开篇章介绍
-
 `__del__(self)`
+
+
+### 元类
+- Python 解析到 class 定义语句。
+- 确定该类的元类（默认是 type）。
+- 调用元类的 __prepare__ 方法，获取一个空的命名空间对象。
+- 执行类体中的代码（如定义方法、赋值属性等），将结果存入这个命名空间。
+- 调用元类的 __new__ 方法，传入类名、基类、命名空间等参数，创建类对象。
+- 调用元类的 __init__ 方法，初始化类对象。
 
 ## 属性访问
 
