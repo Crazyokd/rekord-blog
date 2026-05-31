@@ -2,8 +2,8 @@
 title: Rust 核心概念（二）：借用与引用
 date: 2026/05/31
 updated: 2026/05/31
-index_img: https://cdn.sxrekord.com/blog/code.jpg
-banner_img: https://cdn.sxrekord.com/blog/code.jpg
+index_img: https://cdn.sxrekord.com/v2/rust.png
+banner_img: https://cdn.sxrekord.com/v2/rust.png
 categories:
 - 技术
 tags:
