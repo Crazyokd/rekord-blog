@@ -151,6 +151,68 @@ fn main() {
 
 > 可变引用不是多开一个修改入口，而是暂时把修改权从原变量转交给引用。
 
+# 隐式借用
+
+有些代码看起来没有写 `&` 或 `&mut`，但 Rust 会在方法调用时自动借用。
+
+例如：
+
+```rust
+fn main() {
+    let s = String::from("hello");
+    let n = s.len();
+
+    println!("{}", s);
+    println!("{}", n);
+}
+```
+
+`len` 方法需要的是 `&self`。
+
+所以 `s.len()` 可以理解成：
+
+```rust
+String::len(&s)
+```
+
+这里发生的是不可变借用，所以调用后 `s` 还能继续使用。
+
+再看可变方法：
+
+```rust
+fn main() {
+    let mut s = String::from("hello");
+    s.push_str(" world");
+
+    println!("{}", s);
+}
+```
+
+`push_str` 方法需要的是 `&mut self`。
+
+所以 `s.push_str(" world")` 可以理解成：
+
+```rust
+String::push_str(&mut s, " world");
+```
+
+这就是隐式借用。
+
+它只是让方法调用更自然，不是绕过借用规则。
+
+如果某个值正在被不可变借用，隐式可变借用同样会失败：
+
+```rust
+fn main() {
+    let mut s = String::from("hello");
+
+    let r = &s;
+    // s.push_str(" world"); // 错误：这里需要隐式 &mut s
+
+    println!("{}", r);
+}
+```
+
 # 多个不可变引用
 
 同一时间可以有多个不可变引用。
